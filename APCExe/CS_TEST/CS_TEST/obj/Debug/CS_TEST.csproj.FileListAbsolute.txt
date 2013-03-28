@@ -9,3 +9,14 @@ I:\ProjectsGIT\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\APCLine.xml
 I:\ProjectsGIT\APCSDK\APCExe\CS_TEST\CS_TEST\obj\Debug\ResolveAssemblyReference.cache
 I:\ProjectsGIT\APCSDK\APCExe\CS_TEST\CS_TEST\obj\Debug\CS_TEST.dll
 I:\ProjectsGIT\APCSDK\APCExe\CS_TEST\CS_TEST\obj\Debug\CS_TEST.pdb
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\CS_TEST.dll
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\CS_TEST.pdb
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\APCLine.dll
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\SPCore.dll
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\SPCore.pdb
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\SPCore.xml
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\APCLine.pdb
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\bin\Debug\APCLine.xml
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\obj\Debug\CS_TEST.dll
+C:\Projects\APCSDK\APCExe\CS_TEST\CS_TEST\obj\Debug\CS_TEST.pdb

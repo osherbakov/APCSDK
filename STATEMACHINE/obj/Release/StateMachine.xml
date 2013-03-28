@@ -1,125 +1,199 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>StateMachine</name>
-    <version>1.1.1.14919</version>
-    <fullname>StateMachine, Version=1.1.1.14919, Culture=neutral, PublicKeyToken=null</fullname>
-  </assembly>
-  <members>
-    <member name="T:Diacom.APCStates.APCStateLine">
-      <summary>
- The class that keeps all command and SQL request filters and queues. 
+<assembly>
+<name>
+StateMachine
+</name>
+</assembly>
+<members>
+<member name="T:Diacom.APCStates.APCCommandModule">
+ -----------------------------------------------------------------------------
+ <summary>
+ Implements the <see cref="T:Diacom.IAPCInterface"/> interface for work with a state machine.
  </summary>
-    </member>
-    <member name="P:Diacom.APCStates.APCStateLine.LineReference">
-      <summary>
- Gets and Sets the unique line identifier. 
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCStates.SPCommandModule.#ctor(Diacom.ISP,Diacom.APCStates.APCStateControl)">
+	<summary>
+ Initializes a new instance of <see cref="T:Diacom.APCStates.SPCommandModule"/> class .
  </summary>
- <returns>Unique reference to the line that SP will recognize.</returns></member>
-    <member name="T:Diacom.APCStates.ScriptCallInfo">
-      <summary>
- Internal structure to keep information about scripting calls - 
- Procedure name, on which host, instance of the class and method itself. 
+	<param name="interfaceSP">Interface instance to communicate with SP.</param>
+	<param name="apcModule">The APC module that will be used.</param>
+</member><member name="M:Diacom.APCStates.SPCommandModule.ProcessReadQueue">
+	<summary>
+ Processes all incoming responses and line events from SP queue.
  </summary>
-    </member>
-    <member name="T:Diacom.APCStates.APCStateControl">
-      <summary>
- The class to hold the method and the call instance object 
- for state subroutines calls. 
+</member><member name="T:Diacom.APCStates.SPCommandModule">
+	<summary>
+ Defines the class that communicates with Service Provider (SP) module.
+ </summary>
+</member><member name="T:Diacom.APCStates.ConnectModule">
+	<summary>
+ Class to initiate the connect lines command.
 </summary>
-    </member>
-    <member name="M:Diacom.APCStates.APCStateControl.Connect(System.String,System.String,System.String,System.String)">
-      <summary>
- Connects to the server using SP, provided in a constructor/ 
+</member><member name="T:Diacom.APCStates.DisconnectModule">
+	<summary>
+ Class to initiate disconnect lines command.
+</summary>
+</member><member name="T:Diacom.APCStates.PlayDTMFModule">
+	<summary>
+ Class to initiate the Play DTMF on the line command.
+</summary>
+</member><member name="T:Diacom.APCStates.ReleaseModule">
+	<summary>
+ Class to initiate the disconnect (drop call)line command.
+</summary>
+</member><member name="T:Diacom.APCStates.AnswerModule">
+	<summary>
+ Class to initiate the answer call command.
+</summary>
+</member><member name="T:Diacom.APCStates.RejectModule">
+	<summary>
+ Class to initiate the reject call command.
+</summary>
+</member><member name="T:Diacom.APCStates.PassModule">
+	<summary>
+ Class to initiate the pass call command.
+</summary>
+</member><member name="P:Diacom.APCStates.APCStateLine.LineReference">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets and Sets the unique line identifier.
  </summary>
- <param name="serverName">Server name or IP address to connect to.</param>
- <param name="param1">Login parameter 1.</param>
- <param name="param2">Login parameter 2.</param>
- <param name="param3">Login parameter 3.</param></member>
-    <member name="M:Diacom.APCStates.APCStateControl.AddScript(System.String)">
-      <summary>
- Adds the script or compiled DLL file to the state machine from the supplied file. 
+	<returns>Unique reference to the line that SP will recognize.</returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Diacom.APCStates.APCStateLine">
+ -----------------------------------------------------------------------------
+ <summary>
+ The class that keeps all command and SQL request filters and queues.
  </summary>
- <param name="fileName">File name for the script.</param></member>
-    <member name="M:Diacom.APCStates.APCStateControl.GetFullFilePath(System.String)">
-      <summary>
- Gets full path for directory entry. 
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Diacom.APCStates.ScriptCallInfo">
+ -----------------------------------------------------------------------------
+ <summary>
+ Internal structure to keep information about scripting calls - 
+ Procedure name, on which host, instance of the class and method itself.
  </summary>
- <param name="DirEntry">Directory entry (full path or not).</param>
- <returns>Full path to directory based on startup path.</returns>
- <remarks>
- Thinking all entries are of the following type: ".\<dir>" or "<dir>", and can start and end with "\". 
- <member name="M:Diacom.APCStates.APCStateControl.AddStates(System.String)"><summary>
- Adds the states by parsing all *.DLL files from the supplied directory. 
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCStates.APCStateControl.Connect(System.String,System.String,System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Connects to the server using SP, provided in a constructor/
  </summary>
- <param name="dllDirectories">Directories, separated by ";" where state functions are located.</param></member><member name="M:Diacom.APCStates.APCStateControl.AddLine(Diacom.SPLine)"><summary>
- Adds the supplied line to the line events handler. 
+	<param name="serverName">Server name or IP address to connect to.</param>
+	<param name="param1">Login parameter 1.</param>
+	<param name="param2">Login parameter 2.</param>
+	<param name="param3">Login parameter 3.</param>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCStates.APCStateControl.AddScript(System.String)">
+	<summary>
+ Adds the script or compiled DLL file to the state machine from the supplied file.
  </summary>
- <param name="newLine">Line to be added to the collection of controlled lines.</param></member><member name="M:Diacom.APCStates.APCStateControl.InitLines"><summary>
- Initialises all registered lines into initial state 
- </summary></member><member name="M:Diacom.APCStates.APCStateControl.RemoveLine(System.Object)"><summary>
- Removes the line from the collection of the lines and unregisters from the event handler. 
+	<param name="fileName">File name for the script.</param>
+</member><member name="M:Diacom.APCStates.APCStateControl.GetFullFilePath(System.String)">
+	<summary>
+ Gets full path for directory entry.
  </summary>
- <param name="lineRef">Unique ID that identifies the line.</param></member><member name="P:Diacom.APCStates.APCStateControl.UserData(System.Object,System.Object)"><summary>
- Set and gets user-specific data in service Provider. 
+	<param name="FileEntry">Directory entry (full path or not).</param>
+	<returns>Full path to directory based on startup path.</returns>
+	<remarks>
+ Thinking all entries are of the following type: ".\dir" or "dir", and can start and end with "\".
+ </remarks>
+</member><member name="M:Diacom.APCStates.APCStateControl.AddStates(System.String)">
+	<summary>
+ Adds the states by parsing all *.DLL files from the supplied directory.
  </summary>
- <param name="lineRef">Unique ID that identifies the line.</param>
- <param name="key">The data reference key.</param>
- <returns>Any type of data previously stored.</returns></member><member name="M:Diacom.APCStates.APCStateControl.FindAndExecute(Diacom.APCLine,System.String)"><summary>
- Function to check if the procedure exists in the script module. 
+	<param name="dllDirectories">Directories, separated by ";" where state functions are located.</param>
+</member><member name="M:Diacom.APCStates.APCStateControl.AddLine(Diacom.SPLine)">
+	<summary>
+ Adds the supplied line to the line events handler.
+ </summary>
+	<param name="newLine">Line to be added to the collection of controlled lines.</param>
+</member><member name="M:Diacom.APCStates.APCStateControl.InitLines">
+ -----------------------------------------------------------------------------
+ <summary>
+ Initialises all registered lines into initial state
+ </summary>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCStates.APCStateControl.RemoveLine(System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Removes the line from the collection of the lines and unregisters from the event handler.
+ </summary>
+	<param name="lineRef">Unique ID that identifies the line.</param>
+ -----------------------------------------------------------------------------
+
+</member><member name="P:Diacom.APCStates.APCStateControl.UserData(System.Object,System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Set and gets user-specific data in service Provider.
+ </summary>
+	<param name="lineRef">Unique ID that identifies the line.</param>
+	<param name="key">The data reference key.</param>
+	<returns>Any type of data previously stored.</returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCStates.APCStateControl.FindAndExecute(Diacom.APCLine,System.String)">
+	<summary>
+ Function to check if the procedure exists in the script module.
  If it does exist - execute it 
  </summary>
- <returns>TRUE - if exists and was successfully executed, FALSE - if doesn't exist or error was encountered during execution.</returns></member><member name="M:Diacom.APCStates.APCStateControl.FindDialTargetLine(System.String@,System.Boolean@,System.Boolean@)"><summary>
- Finds the Target line to place the call on. 
+	<returns>TRUE - if exists and was successfully executed, FALSE - if doesn't exist or error was encountered during execution.</returns>
+</member><member name="M:Diacom.APCStates.APCStateControl.FindDialTargetLine(System.String@,System.Boolean@,System.Boolean@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Finds the Target line to place the call on.
  </summary>
- <param name="dialNumber">A string that has the number to be dialed.</param>
- <param name="targetFound">A Boolean indicating if target line is found.</param>
- <param name="continueSearch">A Boolean indicating if any more searches are needed.</param>
- <returns>First line that best matches <paramref name="dialNumber" /> string or Null reference.</returns></member><member name="M:Diacom.APCStates.APCStateControl.FindTransferTargetLine(Diacom.APCStates.APCStateLine,System.String@,System.Boolean@,System.Boolean@,Diacom.Cmd.TransferCallType@)"><summary>
- Finds the target for the call transfer 
+	<param name="dialNumber">A string that has the number to be dialed.</param>
+	<param name="targetFound">A Boolean indicating if target line is found.</param>
+	<param name="continueSearch">A Boolean indicating if any more searches are needed.</param>
+	<returns>First line that best matches <paramref name="dialNumber"/> string or Null reference.</returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCStates.APCStateControl.FindTransferTargetLine(Diacom.APCStates.APCStateLine,System.String@,System.Boolean@,System.Boolean@,Diacom.Cmd.TransferCallType@)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Finds the target for the call transfer
  </summary>
- <param name="dialNumber">A string that has the number to be dialed.</param>
- <param name="targetFound">A Boolean indicating if target line is found.</param>
- <param name="continueSearch">A Boolean indicating if any more searches are needed.</param>
- <param name="TargetType">Output parameter indicating the type of the transfer (see <see cref="Diacom.Cmd.Diacom.Cmd.TransferCallType" /> enumeration).</param>
- <returns>First line that best matches <paramref name="dialNumber" /> string or Null reference.</returns></member><member name="M:Diacom.APCStates.FileSearch.GetDllFileNames(System.String)"><summary>
- Returns the states, that contain states and functions by parsing all *.DLL files from the supplied directory. 
+	<param name="dialNumber">A string that has the number to be dialed.</param>
+	<param name="targetFound">A Boolean indicating if target line is found.</param>
+	<param name="continueSearch">A Boolean indicating if any more searches are needed.</param>
+	<param name="TargetType">Output parameter indicating the type of the transfer (see <see cref="T:Diacom.Cmd.TransferCallType"/> enumeration).</param>
+	<returns>First line that best matches <paramref name="dialNumber"/> string or Null reference.</returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Diacom.APCStates.APCStateControl">
+	<summary> 
+ The class to hold the method and the call instance object
+ for state subroutines calls.
+</summary>
+</member><member name="M:Diacom.APCStates.FileSearch.GetDllFileNames(System.String)">
+	<summary>
+ Returns the states, that contain states and functions by parsing all *.DLL files from the supplied directory.
  </summary>
- <param name="dllDirectories">Directories, separated by ";" where state functions are located.</param></member><member name="M:Diacom.APCStates.FileSearch.GetFullDirPath(System.String)"><summary>
- Gets full path for directory entry. 
+	<param name="dllDirectories">Directories, separated by ";" where state functions are located.</param>
+</member><member name="M:Diacom.APCStates.FileSearch.GetFullDirPath(System.String)">
+	<summary>
+ Gets full path for directory entry.
  </summary>
- <param name="DirEntry">Directory entry (full path or not).</param>
- <returns>Full path to directory based on startup path.</returns>
- <remarks>
- Thinking all entries are of the following type: ".\<dir>" or "<dir>", and can start and end with "\". 
- <member name="T:Diacom.APCStates.APCCommandModule"><summary>
- Implements the <see cref="IAPCInterface" /> interface for work with a state machine. 
- </summary></member><member name="T:Diacom.APCStates.SPCommandModule"><summary>
- Defines the class that communicates with Service Provider (SP) module. 
- </summary></member><member name="M:Diacom.APCStates.SPCommandModule.#ctor(Diacom.ISP,Diacom.APCStates.APCStateControl)"><summary>
- Initializes a new instance of <see cref="SPCommandModule" /> class . 
- </summary>
- <param name="interfaceSP">Interface instance to communicate with SP.</param>
- <param name="apcModule">The APC module that will be used.</param></member><member name="M:Diacom.APCStates.SPCommandModule.ProcessReadQueue"><summary>
- Processes all incoming responses and line events from SP queue. 
- </summary></member><member name="T:Diacom.APCStates.ConnectModule"><summary>
- Class to initiate the connect lines command. 
-</summary></member><member name="T:Diacom.APCStates.DisconnectModule"><summary>
- Class to initiate disconnect lines command. 
-</summary></member><member name="T:Diacom.APCStates.PlayDTMFModule"><summary>
- Class to initiate the Play DTMF on the line command. 
-</summary></member><member name="T:Diacom.APCStates.PlayFileModule"><summary>
- Class to initiate the Play File on the line command. 
-</summary></member><member name="T:Diacom.APCStates.RecordFileModule"><summary>
- Class to initiate the Record File on the line command. 
-</summary></member><member name="T:Diacom.APCStates.ReleaseModule"><summary>
- Class to initiate the disconnect (drop call)line command. 
-</summary></member><member name="T:Diacom.APCStates.AnswerModule"><summary>
- Class to initiate the answer call command. 
-</summary></member><member name="T:Diacom.APCStates.RejectModule"><summary>
- Class to initiate the reject call command. 
-</summary></member><member name="T:Diacom.APCStates.PassModule"><summary>
- Class to initiate the pass call command. 
-</summary></member></dir></dir></remarks></member></dir></dir></remarks></member>
-  </members>
+	<param name="DirEntry">Directory entry (full path or not).</param>
+	<returns>Full path to directory based on startup path.</returns>
+	<remarks>
+ Thinking all entries are of the following type: ".\dir" or "dir", and can start and end with "\".
+ </remarks>
+</member><member name="T:Diacom.APCStates.RecordFileModule">
+	<summary>
+ Class to initiate the Record File on the line command.
+</summary>
+</member><member name="T:Diacom.APCStates.PlayFileModule">
+	<summary>
+ Class to initiate the Play File on the line command.
+</summary>
+</member>
+</members>
 </doc>

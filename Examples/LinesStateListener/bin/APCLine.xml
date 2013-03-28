@@ -1,1676 +1,1664 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>APCLine</name>
-    <version>1.0.0.1</version>
-    <fullname>APCLine, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null</fullname>
-  </assembly>
-  <members>
-    <member name="T:Diacom.APCEvents">
-      <summary>
- Represents the internal system-independent events that state machine processes. 
+<assembly>
+<name>
+APCLine
+</name>
+</assembly>
+<members>
+<member name="F:Diacom.APCEvents.NEWSTATE">
+	<summary>
+ Go to new state.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.NEWSTATE">
-      <summary>
- Go to new state. 
+</member><member name="F:Diacom.APCEvents.EXECUTE">
+	<summary>
+ Execute the code thru the method.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.EXECUTE">
-      <summary>
- Execute the code thru the method. 
+</member><member name="F:Diacom.APCEvents.COMMANDOK">
+	<summary>
+ The last command was executed and returned status is OK.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.COMMANDOK">
-      <summary>
- The last command was executed and returned status is OK. 
+</member><member name="F:Diacom.APCEvents.COMMANDFAIL">
+	<summary>
+ The last command was executed and returned FAIL status.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.COMMANDFAIL">
-      <summary>
- The last command was executed and returned FAIL status. 
+</member><member name="F:Diacom.APCEvents.RINGBACK">
+	<summary>
+ The DIAL or RING command had executed and the given line is ringing now.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.RINGBACK">
-      <summary>
- The DIAL or RING command had executed and the given line is ringing now. 
+</member><member name="F:Diacom.APCEvents.THENCONTINUE">
+	<summary>
+ The block of previously issued commands was successfully executed.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.THENCONTINUE">
-      <summary>
- The block of previously issued commands was successfully executed. 
+</member><member name="F:Diacom.APCEvents.ELSECONTINUE">
+	<summary>
+ The block of previously issued commands had failed.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.ELSECONTINUE">
-      <summary>
- The block of previously issued commands had failed. 
+</member><member name="F:Diacom.APCEvents.DIGIT">
+	<summary>
+ DTMF Digit was issued on the selected line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.DIGIT">
-      <summary>
- DTMF Digit was issued on the selected line. 
+</member><member name="F:Diacom.APCEvents.RING">
+	<summary>
+ There is an incoming ring on the line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.RING">
-      <summary>
- There is an incoming ring on the line. 
+</member><member name="F:Diacom.APCEvents.CONNECT">
+	<summary>
+ The line is either under APC control or connect signal came from the line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.CONNECT">
-      <summary>
- The line is either under APC control or connect signal came from the line. 
+</member><member name="F:Diacom.APCEvents.DISCONNECT">
+	<summary>
+ Disconnect / Hang up signal came from the line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.DISCONNECT">
-      <summary>
- Disconnect / Hang up signal came from the line. 
+</member><member name="F:Diacom.APCEvents.ALERTED">
+	<summary>
+ Voice activity or other signal came from the line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.ALERTED">
-      <summary>
- Voice activity or other signal came from the line. 
+</member><member name="F:Diacom.APCEvents.DISCONNECTLINK">
+	<summary>
+ The disconnect signal came from the linked line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.DISCONNECTLINK">
-      <summary>
- The disconnect signal came from the linked line. 
+</member><member name="F:Diacom.APCEvents.WAITERROR">
+	<summary>
+ The command that was issued with timeout parameter was not executed withing a specified time.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.WAITERROR">
-      <summary>
- The command that was issued with timeout parameter was not executed withing a specified time. 
+</member><member name="F:Diacom.APCEvents.TIMEOUT">
+	<summary>
+ Global timeout for the line was exceeded.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.TIMEOUT">
-      <summary>
- Global timeout for the line was exceeded. 
+</member><member name="F:Diacom.APCEvents.QUERYREADY">
+	<summary>
+ The async query from SQL server returned result or async function call was executed.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.QUERYREADY">
-      <summary>
- The async query from SQL server returned result or async function call was executed. 
+</member><member name="F:Diacom.APCEvents.LINKREQUEST">
+	<summary>
+ The line is requesting to be placed under the control of another line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.LINKREQUEST">
-      <summary>
- The line is requesting to be placed under the control of another line. 
+</member><member name="F:Diacom.APCEvents.LINKRELEASE">
+	<summary>
+ The line is returning from the control of another line .
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.LINKRELEASE">
-      <summary>
- The line is returning from the control of another line . 
+</member><member name="F:Diacom.APCEvents.GRANTREQUEST">
+	<summary>
+ The line is informing that it is ready to be under control of another line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEvents.GRANTREQUEST">
-      <summary>
- The line is informing that it is ready to be under control of another line. 
+</member><member name="T:Diacom.APCEvents">
+	<summary>
+ Represents the internal system-independent events that state machine processes.
  </summary>
-    </member>
-    <member name="T:Diacom.APCEventArgs">
-      <summary>
- Holds parameters passed with the APCEvents. 
+</member><member name="F:Diacom.APCEventArgs.DestinationLine">
+	<summary>
+ The line for which that event is assigned.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEventArgs.DestinationLine">
-      <summary>
- The line for which that event is assigned. 
+</member><member name="F:Diacom.APCEventArgs.EventType">
+	<summary>
+ Event type (member of <see cref="T:Diacom.APCEvents"/> enumeration).
  </summary>
-    </member>
-    <member name="F:Diacom.APCEventArgs.EventType">
-      <summary>
- Event type (member of <see cref="APCEvents" /> enumeration). 
+</member><member name="F:Diacom.APCEventArgs.EventParam">
+	<summary>
+ Parameters for one of the <see cref="T:Diacom.APCEvents"/> enumeration member.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEventArgs.EventParam">
-      <summary>
- Parameters for one of the <see cref="APCEvents" /> enumeration member. 
+</member><member name="F:Diacom.APCEventArgs.CallLineFilter">
+	<summary>
+ Specifies if the event should go through the line filter or not.
  </summary>
-    </member>
-    <member name="F:Diacom.APCEventArgs.CallLineFilter">
-      <summary>
- Specifies if the event should go through the line filter or not. 
+</member><member name="T:Diacom.APCEventArgs">
+	<summary>
+ Holds parameters passed with the APCEvents.
  </summary>
-    </member>
-    <member name="T:Diacom.APCLine">
-      <summary>
- Represents the line under the APC control. 
+</member><member name="F:Diacom.APCLine.CallRingTime">
+	<summary>
+ Total time the call continued.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.CallRingTime">
-      <summary>
- Total time the call continued. 
+</member><member name="F:Diacom.APCLine.CallConnectTime">
+	<summary>
+ Time the connection started.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.CallConnectTime">
-      <summary>
- Time the connection started. 
+</member><member name="F:Diacom.APCLine.CallDisconnectTime">
+	<summary>
+ Time the connection ended.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.CallDisconnectTime">
-      <summary>
- Time the connection ended. 
+</member><member name="F:Diacom.APCLine.Timeout">
+	<summary>
+ Timeout for the line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.Timeout">
-      <summary>
- Timeout for the line. 
+</member><member name="F:Diacom.APCLine.CurrentLanguageSet">
+	<summary>
+ Current language for the line.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.CurrentLanguageSet">
-      <summary>
- Current language for the line. 
+</member><member name="F:Diacom.APCLine.LinkLine">
+	<summary>
+ Line to link to.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.LinkLine">
-      <summary>
- Line to link to. 
+</member><member name="F:Diacom.APCLine.EventLine">
+	<summary>
+ The line all events will came to.
  </summary>
-    </member>
-    <member name="F:Diacom.APCLine.EventLine">
-      <summary>
- The line all events will came to. 
+</member><member name="E:Diacom.APCLine.APCStateEvent">
+	<summary>
+ Occurs when line status has been chanded.
  </summary>
-    </member>
-    <member name="E:Diacom.APCLine.APCStateEvent" />
-    <member name="T:Diacom.APCLine.APCStateEventEventHandler">
-      <summary>
- Occurs when line status has been chanded. 
+</member><member name="M:Diacom.APCLine.#ctor(System.String)">
+	<summary>
+ Initializes new instance of the class with default parameters.
  </summary>
-    </member>
-    <member name="M:Diacom.APCLine.#ctor(System.String)">
-      <summary>
- Initializes new instance of the class with default parameters. 
+</member><member name="P:Diacom.APCLine.Item(System.String)">
+	<summary>
+ Implements access to a named variables.
  </summary>
-    </member>
-    <member name="P:Diacom.APCLine.Item(System.String)">
-      <summary>
- Implements access to a named variables. 
+	<param name="NameString">Name of the variable.</param>
+	<value>Variable value or <c>Nothing</c> if no variable with this name available.</value>
+</member><member name="P:Diacom.APCLine.Var(System.String)">
+	<summary>
+ Implements access to a named variables.
  </summary>
- <param name="NameString">Name of the variable.</param>
- <value>Variable value or <see cref="Nothing" /> if no variable with this name available.</value></member>
-    <member name="P:Diacom.APCLine.Var(System.String)">
-      <summary>
- Implements access to a named variables. 
+	<param name="NameString">Name of the variable.</param>
+	<value>Variable value or <c>Nothing</c> if no variable with this name available.</value>
+</member><member name="P:Diacom.APCLine.Vars">
+	<summary>
+ Gets a <see cref="T:System.Collections.Hashtable"/> of all named variables.
  </summary>
- <param name="NameString">Name of the variable.</param>
- <value>Variable value or <see cref="Nothing" /> if no variable with this name available.</value></member>
-    <member name="P:Diacom.APCLine.Vars">
-      <summary>
- Gets a <see cref="Collections.Hashtable" /> of all named variables. 
+	<value><see cref="T:System.Collections.Hashtable"/> of all named variables.</value>
+</member><member name="M:Diacom.APCLine.FullStateName(System.String)">
+	<summary>
+ Function that returns a full state name.
  </summary>
- <value><see cref="Collections.Hashtable" /> of all named variables.</value></member>
-    <member name="M:Diacom.APCLine.FullStateName(System.String)">
-      <summary>
- Function that returns a full state name. 
+	<param name="StateName">Name of the state.</param>
+	<returns>Full state name.</returns>
+	<remarks>
+		<para>Full state name for the state is something like:</para>
+		<para>ZZZZ with no module -&gt; ZZZZ</para>
+		<para>ZZZZ with module MMMM -&gt; MMMM.ZZZZ</para>
+		<para>.ZZZZ with any module -&gt; ZZZZ</para>
+	</remarks>
+</member><member name="P:Diacom.APCLine.State">
+	<summary>
+ Gets current line state.
  </summary>
- <param name="StateName">Name of the state.</param>
- <returns>Full state name.</returns>
- <remarks>
- <para>Full state name for the state is something like:</para>
- <para>ZZZZ with no module -&gt; ZZZZ</para>
- <para>ZZZZ with module MMMM -&gt; MMMM.ZZZZ</para>
- <para>.ZZZZ with any module -&gt; ZZZZ</para>
- </remarks></member>
-    <member name="P:Diacom.APCLine.State">
-      <summary>
- Gets current line state. 
+	<value>Current line state.</value>
+</member><member name="M:Diacom.APCLine.PopState">
+	<summary>
+ Returns line to the previous state.
  </summary>
- <value>Current line state.</value></member>
-    <member name="M:Diacom.APCLine.PopState">
-      <summary>
- Returns line to the previous state. 
+</member><member name="M:Diacom.APCLine.Init">
+	<summary>
+ Initializes the line.
  </summary>
-    </member>
-    <member name="M:Diacom.APCLine.Init">
-      <summary>
- Initializes the line. 
+	<remarks>
+ All the values will be set by default.
+ </remarks>
+</member><member name="P:Diacom.APCLine.InitialState">
+	<summary>
+ Gets initial state of the line.
  </summary>
- <remarks>
- All the values will be set by default. 
- </remarks></member>
-    <member name="P:Diacom.APCLine.InitialState">
-      <summary>
- Gets initial state of the line. 
+	<value>Initial state of the line.</value>
+</member><member name="P:Diacom.APCLine.LastEvent">
+	<summary>
+ Gets last event occurred on the line.
  </summary>
- <value>Initial state of the line.</value></member>
-    <member name="P:Diacom.APCLine.LastEvent">
-      <summary>
- Gets last event occurred on the line. 
+	<value>Last event occurred on the line.</value>
+</member><member name="P:Diacom.APCLine.LastEventParameter">
+	<summary>
+ Gets  parameter of the last event occurred on the line.
  </summary>
- <value>Last event occurred on the line.</value></member>
-    <member name="P:Diacom.APCLine.LastEventParameter">
-      <summary>
- Gets  parameter of the last event occurred on the line. 
+	<value>Parameter of the last event occurred on the line.</value>
+</member><member name="P:Diacom.APCLine.LastDigit">
+	<summary>
+ Gets last digit on the line if available.
  </summary>
- <value>Parameter of the last event occurred on the line.</value></member>
-    <member name="P:Diacom.APCLine.LastDigit">
-      <summary>
- Gets last digit on the line if available. 
+	<value>Last digit on the line if available.</value>
+</member><member name="P:Diacom.APCLine.AllDigits">
+	<summary>
+ Gets all digits for the line.
  </summary>
- <value>Last digit on the line if available.</value></member>
-    <member name="P:Diacom.APCLine.AllDigits">
-      <summary>
- Gets all digits for the line. 
+	<value>All digits for the line.</value>
+</member><member name="P:Diacom.APCLine.InCallTime">
+	<summary>
+ Gets current duration of the call.
  </summary>
- <value>All digits for the line.</value></member>
-    <member name="P:Diacom.APCLine.InCallTime">
-      <summary>
- Gets current duration of the call. 
+	<value>Current duration of the call.</value>
+</member><member name="P:Diacom.APCLine.CallDuration">
+	<summary>
+ Gets total duration of the call.
  </summary>
- <value>Current duration of the call.</value></member>
-    <member name="P:Diacom.APCLine.CallDuration">
-      <summary>
- Gets total duration of the call. 
+	<value>Total duration of the call.</value>
+</member><member name="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)">
+	<summary>
+ Raizes event of given type for the given line with given event data and data filter.
  </summary>
- <value>Total duration of the call.</value></member>
-    <member name="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)">
-      <summary>
- Raizes event of given type for the given line with given event data and data filter. 
+	<param name="destLine">Destination line.</param>
+	<param name="eventType">Type of event will raized.</param>
+	<param name="eventData">Data for the event.</param>
+	<param name="useLineFilter">Filter used for this event.</param>
+</member><member name="F:Diacom.APCLine.ToStringFormat">
+	<summary>
+ Format string for <see cref="M:Diacom.APCLine.ToString"/>() method.
  </summary>
- <param name="destLine">Destination line.</param>
- <param name="eventType">Type of event will raized.</param>
- <param name="eventData">Data for the event.</param>
- <param name="useLineFilter">Filter used for this event.</param></member>
-    <member name="M:Diacom.APCLine.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-      <summary>
- Creates class instance based on serialization information. 
- </summary>
- <param name="info">Serialization information.</param>
- <param name="context">Serialization context.</param></member>
-    <member name="M:Diacom.APCLine.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-      <summary>
- Populates a <see cref="System.Runtime.Serialization.SerializationInfo" /> with the data needed to serialize the target object. 
- </summary>
- <param name="info">The <see cref="System.Runtime.Serialization.SerializationInfo" /> to populate with data.</param>
- <param name="context">The destination (see <see cref="System.Runtime.Serialization.StreamingContext" />) for this serialization.</param></member>
-    <member name="F:Diacom.APCLine.ToStringFormat">
-      <summary>
- Format string for <see cref="ToString" />() method. 
- </summary>
- <remarks>
- Actually is the following string: 
+	<remarks>
+ Actually is the following string:
  <pre>  ID | Number     | Name                           | Port     | Prefix   | Status               | Type | User Name                      | User Number | Call Name                      | Call Number | CID Name                       | CID NUmber  | DID Name                       | DID Number  | DNIS Name                      | DNIS Number</pre>
- </remarks></member>
-    <member name="F:Diacom.APCLine.ToStringSeparator">
-      <summary>
- Separator string for <see cref="ToString" />() method. 
+	</remarks>
+</member><member name="F:Diacom.APCLine.ToStringSeparator">
+	<summary>
+ Separator string for <see cref="M:Diacom.APCLine.ToString"/>() method.
  </summary>
- <remarks>
- Actually is the following string: 
+	<remarks>
+ Actually is the following string:
  <pre>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre>
- </remarks></member>
-    <member name="M:Diacom.APCLine.ToString">
-      <summary>
- Converts content of class to string. 
+	</remarks>
+</member><member name="M:Diacom.APCLine.ToString">
+	<summary>
+ Converts content of class to string.
  </summary>
- <returns>String presentation of class properties.</returns></member>
-    <member name="T:Diacom.DataRecord">
-      <summary>
- Represents the data record retrieved from the SQL datbase. 
+	<returns>String presentation of class properties.</returns>
+</member><member name="T:Diacom.APCLine">
+	<summary>
+ Represents the line under the APC control.
  </summary>
-    </member>
-    <member name="F:Diacom.DataRecord.m_Records">
-      <summary>
- Collection of elements in record. 
+</member><member name="F:Diacom.APCLineControl.oSourceLine">
+	<summary>
+ The line from which the event came (Originating Line).
  </summary>
-    </member>
-    <member name="F:Diacom.DataRecord.m_FieldNames">
-      <summary>
- Collection of field names. 
+</member><member name="F:Diacom.APCLineControl.oStateLine">
+	<summary>
+ The line on which state changes are made.
  </summary>
-    </member>
-    <member name="F:Diacom.DataRecord.m_Index">
-      <summary>
- Index for NextRecord interface. 
+</member><member name="M:Diacom.APCLineControl.GetSyncRoot">
+	<summary>
+ Gets the sync object of the main module.
  </summary>
-    </member>
-    <member name="F:Diacom.DataRecord.m_Enum">
-      <summary>
- Index for IEnumerator interface. 
+	<returns>The sync object of the Main module.</returns>
+</member><member name="M:Diacom.APCLineControl.SharedFunctionTest(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Test function for testing methods, static functions and subs. Puts its parameter to a 
+ standard error stram.
  </summary>
-    </member>
-    <member name="F:Diacom.DataRecord.m_Data">
-      <summary>
- Current data. 
+	<param name="testParam">String to put to the standard error stream of the application.</param>
+	<returns><c>Nothing</c>.</returns>
+</member><member name="M:Diacom.APCLineControl.SharedSubTest(System.String)">
+	<summary>
+ Test function for testing methods, static functions and subs. Puts its parameter to a 
+ standard error stram.
  </summary>
-    </member>
-    <member name="M:Diacom.DataRecord.#ctor">
-      <summary>
- Creates a new instance of <see cref="DataRecord" /> class with default parameters. 
+	<param name="testParam">String to put to the standard error stream of the application.</param>
+</member><member name="M:Diacom.APCLineControl.FunctionTest(System.String)">
+	<summary>
+ Test function for testing methods, static functions and subs. Puts its parameter to a 
+ standard error stram.
  </summary>
-    </member>
-    <member name="M:Diacom.DataRecord.#ctor(System.String[])">
-      <summary>
- Creates a new instance of <see cref="DataRecord" /> class with Field names as parameters. 
+	<param name="testParam">String to put to the standard error stream of the application.</param>
+</member><member name="M:Diacom.APCLineControl.SubTest(System.String)">
+	<summary>
+ Test function for testing methods, static functions and subs. Puts its parameter to a 
+ standard error stram.
  </summary>
- <param name="fieldNames">An array of field names to initialize the field names.</param></member>
-    <member name="M:Diacom.DataRecord.Reset">
-      <summary>
- Resets the Data Record, implements <see cref="System.Collections.IEnumerator.Reset" /> method of <see cref="System.Collections.IEnumerator" /> interface. 
- Sets the enumerator to its initial position, which is before the first element in the collection. 
+	<param name="testParam">String to put to the standard error stream of the application.</param>
+</member><member name="M:Diacom.APCLineControl.ServerConnect(System.String,System.String,System.String,System.String)">
+	<summary>
+ Connects to server with given parameters.
  </summary>
- <exception cref="System.InvalidOperationException">The collection was modified after the 
+	<param name="ServerName">Name of the server.</param>
+	<param name="Param1">First parameter.</param>
+	<param name="Param2">Second parameter.</param>
+	<param name="Param3">Third parameter.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCConnectToServer(System.String,System.String,System.String,System.String)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.ConnectToServer(System.String,System.String,System.String,System.String)">
+	<summary>
+ Connects to server with given parameters.
+ </summary>
+	<param name="ServerName">Name of the server.</param>
+	<param name="Param1">First parameter.</param>
+	<param name="Param2">Second parameter.</param>
+	<param name="Param3">Third parameter.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCConnectToServer(System.String,System.String,System.String,System.String)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.EmptyRecord">
+	<summary>
+ Gets new empty data record.
+ </summary>
+	<returns>New empty data record.</returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCLineControl.PlayDTMF(System.String)">
+	<summary>
+ Plays given DTMF code for the line.
+ </summary>
+	<param name="DTMFString">DTMF code to play.</param>
+</member><member name="M:Diacom.APCLineControl.PlayDTMF(System.String,System.Int32)">
+	<summary>
+ Plays DTMF code with given parameters for the line.
+ </summary>
+	<param name="DTMFString">DTMF code to play.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.PlayFile(System.String)">
+	<summary>
+ Plays given file for the line.
+ </summary>
+	<param name="FileString">File to play path.</param>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.APCLineControl.PlayFile(System.String,System.String)">
+	<summary>
+ Plays given file for the line with given cutoff digits.
+ </summary>
+	<param name="FileString">File to play path.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+</member><member name="M:Diacom.APCLineControl.PlayFile(System.String,System.String,System.Int32)">
+	<summary>
+ Plays given file for the line with given cutoff digits and action timeout.
+ </summary>
+	<param name="FileString">File to play path.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.RecordFile(System.String)">
+	<summary>
+ Records a file for the line.
+ </summary>
+	<param name="FileString">Path to store the file to (with file name).</param>
+</member><member name="M:Diacom.APCLineControl.RecordFile(System.String,System.String)">
+	<summary>
+ Records a file for the line.
+ </summary>
+	<param name="FileString">Path to store the file to (with file name).</param>
+	<param name="CutoutString">Cutoff digits.</param>
+</member><member name="M:Diacom.APCLineControl.RecordFile(System.String,System.String,System.Int32)">
+	<summary>
+ Records a file for the line.
+ </summary>
+	<param name="FileString">Path to store the file to (with file name).</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.StopPlay">
+	<summary>
+ Stops file playing for the line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.StopRecord">
+	<summary>
+ Stops file recording for the line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Reset">
+	<summary>
+ Resets all commands of the line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Clear">
+	<summary>
+ Clears the line.
+ </summary>
+	<remarks>
+		<seealso cref="M:Diacom.APCLineControl.Reset"/></remarks>
+</member><member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32)">
+	<summary>
+ Collects number from the line.
+ </summary>
+	<param name="NumberVar">Variable name to collect number to.</param>
+	<param name="MaxDigits">Maximum number of digits to collect.</param>
+</member><member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32,System.String)">
+	<summary>
+ Collects number from the line.
+ </summary>
+	<param name="NumberVar">Variable name to collect number to.</param>
+	<param name="MaxDigits">Maximum number of digits to collect.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+</member><member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32,System.String,System.Int32,System.Int32)">
+	<summary>
+ Collects number from the line.
+ </summary>
+	<param name="NumberVar">Variable name to collect number to.</param>
+	<param name="MaxDigits">Maximum number of digits to collect.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="InitTimeoutVal">Timeout for the action.</param>
+	<param name="DigitTimeoutVal">Timeout between neighboring digits.</param>
+</member><member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Collects number from the line.
+ </summary>
+	<param name="NumberVar">Variable name to collect number to.</param>
+	<param name="MaxDigits">Maximum number of digits to collect.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="InitTimeoutVal">Timeout for the action.</param>
+	<param name="DigitTimeoutVal">Timeout between neighboring digits.</param>
+	<param name="TimeoutVal">Timeout for the whole action.</param>
+</member><member name="M:Diacom.APCLineControl.PlayNumber(System.Object)">
+	<summary>
+ Plays number for the line.
+ </summary>
+	<param name="DataNumber">The number to play.</param>
+</member><member name="M:Diacom.APCLineControl.PlayNumber(System.Object,System.String)">
+	<summary>
+ Plays number for the line.
+ </summary>
+	<param name="DataNumber">The number to play.</param>
+	<param name="RuleName">Name of the rule to use for the number.</param>
+</member><member name="M:Diacom.APCLineControl.PlayNumber(System.Object,System.String,System.String)">
+	<summary>
+ Plays number for the line.
+ </summary>
+	<param name="DataNumber">The number to play.</param>
+	<param name="RuleName">Name of the rule to use for the number.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+</member><member name="M:Diacom.APCLineControl.PlayNumber(System.Object,System.String,System.String,System.Int32)">
+	<summary>
+ Plays number for the line.
+ </summary>
+	<param name="DataNumber">The number to play.</param>
+	<param name="RuleName">Name of the rule to use for the number.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="TimeoutVal">Timeout for the action.</param>
+</member><member name="M:Diacom.APCLineControl.Release">
+ -----------------------------------------------------------------------------
+ <summary>
+ Releases the line from APC control.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCRelease(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Release(System.Int32)">
+	<summary>
+ Releases the line from APC control.
+ </summary>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCRelease(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.AnswerCall">
+	<summary>
+ Answers call and puts line under APC control.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCAnswer(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.AnswerCall(System.Int32)">
+	<summary>
+ Answers call and puts line under APC control.
+ </summary>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCAnswer(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RejectCall">
+	<summary>
+ Rejects the incoming call.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCReject(Diacom.APCLine,Diacom.APCLine,System.Int32,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RejectCall(System.Int32)">
+	<summary>
+ Rejects the incoming call.
+ </summary>
+	<param name="RejectReason">Reason for the call rejection.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCReject(Diacom.APCLine,Diacom.APCLine,System.Int32,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RejectCall(System.Int32,System.Int32)">
+	<summary>
+ Rejects the incoming call.
+ </summary>
+	<param name="RejectReason">Reason for the call rejection.</param>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCReject(Diacom.APCLine,Diacom.APCLine,System.Int32,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.DropCall">
+	<summary>
+ Releases the line from APC control.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCRelease(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.DropCall(System.Int32)">
+	<summary>
+ Releases the line from APC control.
+ </summary>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCRelease(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.PassCall">
+	<summary>
+ Pass the call to the regular processing from APC control.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCPass(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.PassCall(System.Int32)">
+	<summary>
+ Pass the call to the regular processing from APC control.
+ </summary>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCPass(Diacom.APCLine,Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Dial(System.String)">
+	<summary>
+ Dials specified number.
+ </summary>
+	<param name="NumberString">Number to dial.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCDial(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Dial(System.String,System.String)">
+	<summary>
+ Dials specified number.
+ </summary>
+	<param name="NumberString">Number to dial.</param>
+	<param name="SourceNumber">Number of caller.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCDial(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Dial(System.String,System.String,System.Int32)">
+	<summary>
+ Dials specified number.
+ </summary>
+	<param name="NumberString">Number to dial.</param>
+	<param name="SourceNumber">Number of caller.</param>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCDial(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Transfer(System.String)">
+	<summary>
+ Trasfers incoming call to the specified number.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCTransfer(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Transfer(System.String,System.String)">
+	<summary>
+ Trasfers incoming call to the specified number.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+	<param name="SourceNumber">Number of the line which transfers the call.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCTransfer(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Transfer(System.String,System.Int32)">
+	<summary>
+ Trasfers incoming call to the specified number.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCTransfer(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Transfer(System.String,System.String,System.Int32)">
+	<summary>
+ Trasfers incoming call to the specified number.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+	<param name="SourceNumber">Number of the line which transfers the call.</param>
+	<param name="TimeoutVal">Timeout for the action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCTransfer(Diacom.APCLine,Diacom.APCLine,System.String,System.String,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.WaitDigit">
+	<summary>
+ Waits for a digit on the line.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCWaitDigit(Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.WaitDigit(System.Int32)">
+	<summary>
+ Waits for a digit on the line.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCWaitDigit(Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.WaitComplete">
+	<summary>
+ Waits for a query of commands to be completed.
+ </summary>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCWaitComplete(Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.WaitComplete(System.Int32)">
+	<summary>
+ Waits for a query of commands to be completed.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCWaitComplete(Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.Pause(System.Int32)">
+	<summary>
+ Sets a delay for the line depending on parameter.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCWaitTimer(Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.WaitTimer(System.Int32)">
+	<summary>
+ Sets a delay for the line depending on parameter.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+	<remarks><seealso cref="M:Diacom.IAPCInterface.APCWaitTimer(Diacom.APCLine,System.Int32)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RequestLink">
+	<summary>
+ Raises <see cref="F:Diacom.APCEvents.LINKREQUEST"/> event for a linked line.
+ </summary>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RequestLink(Diacom.APCLine)">
+	<summary>
+ Raises <see cref="F:Diacom.APCEvents.LINKREQUEST"/> event for a specified line.
+ </summary>
+	<param name="targetLine">Line to raise the event for.</param>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RequestGrant">
+	<summary>
+ Raises <see cref="F:Diacom.APCEvents.GRANTREQUEST"/> event for a linked line.
+ </summary>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RequestGrant(Diacom.APCLine)">
+	<summary>
+ Raises <see cref="F:Diacom.APCEvents.LINKREQUEST"/> event for a specified line.
+ </summary>
+	<param name="targetLine">Line to raise the event for.</param>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.ReleaseLinkSlave">
+	<summary>
+ Breakes the link between Master and Slave line.
+ </summary>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.ReleaseLinkSlave(System.Object)">
+	<summary>
+ Breakes the link between Master and specified Slave line.
+ </summary>
+	<param name="linkedLine">Slave line to break the link with.</param>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.AcceptLinkAsSlave">
+	<summary>
+ Accepts request to link as Slave line.
+ </summary>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.AcceptGrantAsMaster">
+	<summary>
+ Accepts request to link as Master line.
+ </summary>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.RejectLinkOrGrant">
+	<summary>
+ Rejects request to link.
+ </summary>
+	<remarks><seealso cref="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)"/></remarks>
+</member><member name="M:Diacom.APCLineControl.IsLinkLine">
+	<summary>
+ Shows do we have any Link'ed lines or not.
+ </summary>
+	<returns>True if we do have.</returns>
+</member><member name="M:Diacom.APCLineControl.IsLinkLine(Diacom.APCLine)">
+	<summary>
+ Shows do we have specified line as Link'ed line or not.
+ </summary>
+	<param name="linkedLine">Line to check if it is Link'ed line.</param>
+	<returns>True if we do have.</returns>
+</member><member name="M:Diacom.APCLineControl.IsLinkLineEvent">
+	<summary>
+ Shows does the event came from Linked Line or not.
+ </summary>
+	<returns>True if the event came from a Link'ed line.</returns>
+</member><member name="M:Diacom.APCLineControl.IsCurrentLineEvent">
+	<summary>
+ Shows does the event came from Current Line.
+ </summary>
+	<returns>True if the event came from the current line.</returns>
+</member><member name="M:Diacom.APCLineControl.LinkDropCall">
+	<summary>
+ Drops the call on the Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkDropCall(System.Int32)">
+	<summary>
+ Drops the call on the Link'ed line.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkRelease">
+	<summary>
+ Releases the Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkRelease(System.Int32)">
+	<summary>
+ Releases the Link'ed line.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkTransfer(System.String)">
+	<summary>
+ Transfers the call to the Link'ed line.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+</member><member name="M:Diacom.APCLineControl.LinkTransfer(System.String,System.String)">
+	<summary>
+ Transfers the call to the Link'ed line.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+	<param name="SourceNumber">Number of the line which transfers the call.</param>
+</member><member name="M:Diacom.APCLineControl.LinkTransfer(System.String,System.String,System.Int32)">
+	<summary>
+ Transfers the call to the Link'ed line.
+ </summary>
+	<param name="NumberString">Number to transfer the call to.</param>
+	<param name="SourceNumber">Number of the line which transfers the call.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkPlayDTMF(System.String)">
+	<summary>
+ Plays DTMF code on the Link'ed line.
+ </summary>
+	<param name="DTMFString">DTMF code to play.</param>
+</member><member name="M:Diacom.APCLineControl.LinkPlayDTMF(System.String,System.Int32)">
+	<summary>
+ Plays DTMF code on the Link'ed line.
+ </summary>
+	<param name="DTMFString">DTMF code to play.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkPlayFile(System.String)">
+	<summary>
+ Plays file on the Link'ed line.
+ </summary>
+	<param name="FileString">Path to the file to play.</param>
+</member><member name="M:Diacom.APCLineControl.LinkPlayFile(System.String,System.String)">
+	<summary>
+ Plays file on the Link'ed line.
+ </summary>
+	<param name="FileString">Path to the file to play.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+</member><member name="M:Diacom.APCLineControl.LinkPlayFile(System.String,System.String,System.Int32)">
+	<summary>
+ Plays file on the Link'ed line.
+ </summary>
+	<param name="FileString">Path to the file to play.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkRecordFile(System.String)">
+	<summary>
+ Records the file on the Link'ed line.
+ </summary>
+	<param name="FileString">Path to store the file.</param>
+</member><member name="M:Diacom.APCLineControl.LinkRecordFile(System.String,System.String)">
+	<summary>
+ Records the file on the Link'ed line.
+ </summary>
+	<param name="FileString">Path to store the file.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+</member><member name="M:Diacom.APCLineControl.LinkRecordFile(System.String,System.String,System.Int32)">
+	<summary>
+ Records the file on the Link'ed line.
+ </summary>
+	<param name="FileString">Path to store the file.</param>
+	<param name="CutoutString">Cutoff digits.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkStopPlay">
+	<summary>
+ Stops playing file on the Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkStopRecord">
+	<summary>
+ Stops file recording on the Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkReset">
+	<summary>
+ Resets the Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkClear">
+	<summary>
+ Clears the Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkWaitDigit">
+	<summary>
+ Tells the Link'ed line to wait for a digit.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkWaitDigit(System.Int32)">
+	<summary>
+ Tells the Link'ed line to wait a digit.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkWaitComplete">
+	<summary>
+ Tells the Link'ed line to wait while all commands will complete.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.LinkWaitComplete(System.Int32)">
+	<summary>
+ Tells the Link'ed line to wait while all commands will complete at the specified time.
+ </summary>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.LinkPause(System.Int32)">
+	<summary>
+ Pauses the Link'ed line.
+ </summary>
+	<param name="TimeoutVal">Time to pause for.</param>
+</member><member name="M:Diacom.APCLineControl.LinkWaitTimer(System.Int32)">
+	<summary>
+ Pauses the Link'ed line.
+ </summary>
+	<param name="TimeoutVal">Time to pause for.</param>
+</member><member name="P:Diacom.APCLineControl.Var(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets access to the named variable.
+ </summary>
+	<param name="NameVar">Name to the variable to take access to.</param>
+	<value>The named variable.</value>
+</member><member name="P:Diacom.APCLineControl.Item(System.String)">
+	<summary>
+ Gets access to the named variable.
+ </summary>
+	<param name="NameVar">Name to the variable to take access to.</param>
+	<value>The named variable.</value>
+</member><member name="P:Diacom.APCLineControl.LinkVar(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets access to the named variable of the Link'ed line.
+ </summary>
+	<param name="NameVar">Name to the variable to take access to.</param>
+	<value>The named variable.</value>
+</member><member name="M:Diacom.APCLineControl.SQLNonQuery(System.String,System.String)">
+	<summary>
+ Executes non-queried SQL command.
+ </summary>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLNonQuery(System.String,System.String,System.String)">
+	<summary>
+ Executes non-queried SQL command.
+ </summary>
+	<param name="NameVar">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLNonQuery(System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Executes non-queried SQL command.
+ </summary>
+	<param name="NameVar">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.SQLGetValue(System.String,System.String)">
+	<summary>
+ Retrieves scalar value as a result of specified query.
+ </summary>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLGetValue(System.String,System.String,System.String)">
+	<summary>
+ Retrieves scalar value as a result of specified query.
+ </summary>
+	<param name="NameVar">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLGetValue(System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Retrieves scalar value as a result of specified query.
+ </summary>
+	<param name="NameVar">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.SQLGetRecord(System.String,System.String)">
+	<summary>
+ Retrieves data as a result of specified query.
+ </summary>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLGetRecord(System.String,System.String,System.String)">
+	<summary>
+ Retrieves data as a result of specified query.
+ </summary>
+	<param name="NameRecord">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLGetRecord(System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Retrieves data as a result of specified query.
+ </summary>
+	<param name="NameRecord">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The command to execute.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String)">
+	<summary>
+ Executes stored procedure.
+ </summary>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The stored procedure to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String,System.String)">
+	<summary>
+ Executes stored procedure.
+ </summary>
+	<param name="NameRecord">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The stored procedure to execute.</param>
+</member><member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Executes stored procedure.
+ </summary>
+	<param name="NameRecord">Variable to store the result of the command.</param>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The stored procedure to execute.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String,System.Int32)">
+	<summary>
+ Executes stored procedure.
+ </summary>
+	<param name="SQLServerString">Name of the SQL server to execute command on.</param>
+	<param name="SQLCommand">The stored procedure to execute.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.SQLReset">
+	<summary>
+ Resets all SQL queries for the line.
+ </summary>
+</member><member name="P:Diacom.APCLineControl.LineNumber">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets number of the line.
+ </summary>
+	<value>Number of the line.</value>
+</member><member name="P:Diacom.APCLineControl.LineName">
+	<summary>
+ Gets name of the line.
+ </summary>
+	<value>Name of the line.</value>
+</member><member name="P:Diacom.APCLineControl.PortName">
+	<summary>
+ Gets port of the line.
+ </summary>
+	<value>Port of the line.</value>
+</member><member name="P:Diacom.APCLineControl.LineType">
+	<summary>
+ Gets type of the line.
+ </summary>
+	<value>Type of the line.</value>
+</member><member name="P:Diacom.APCLineControl.AccessCode">
+	<summary>
+ Gets access code for the line.
+ </summary>
+	<value>Access code for the line.</value>
+</member><member name="P:Diacom.APCLineControl.DIDNumber">
+	<summary>
+ Gets or sets DID number of the line.
+ </summary>
+	<value>DID number of the line.</value>
+</member><member name="P:Diacom.APCLineControl.CIDNumber">
+	<summary>
+ Gets or sets CID number of the line.
+ </summary>
+	<value>CID number of the line.</value>
+</member><member name="P:Diacom.APCLineControl.UserNumber">
+	<summary>
+ Gets or sets user number of the line.
+ </summary>
+	<value>User number of the line.</value>
+</member><member name="P:Diacom.APCLineControl.UserData(System.Object)">
+	<summary>
+ Gets or Sets User-specific Data.
+ </summary>
+	<param name="Key">Key to reference to stored Data.</param>
+	<returns>Any type of stored Data.</returns>
+</member><member name="P:Diacom.APCLineControl.UserData(Diacom.APCLine,System.Object)">
+	<summary>
+ Gets or Sets User-specific Data.
+ </summary>
+	<param name="TargetLine">Line to store Data on.</param>
+	<param name="Key">Key to reference to stored Data.</param>
+	<returns>Any type of stored Data.</returns>
+</member><member name="P:Diacom.APCLineControl.LastEvent">
+	<summary>
+ Gets or sets last event on the line.
+ </summary>
+	<value>Last event on the line.</value>
+</member><member name="P:Diacom.APCLineControl.LastEventParameter">
+	<summary>
+ Gets or sets parameter of the last event.
+ </summary>
+	<value>Parameter of the last event.</value>
+</member><member name="P:Diacom.APCLineControl.LastDigit">
+	<summary>
+ Gets or sets last digit on the line.
+ </summary>
+	<value>Last digit on the line.</value>
+</member><member name="P:Diacom.APCLineControl.AllDigits">
+	<summary>
+ Gets or sets all digits on the line.
+ </summary>
+	<value>All digits on the line.</value>
+</member><member name="P:Diacom.APCLineControl.Timeout">
+	<summary>
+ Gets or sets timeout for the line (delay the line will receive the <see cref="F:Diacom.APCEvents.TIMEOUT"/> event.
+ </summary>
+	<value>Timeout for the line (delay the line will receive the <see cref="F:Diacom.APCEvents.TIMEOUT"/> event.</value>
+</member><member name="P:Diacom.APCLineControl.State">
+	<summary>
+ Gets the state of the line.
+ </summary>
+	<value>State of the line.</value>
+</member><member name="P:Diacom.APCLineControl.Line">
+	<summary>
+ Gets the pure line (<see cref="T:Diacom.APCLine"/>).
+ </summary>
+	<value>The pure line (<see cref="T:Diacom.APCLine"/>).</value>
+</member><member name="P:Diacom.APCLineControl.SourceLine">
+	<summary>
+ Gets or sets the event source line.
+ </summary>
+	<value>Event source line.</value>
+</member><member name="P:Diacom.APCLineControl.StateLine">
+	<summary>
+ Gets or sets the line all events will came to.
+ </summary>
+	<value>Line all events will came to.</value>
+</member><member name="P:Diacom.APCLineControl.CurrentLine">
+	<summary>
+ Gets the pure line (<see cref="T:Diacom.APCLine"/>).
+ </summary>
+	<value>The pure line (<see cref="T:Diacom.APCLine"/>).</value>
+</member><member name="P:Diacom.APCLineControl.EventLine">
+	<summary>
+ Gets the pure line (<see cref="T:Diacom.APCLine"/>) the event comes from.
+ </summary>
+	<value>The pure line (<see cref="T:Diacom.APCLine"/>) the event comes from.</value>
+</member><member name="P:Diacom.APCLineControl.LinkLine">
+	<summary>
+ Gets the pure (<see cref="T:Diacom.APCLine"/>) Link'ed line.
+ </summary>
+	<value>The pure (<see cref="T:Diacom.APCLine"/>) Link'ed line.</value>
+</member><member name="M:Diacom.APCLineControl.NewState(System.String)">
+	<summary>
+ Tells the line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.GotoState(System.String)">
+	<summary>
+ Tells the line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.GotoState(Diacom.StateFunction)">
+	<summary>
+ Tells the line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.ReturnState">
+	<summary>
+ Tells the line to go to the previous state.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.StateReturn">
+	<summary>
+ Tells the line to go to the previous state.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.CallStateFunction(System.String,System.String)">
+	<summary>
+ Calls the state function with return parameter.
+ </summary>
+	<param name="vNewState">New state for the line.</param>
+	<param name="vReturnState">The state for the line after ReturnStateFunction is executed.</param>
+</member><member name="M:Diacom.APCLineControl.CallStateFunction(Diacom.StateFunction,Diacom.StateFunction)">
+	<summary>
+ Calls the state function with return parameter.
+ </summary>
+	<param name="vNewState">New state for the line.</param>
+	<param name="vReturnState">The state for the line after ReturnStateFunction is executed.</param>
+</member><member name="M:Diacom.APCLineControl.LinkNewState(System.String)">
+	<summary>
+ Tells the Link'ed line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.LinkNewState(Diacom.StateFunction)">
+	<summary>
+ Tells the Link'ed line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.LinkGotoState(System.String)">
+	<summary>
+ Tells the Link'ed line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.LinkGotoState(Diacom.StateFunction)">
+	<summary>
+ Tells the Link'ed line to go to the specified state.
+ </summary>
+	<param name="vNewState">The state line should go to.</param>
+</member><member name="M:Diacom.APCLineControl.LinkReturnState">
+	<summary>
+ Tells the Link'ed line to go to the previous state.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.SendRejectEvent">
+	<summary>
+ Sends the <see cref="F:Diacom.APCEvents.ELSECONTINUE"/> (reject) event.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Init">
+	<summary>
+ Initializes the line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Initialize(Diacom.APCLine)">
+	<summary>
+ Initializes specified line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.ResetAll">
+	<summary>
+ Resets both commands and SQL queues of the line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Connect">
+	<summary>
+ Connects current line with it's Link'ed line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Connect(System.Int32)">
+	<summary>
+ Connects current line with it's Link'ed line.
+ </summary>
+	<param name="TimeoutVal">Timeout for the opaeration.</param>
+</member><member name="M:Diacom.APCLineControl.Disconnect">
+	<summary>
+ Disconnects the line from the line it was connected to and snatches it under APC control.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.Disconnect(Diacom.APCLine)">
+	<summary>
+ Disconnects specified line from the line it was connected to and snatches it under APC control.
+ </summary>
+	<param name="TargetLine">Line to snatch.</param>
+</member><member name="M:Diacom.APCLineControl.Disconnect(Diacom.APCLine,System.Int32)">
+	<summary>
+ Disconnects specified line from the line it was connected to and snatches it under APC control.
+ </summary>
+	<param name="TargetLine">Line to snatch.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="P:Diacom.APCLineControl.CallDuration">
+	<summary>
+ Gets total duration of the call for the line.
+ </summary>
+	<value>Duration of the call for the line.</value>
+</member><member name="P:Diacom.APCLineControl.CallRingTime">
+	<summary>
+ Gets the time ring was detected on the line.
+ </summary>
+	<value>The time ring was detected on the line.</value>
+</member><member name="P:Diacom.APCLineControl.CallConnectTime">
+	<summary>
+ Gets time the line was connected to another.
+ </summary>
+	<value>Time the line was connected to another.</value>
+</member><member name="P:Diacom.APCLineControl.InCallTime">
+	<summary>
+ Gets current duration of the call for the line.
+ </summary>
+	<value>Current duration of the call for the line.</value>
+</member><member name="P:Diacom.APCLineControl.CallDisconnectTime">
+	<summary>
+ Gets the time the line was disconnected from another.
+ </summary>
+	<value>The time the line was disconnected from another.</value>
+</member><member name="P:Diacom.APCLineControl.LinkCallDuration">
+	<summary>
+ Gets total duration of the call for the Link'ed line.
+ </summary>
+	<value>Duration of the call for the Link'ed line.</value>
+</member><member name="P:Diacom.APCLineControl.LinkCallRingTime">
+	<summary>
+ Gets the time ring was detected on the Link'ed line.
+ </summary>
+	<value>The time ring was detected on the Link'ed line.</value>
+</member><member name="P:Diacom.APCLineControl.LinkCallConnectTime">
+	<summary>
+ Gets time the Link'ed line was connected to another.
+ </summary>
+	<value>Time the Link'ed line was connected to another.</value>
+</member><member name="P:Diacom.APCLineControl.LinkInCallTime">
+	<summary>
+ Gets current duration of the call for the Link'ed line.
+ </summary>
+	<value>Current duration of the call for the Link'ed line.</value>
+</member><member name="P:Diacom.APCLineControl.LinkCallDisconnectTime">
+	<summary>
+ Gets the time the Link'ed line was disconnected from another.
+ </summary>
+	<value>The time the Link'ed line was disconnected from another.</value>
+</member><member name="M:Diacom.APCLineControl.UseLanguage(System.String)">
+	<summary>
+ Sets the language the line uses.
+ </summary>
+	<param name="LangName">The language the line will use.</param>
+</member><member name="M:Diacom.APCLineControl.Convert(System.String,System.Object)">
+	<summary>
+ Converts data using specified rule.
+ </summary>
+	<param name="ConversionName">The rule to use.</param>
+	<param name="DataNumber">Data to convert.</param>
+	<returns>Converted data.</returns>
+</member><member name="M:Diacom.APCLineControl.Convert(System.String,System.String,System.Object)">
+	<summary>
+ Converts data using specified rule.
+ </summary>
+	<param name="LangName">Language to use for conversion.</param>
+	<param name="ConversionName">The rule to use.</param>
+	<param name="DataNumber">Data to convert.</param>
+	<returns>Converted data.</returns>
+</member><member name="M:Diacom.APCLineControl.CreateDate(System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Creates date from the specified arguments.
+ </summary>
+	<param name="Year">Year.</param>
+	<param name="Month">Month.</param>
+	<param name="Day">Day.</param>
+	<returns>Date in <see cref="T:System.DateTime"/> format.</returns>
+</member><member name="M:Diacom.APCLineControl.CreateTime(System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Creates date from the specified arguments.
+ </summary>
+	<param name="Hours">Hours.</param>
+	<param name="Minutes">Minutes.</param>
+	<param name="Seconds">Seconds.</param>
+	<returns>Date in <see cref="T:System.DateTime"/> format.</returns>
+</member><member name="M:Diacom.APCLineControl.CreateDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Creates date from the specified arguments.
+ </summary>
+	<param name="Year">Year.</param>
+	<param name="Month">Month.</param>
+	<param name="Day">Day.</param>
+	<param name="Hours">Hours.</param>
+	<param name="Minutes">Minutes.</param>
+	<param name="Seconds">Seconds.</param>
+	<returns>Date in <see cref="T:System.DateTime"/> format.</returns>
+</member><member name="M:Diacom.APCLineControl.AsyncReset">
+	<summary>
+ Resets all asyncronious operations for the line.
+ </summary>
+</member><member name="M:Diacom.APCLineControl.AsyncExecute(System.String,System.Object[])">
+	<summary>
+ Asyncroniously executes specified procedure.
+ </summary>
+	<param name="FunctionName">Procedure to execute.</param>
+	<param name="stateParam">Procedure parameters.</param>
+</member><member name="M:Diacom.APCLineControl.AsyncExecute(Diacom.AsyncFunction)">
+	<summary>
+ Asyncroniously executes specified procedure.
+ </summary>
+	<param name="FunctionName">Procedure to execute.</param>
+</member><member name="M:Diacom.APCLineControl.AsyncFunction(System.String,System.String)">
+	<summary>
+ Asyncroniously executes specified function.
+ </summary>
+	<param name="VariableName">Storage for the result of function.</param>
+	<param name="FunctionName">Function to execute.</param>
+</member><member name="M:Diacom.APCLineControl.AsyncFunction(System.String,Diacom.AsyncFunction)">
+	<summary>
+ Asyncroniously executes specified function.
+ </summary>
+	<param name="VariableName">Storage for the result of function.</param>
+	<param name="FunctionName">Function to execute.</param>
+</member><member name="M:Diacom.APCLineControl.AsyncFunction(System.String,System.String,System.Object[])">
+	<summary>
+ Asyncroniously executes specified function.
+ </summary>
+	<param name="VariableName">Storage for the result of function.</param>
+	<param name="FunctionName">Function to execute.</param>
+	<param name="stateParam">Function parameters.</param>
+</member><member name="M:Diacom.APCLineControl.OnEvent(System.String,System.String)">
+	<summary>
+ Single event handler (handles only first event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+</member><member name="M:Diacom.APCLineControl.OnEvent(System.String,Diacom.StateFunction)">
+	<summary>
+ Single event handler (handles only first event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+</member><member name="M:Diacom.APCLineControl.OnEvent(System.String,System.String,System.Int32)">
+	<summary>
+ Sets single event handler (handles only first event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.OnEvent(System.String,Diacom.StateFunction,System.Int32)">
+	<summary>
+ Sets single event handler (handles only first event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.OnEventHandler(System.String,System.String)">
+	<summary>
+ Sets event handler (handles every event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+</member><member name="M:Diacom.APCLineControl.OnEventHandler(System.String,Diacom.StateFunction)">
+	<summary>
+ Sets event handler (handles every event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+</member><member name="M:Diacom.APCLineControl.OnEventHandler(System.String,System.String,System.Int32)">
+	<summary>
+ Sets event handler (handles every event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="M:Diacom.APCLineControl.OnEventHandler(System.String,Diacom.StateFunction,System.Int32)">
+	<summary>
+ Sets event handler (handles every event of specified type).
+ </summary>
+	<param name="eventCode">Type of event to handle.</param>
+	<param name="eventSub">Procedure to execute when event occurs.</param>
+	<param name="TimeoutVal">Timeout for action.</param>
+</member><member name="T:Diacom.APCLineControl">
+	<summary>
+ Represents the control from which all other controlling classes are derived.
+ </summary>
+</member><member name="F:Diacom.DataRecord.m_Records">
+	<summary>
+ Collection of elements in record.
+ </summary>
+</member><member name="F:Diacom.DataRecord.m_FieldNames">
+	<summary>
+ Collection of field names.
+ </summary>
+</member><member name="F:Diacom.DataRecord.m_Index">
+	<summary>
+ Index for NextRecord interface.
+ </summary>
+</member><member name="F:Diacom.DataRecord.m_Enum">
+	<summary>
+ Index for IEnumerator interface.
+ </summary>
+</member><member name="F:Diacom.DataRecord.m_Data">
+	<summary>
+ Current data.
+ </summary>
+</member><member name="M:Diacom.DataRecord.#ctor">
+	<summary>
+ Creates a new instance of <see cref="T:Diacom.DataRecord"/> class with default parameters.
+ </summary>
+</member><member name="M:Diacom.DataRecord.#ctor(System.String[])">
+	<summary>
+ Creates a new instance of <see cref="T:Diacom.DataRecord"/> class with Field names as parameters.
+ </summary>
+	<param name="fieldNames">An array of field names to initialize the field names.</param>
+</member><member name="M:Diacom.DataRecord.Reset">
+	<summary>
+ Resets the Data Record, implements <see cref="M:System.Collections.IEnumerator.Reset"/> method of <see cref="T:System.Collections.IEnumerator"/> interface.
+ Sets the enumerator to its initial position, which is before the first element in the collection.
+ </summary>
+	<exception cref="T:System.InvalidOperationException">The collection was modified after the 
  enumerator was created.</exception>
- <remarks>
- <para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
+	<remarks>
+		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
  to the collection, such as adding, modifying or deleting elements, the enumerator is irrecoverably 
- invalidated and the next call to <see cref="MoveNext" /> or <see cref="Reset" /> throws an 
- <see cref="System.InvalidOperationException" />.</para>
- <para><b>Notes to Implementers:</b></para>
- <para>All calls to <see cref="Reset" /> must result in the same state for the enumerator. The preferred 
+ invalidated and the next call to <see cref="M:Diacom.DataRecord.MoveNext"/> or <see cref="M:Diacom.DataRecord.Reset"/> throws an 
+ <see cref="T:System.InvalidOperationException"/>.</para>
+		<para><b>Notes to Implementers:</b></para>
+		<para>All calls to <see cref="M:Diacom.DataRecord.Reset"/> must result in the same state for the enumerator. The preferred 
  implementation is to move the enumerator to the beginning of the collection, before the first element. 
  This invalidates the enumerator if the collection has been modified since the enumerator was created, 
- which is consistent with <see cref="MoveNext" /> and <see cref="Current" />.</para>
- </remarks></member>
-    <member name="M:Diacom.DataRecord.Add(System.Collections.ArrayList)">
-      <summary>
- Adds specified data to the record. 
+ which is consistent with <see cref="M:Diacom.DataRecord.MoveNext"/> and <see cref="P:Diacom.DataRecord.Current"/>.</para>
+	</remarks>
+</member><member name="M:Diacom.DataRecord.Add(System.Collections.ArrayList)">
+	<summary>
+ Adds specified data to the record.
  </summary>
- <param name="oRow">The data to add.</param></member>
-    <member name="P:Diacom.DataRecord.Count">
-      <summary>
- Gets the number of elements actually contained in record. 
+	<param name="oRow">The data to add.</param>
+</member><member name="P:Diacom.DataRecord.Count">
+	<summary>
+ Gets the number of elements actually contained in record.
  </summary>
- <value>Number of data fields in record.</value></member>
-    <member name="M:Diacom.DataRecord.GetEnumerator">
-      <summary>
- Returns an enumerator that can iterate through a collection. 
+	<value>Number of data fields in record.</value>
+</member><member name="M:Diacom.DataRecord.GetEnumerator">
+	<summary>
+ Returns an enumerator that can iterate through a collection.
  </summary>
- <returns>An <see cref="System.Collections.IEnumerator" /> that can be used to iterate 
- through the collection.</returns></member>
-    <member name="P:Diacom.DataRecord.Current">
-      <summary>
- Gets the current element in the collection. 
+	<returns>An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate 
+ through the collection.</returns>
+</member><member name="P:Diacom.DataRecord.Current">
+	<summary>
+ Gets the current element in the collection.
  </summary>
- <value>The current element in the collection.</value>
- <exception cref="System.InvalidOperationException">The enumerator is positioned before the 
+	<value>The current element in the collection.</value>
+	<exception cref="T:System.InvalidOperationException">The enumerator is positioned before the 
  first element of the collection or after the last element.</exception>
- <remarks>
- <para>After an enumerator is created or after a <see cref="Reset" />, <see cref="MoveNext" /> must be 
+	<remarks>
+		<para>After an enumerator is created or after a <see cref="M:Diacom.DataRecord.Reset"/>, <see cref="M:Diacom.DataRecord.MoveNext"/> must be 
  called to advance the enumerator to the first element of the collection before reading the value 
- of <see cref="Current" />; otherwise, <see cref="Current" /> is undefined.</para>
- <para><see cref="Current" /> also throws an exception if the last call to 
- <see cref="MoveNext" /> returned false, which indicates the end of the collection.</para>
- <para><see cref="Current" /> does not move the position of the enumerator and consecutive calls to 
- <see cref="Current" /> return the same object until either <see cref="MoveNext" /> or 
- <see cref="Reset" /> is called.</para>
- <para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
+ of <see cref="P:Diacom.DataRecord.Current"/>; otherwise, <see cref="P:Diacom.DataRecord.Current"/> is undefined.</para>
+		<para><see cref="P:Diacom.DataRecord.Current"/> also throws an exception if the last call to 
+ <see cref="M:Diacom.DataRecord.MoveNext"/> returned false, which indicates the end of the collection.</para>
+		<para><see cref="P:Diacom.DataRecord.Current"/> does not move the position of the enumerator and consecutive calls to 
+ <see cref="P:Diacom.DataRecord.Current"/> return the same object until either <see cref="M:Diacom.DataRecord.MoveNext"/> or 
+ <see cref="M:Diacom.DataRecord.Reset"/> is called.</para>
+		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
  to the collection, such as adding, modifying or deleting elements, the enumerator is irrecoverably 
- invalidated and the next call to <see cref="MoveNext" /> or <see cref="Reset" /> throws an 
- <see cref="System.InvalidOperationException" />. If the collection is modified between 
- <see cref="MoveNext" /> and <see cref="Current" />, <see cref="Current" /> will return the element 
+ invalidated and the next call to <see cref="M:Diacom.DataRecord.MoveNext"/> or <see cref="M:Diacom.DataRecord.Reset"/> throws an 
+ <see cref="T:System.InvalidOperationException"/>. If the collection is modified between 
+ <see cref="M:Diacom.DataRecord.MoveNext"/> and <see cref="P:Diacom.DataRecord.Current"/>, <see cref="P:Diacom.DataRecord.Current"/> will return the element 
  that it is set to, even if the enumerator is already invalidated.</para>
- </remarks></member>
-    <member name="M:Diacom.DataRecord.MoveNext">
-      <summary>
- Advances the enumerator to the next element of the collection. 
+	</remarks>
+</member><member name="M:Diacom.DataRecord.MoveNext">
+	<summary>
+ Advances the enumerator to the next element of the collection.
  </summary>
- <returns><see cref="True" /> if the enumerator was successfully advanced to the next element; 
- <see cref="False" /> if the enumerator has passed the end of the collection.</returns>
- <remarks>
- <para>After an enumerator is created or after a call to Reset, an enumerator is positioned before 
- the first element of the collection, and the first call to <see cref="MoveNext" /> moves the enumerator 
+	<returns><c>Nothing</c> if the enumerator was successfully advanced to the next element;
+ <c>False</c> if the enumerator has passed the end of the collection.</returns>
+	<remarks>
+		<para>After an enumerator is created or after a call to Reset, an enumerator is positioned before 
+ the first element of the collection, and the first call to <see cref="M:Diacom.DataRecord.MoveNext"/> moves the enumerator 
  over the first element of the collection.</para>
- <para>After the end of the collection is passed, subsequent calls to <see cref="MoveNext" /> return 
- <see cref="False" /> until <see cref="Reset" /> is called.</para>
- <para>An enumerator remains valid as long as the collection remains unchanged. If changes are 
+		<para>After the end of the collection is passed, subsequent calls to <see cref="M:Diacom.DataRecord.MoveNext"/> return 
+ <c>False</c> until <see cref="M:Diacom.DataRecord.Reset"/> is called.</para>
+		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are 
  made to the collection, such as adding, modifying or deleting elements, the enumerator is 
  irrecoverably invalidated and the next call to MoveNext or Reset throws an 
- <see cref="InvalidOperationException" />.</para>
- </remarks></member>
-    <member name="P:Diacom.DataRecord.Item(System.Int32)">
-      <summary>
- Gets the element at the specified index. 
- </summary>
- <param name="index">The zero-based index of the element to get.</param>
- <exception cref="System.ArgumentOutOfRangeException">Index is less 
- than zero or index is equal to or greater than <see cref="Count" />.</exception>
- <value>The element at the specified index.</value></member>
-    <member name="P:Diacom.DataRecord.Item(System.String)">
-      <summary>
- Searches for the element with specified field name and returns it if found. 
- </summary>
- <param name="Key">Name of the field to get the element from.</param>
- <value>The element with the specified field name.</value></member>
-    <member name="M:Diacom.DataRecord.NextRecord">
-      <summary>
- Gets the element that positiones after the current and advances position. 
- </summary>
-    </member>
-    <member name="P:Diacom.DataRecord.IsEmpty">
-      <summary>
- Checks if current element is empty or not. 
- </summary>
- <value>The current element is empty or not.</value></member>
-    <member name="T:Diacom.APCLineState">
-      <summary>
- APC line state. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.IDLE">
-      <summary>
- Line is idle. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.EAP">
-      <summary>
- EAP line state. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.CONNECTED">
-      <summary>
- Line is connected. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.INUSE">
-      <summary>
- Line is in use. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.OFFHOOK">
-      <summary>
- Offhook. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.CALLPENDING">
-      <summary>
- Pending call is on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.RINGBACK">
-      <summary>
- Ringback state. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.CONFERENCING">
-      <summary>
- Conference on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.AA">
-      <summary>
- Autoateddant state. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.VM">
-      <summary>
- Voice mail state. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.HOLD">
-      <summary>
- Line is on hold. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.HOLDPENDING">
-      <summary>
- On hold is pending on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.PROCEEDING">
-      <summary>
- Line is porceeding something. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.DISCONNECT">
-      <summary>
- Line disconnects. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.ERROR">
-      <summary>
- Error is on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.RING">
-      <summary>
- Ring is on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.PARK">
-      <summary>
- Line is parked. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.SOFTOFFHOOK">
-      <summary>
- Softoffhook. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.MUSICONHOLD">
-      <summary>
- Line in in music on hold state. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.XFER_WAITFORONHOOK">
-      <summary>
- Line is waiting for onhook for XFER. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.XFER_RINGBACK">
-      <summary>
- Ringback on line for XFER. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.BUSY">
-      <summary>
- Line is busy. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.PLAY">
-      <summary>
- Something is playing on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.RECORD">
-      <summary>
- Something is recording on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.APC">
-      <summary>
- Line is under APC control. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.VOICE_RECORD_START">
-      <summary>
- Voice recording started on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.VOICE_RECORD_STOP">
-      <summary>
- Voice recording ended on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.SILENTMONITOR">
-      <summary>
- Silent monitor on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.BARGEIN">
-      <summary>
- Line is barged in. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.HOLD_CONFERENCE">
-      <summary>
- Conference is held on the line (for conference mode). 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.HFDTD_IDLE">
-      <summary>
- Line is idle for offhook when hands free / dialtone disabled. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.PLAY_CALL_STOP">
-      <summary>
- Playing call is finished on the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.PLAY_CALL">
-      <summary>
- Line is playing call. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.LINE_ADD">
-      <summary>
- Line is added to the system. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineState.LINE_REMOVE">
-      <summary>
- Line is removed from the system. 
- </summary>
-    </member>
-    <member name="T:Diacom.LineClass">
-      <summary>
- Describes a common information about a line shared by all components of the APCSDK. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LineID">
-      <summary>
- Line identificator (ID) - unique object that identifies the line. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LineStatus">
-      <summary>
- Current line status/state (see <see cref="APCLineState" /> enumeration). 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.DIDNumber">
-      <summary>
- DID number - the CO supplied DID. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.CIDNumber">
-      <summary>
- CID number - the CO supplied CID. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.DNISNumber">
-      <summary>
- DNIS number - the CO supplied DNIS. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.UserNumber">
-      <summary>
- User number. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.CallNumber">
-      <summary>
- Call number - the number that is currently called. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LineName">
-      <summary>
- Line name - the name (if any) assigned to that line. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.DIDName">
-      <summary>
- DID name - the CO supplied DID name. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.CIDName">
-      <summary>
- CID name - the CO supplied CID name. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.DNISName">
-      <summary>
- DNIS name  - the CO supplied DNIS name. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.UserName">
-      <summary>
- User name. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.CallName">
-      <summary>
- Call name - name that is currently called. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LinePort">
-      <summary>
- Line port. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LineNumber">
-      <summary>
- Line number - the assigned line number. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LineAccessCode">
-      <summary>
- Line access code - the code that this line can be accessed. 
- </summary>
-    </member>
-    <member name="F:Diacom.LineClass.LineType">
-      <summary>
- Line type. 
- </summary>
-    </member>
-    <member name="M:Diacom.LineClass.Clone">
-      <summary>
- Creates a new object that is a shallow copy of the current <see cref="LineClass" /> instance. 
- </summary>
- <returns>A new object that is a copy of this instance.</returns></member>
-    <member name="M:Diacom.LineClass.#ctor">
-      <summary>
- Default class constructor. 
- </summary>
- <remarks>
- <para>All the fields of the class will have default (<see cref="Nothing" /> in most cases) values.</para>
- </remarks></member>
-    <member name="M:Diacom.LineClass.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-      <summary>
- Creates class instance based on serialization information. 
- </summary>
- <param name="info">Serialization information.</param>
- <param name="context">Serialization context.</param></member>
-    <member name="M:Diacom.LineClass.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-      <summary>
- Populates a <see cref="System.Runtime.Serialization.SerializationInfo" /> with the data needed to serialize the target object. 
- </summary>
- <param name="info">The <see cref="System.Runtime.Serialization.SerializationInfo" /> to populate with data.</param>
- <param name="context">The destination (see <see cref="System.Runtime.Serialization.StreamingContext" />) for this serialization.</param></member>
-    <member name="T:Diacom.APCLineControl">
-      <summary>
- Represents all the line activities. 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineControl.syncObject">
-      <summary>
- Synchronization object 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineControl.oSourceLine">
-      <summary>
- The line from which the event came (Originating Line). 
- </summary>
-    </member>
-    <member name="F:Diacom.APCLineControl.oStateLine">
-      <summary>
- The line on which state changes are made. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.GetSyncRoot">
-      <summary>
- Gets the sync object of the main module. 
- </summary>
- <returns>The sync object of the Main module.</returns></member>
-    <member name="M:Diacom.APCLineControl.SharedFunctionTest(System.String)">
-      <summary>
- Test function for testing methods, static functions and subs. Puts its parameter to a 
- standard error stram. 
- </summary>
- <param name="testParam">String to put to the standard error stream of the application.</param>
- <returns><see cref="Nothing" />.</returns></member>
-    <member name="M:Diacom.APCLineControl.SharedSubTest(System.String)">
-      <summary>
- Test function for testing methods, static functions and subs. Puts its parameter to a 
- standard error stram. 
- </summary>
- <param name="testParam">String to put to the standard error stream of the application.</param></member>
-    <member name="M:Diacom.APCLineControl.FunctionTest(System.String)">
-      <summary>
- Test function for testing methods, static functions and subs. Puts its parameter to a 
- standard error stram. 
- </summary>
- <param name="testParam">String to put to the standard error stream of the application.</param></member>
-    <member name="M:Diacom.APCLineControl.SubTest(System.String)">
-      <summary>
- Test function for testing methods, static functions and subs. Puts its parameter to a 
- standard error stram. 
- </summary>
- <param name="testParam">String to put to the standard error stream of the application.</param></member>
-    <member name="M:Diacom.APCLineControl.ServerConnect(System.String,System.String,System.String,System.String)">
-      <summary>
- Connects to server with given parameters. 
- </summary>
- <param name="ServerName">Name of the server.</param>
- <param name="Param1">First parameter.</param>
- <param name="Param2">Second parameter.</param>
- <param name="Param3">Third parameter.</param>
- <remarks><seealso cref="IAPCInterface.APCConnectToServer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.ConnectToServer(System.String,System.String,System.String,System.String)">
-      <summary>
- Connects to server with given parameters. 
- </summary>
- <param name="ServerName">Name of the server.</param>
- <param name="Param1">First parameter.</param>
- <param name="Param2">Second parameter.</param>
- <param name="Param3">Third parameter.</param>
- <remarks><seealso cref="IAPCInterface.APCConnectToServer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.EmptyRecord">
-      <summary>
- Gets new empty data record. 
- </summary>
- <returns>New empty data record.</returns></member>
-    <member name="M:Diacom.APCLineControl.PlayDTMF(System.String)">
-      <summary>
- Plays given DTMF code for the line. 
- </summary>
- <param name="DTMFString">DTMF code to play.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayDTMF(System.String,System.Int32)">
-      <summary>
- Plays DTMF code with given parameters for the line. 
- </summary>
- <param name="DTMFString">DTMF code to play.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayFile(System.String)">
-      <summary>
- Plays given file for the line. 
- </summary>
- <param name="FileString">File to play path.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayFile(System.String,System.String)">
-      <summary>
- Plays given file for the line with given cutoff digits. 
- </summary>
- <param name="FileString">File to play path.</param>
- <param name="CutoutString">Cutoff digits.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayFile(System.String,System.String,System.Int32)">
-      <summary>
- Plays given file for the line with given cutoff digits and action timeout. 
- </summary>
- <param name="FileString">File to play path.</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.RecordFile(System.String)">
-      <summary>
- Records a file for the line. 
- </summary>
- <param name="FileString">Path to store the file to (with file name).</param></member>
-    <member name="M:Diacom.APCLineControl.RecordFile(System.String,System.String)">
-      <summary>
- Records a file for the line. 
- </summary>
- <param name="FileString">Path to store the file to (with file name).</param>
- <param name="CutoutString">Cutoff digits.</param></member>
-    <member name="M:Diacom.APCLineControl.RecordFile(System.String,System.String,System.Int32)">
-      <summary>
- Records a file for the line. 
- </summary>
- <param name="FileString">Path to store the file to (with file name).</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.StopPlay">
-      <summary>
- Stops file playing for the line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.StopRecord">
-      <summary>
- Stops file recording for the line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Reset">
-      <summary>
- Resets all commands of the line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Clear">
-      <summary>
- Clears the line. 
- </summary>
- <remarks>
- <seealso cref="Reset" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32)">
-      <summary>
- Collects number from the line. 
- </summary>
- <param name="NumberVar">Variable name to collect number to.</param>
- <param name="MaxDigits">Maximum number of digits to collect.</param></member>
-    <member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32,System.String)">
-      <summary>
- Collects number from the line. 
- </summary>
- <param name="NumberVar">Variable name to collect number to.</param>
- <param name="MaxDigits">Maximum number of digits to collect.</param>
- <param name="CutoutString">Cutoff digits.</param></member>
-    <member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32,System.String,System.Int32,System.Int32)">
-      <summary>
- Collects number from the line. 
- </summary>
- <param name="NumberVar">Variable name to collect number to.</param>
- <param name="MaxDigits">Maximum number of digits to collect.</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="InitTimeoutVal">Timeout for the action.</param>
- <param name="DigitTimeoutVal">Timeout between neighboring digits.</param></member>
-    <member name="M:Diacom.APCLineControl.CollectNumber(System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
-      <summary>
- Collects number from the line. 
- </summary>
- <param name="NumberVar">Variable name to collect number to.</param>
- <param name="MaxDigits">Maximum number of digits to collect.</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="InitTimeoutVal">Timeout for the action.</param>
- <param name="DigitTimeoutVal">Timeout between neighboring digits.</param>
- <param name="TimeoutVal">Timeout for the whole action.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayNumber(System.Object)">
-      <summary>
- Plays number for the line. 
- </summary>
- <param name="DataNumber">The number to play.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayNumber(System.Object,System.String)">
-      <summary>
- Plays number for the line. 
- </summary>
- <param name="DataNumber">The number to play.</param>
- <param name="RuleName">Name of the rule to use for the number.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayNumber(System.Object,System.String,System.String)">
-      <summary>
- Plays number for the line. 
- </summary>
- <param name="DataNumber">The number to play.</param>
- <param name="RuleName">Name of the rule to use for the number.</param>
- <param name="CutoutString">Cutoff digits.</param></member>
-    <member name="M:Diacom.APCLineControl.PlayNumber(System.Object,System.String,System.String,System.Int32)">
-      <summary>
- Plays number for the line. 
- </summary>
- <param name="DataNumber">The number to play.</param>
- <param name="RuleName">Name of the rule to use for the number.</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="TimeoutVal">Timeout for the action.</param></member>
-    <member name="M:Diacom.APCLineControl.Release">
-      <summary>
- Releases the line from APC control. 
- </summary>
- <remarks><seealso cref="IAPCInterface.APCRelease" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Release(System.Int32)">
-      <summary>
- Releases the line from APC control. 
- </summary>
- <param name="TimeoutVal">Timeout for the action.</param>
- <remarks><seealso cref="IAPCInterface.APCRelease" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.DropCall">
-      <summary>
- Releases the line from APC control. 
- </summary>
- <remarks><seealso cref="IAPCInterface.APCRelease" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.DropCall(System.Int32)">
-      <summary>
- Releases the line from APC control. 
- </summary>
- <param name="TimeoutVal">Timeout for the action.</param>
- <remarks><seealso cref="IAPCInterface.APCRelease" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Dial(System.String)">
-      <summary>
- Dials specified number. 
- </summary>
- <param name="NumberString">Number to dial.</param>
- <remarks><seealso cref="IAPCInterface.APCDial" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Dial(System.String,System.String)">
-      <summary>
- Dials specified number. 
- </summary>
- <param name="NumberString">Number to dial.</param>
- <param name="SourceNumber">Number of caller.</param>
- <remarks><seealso cref="IAPCInterface.APCDial" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Dial(System.String,System.String,System.Int32)">
-      <summary>
- Dials specified number. 
- </summary>
- <param name="NumberString">Number to dial.</param>
- <param name="SourceNumber">Number of caller.</param>
- <param name="TimeoutVal">Timeout for the action.</param>
- <remarks><seealso cref="IAPCInterface.APCDial" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Transfer(System.String)">
-      <summary>
- Trasfers incoming call to the specified number. 
- </summary>
- <param name="NumberString">Number to transfer the call to.</param>
- <remarks><seealso cref="IAPCInterface.APCTransfer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Transfer(System.String,System.String)">
-      <summary>
- Trasfers incoming call to the specified number. 
- </summary>
- <param name="NumberString">Number to transfer the call to.</param>
- <param name="SourceNumber">Number of the line which transfers the call.</param>
- <remarks><seealso cref="IAPCInterface.APCTransfer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Transfer(System.String,System.String,System.Int32)">
-      <summary>
- Trasfers incoming call to the specified number. 
- </summary>
- <param name="NumberString">Number to transfer the call to.</param>
- <param name="SourceNumber">Number of the line which transfers the call.</param>
- <param name="TimeoutVal">Timeout for the action.</param>
- <remarks><seealso cref="IAPCInterface.APCTransfer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.WaitDigit">
-      <summary>
- Waits for a digit on the line. 
- </summary>
- <remarks><seealso cref="IAPCInterface.APCWaitDigit" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.WaitDigit(System.Int32)">
-      <summary>
- Waits for a digit on the line. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param>
- <remarks><seealso cref="IAPCInterface.APCWaitDigit" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.WaitComplete">
-      <summary>
- Waits for a query of commands to be completed. 
- </summary>
- <remarks><seealso cref="IAPCInterface.APCWaitComplete" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.WaitComplete(System.Int32)">
-      <summary>
- Waits for a query of commands to be completed. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param>
- <remarks><seealso cref="IAPCInterface.APCWaitComplete" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.Pause(System.Int32)">
-      <summary>
- Sets a delay for the line depending on parameter. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param>
- <remarks><seealso cref="IAPCInterface.APCWaitTimer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.WaitTimer(System.Int32)">
-      <summary>
- Sets a delay for the line depending on parameter. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param>
- <remarks><seealso cref="IAPCInterface.APCWaitTimer" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.RequestLink">
-      <summary>
- Raises <see cref="APCEvents.LINKREQUEST" /> event for a linked line. 
- </summary>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.RequestLink(Diacom.APCLine)">
-      <summary>
- Raises <see cref="APCEvents.LINKREQUEST" /> event for a specified line. 
- </summary>
- <param name="targetLine">Line to raise the event for.</param>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.RequestGrant">
-      <summary>
- Raises <see cref="APCEvents.GRANTREQUEST" /> event for a linked line. 
- </summary>
- <param name="targetLine">Line to raise the event for.</param>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.RequestGrant(Diacom.APCLine)">
-      <summary>
- Raises <see cref="APCEvents.LINKREQUEST" /> event for a specified line. 
- </summary>
- <param name="targetLine">Line to raise the event for.</param>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.ReleaseLinkSlave">
-      <summary>
- Breakes the link between Master and Slave line. 
- </summary>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.ReleaseLinkSlave(System.Object)">
-      <summary>
- Breakes the link between Master and specified Slave line. 
- </summary>
- <param name="linkedLine">Slave line to break the link with.</param>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.AcceptLinkAsSlave">
-      <summary>
- Accepts request to link as Slave line. 
- </summary>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.AcceptGrantAsMaster">
-      <summary>
- Accepts request to link as Master line. 
- </summary>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.RejectLinkOrGrant">
-      <summary>
- Rejects request to link. 
- </summary>
- <remarks><seealso cref="APCLine.FireStateEvent" /></remarks></member>
-    <member name="M:Diacom.APCLineControl.IsLinkLine">
-      <summary>
- Shows do we have any Link'ed lines or not. 
- </summary>
- <returns>True if we do have.</returns></member>
-    <member name="M:Diacom.APCLineControl.IsLinkLine(Diacom.APCLine)">
-      <summary>
- Shows do we have specified line as Link'ed line or not. 
- </summary>
- <param name="linkedLine">Line to check if it is Link'ed line.</param>
- <returns>True if we do have.</returns></member>
-    <member name="M:Diacom.APCLineControl.IsLinkLineEvent">
-      <summary>
- Shows does the event came from Linked Line or not. 
- </summary>
- <returns>True if the event came from a Link'ed line.</returns></member>
-    <member name="M:Diacom.APCLineControl.IsCurrentLineEvent">
-      <summary>
- Shows does the event came from Current Line. 
- </summary>
- <returns>True if the event came from the current line.</returns></member>
-    <member name="M:Diacom.APCLineControl.LinkDropCall">
-      <summary>
- Drops the call on the Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkDropCall(System.Int32)">
-      <summary>
- Drops the call on the Link'ed line. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkRelease">
-      <summary>
- Releases the Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkRelease(System.Int32)">
-      <summary>
- Releases the Link'ed line. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkTransfer(System.String)">
-      <summary>
- Transfers the call to the Link'ed line. 
- </summary>
- <param name="NumberString">Number to transfer the call to.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkTransfer(System.String,System.String)">
-      <summary>
- Transfers the call to the Link'ed line. 
- </summary>
- <param name="NumberString">Number to transfer the call to.</param>
- <param name="SourceNumber">Number of the line which transfers the call.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkTransfer(System.String,System.String,System.Int32)">
-      <summary>
- Transfers the call to the Link'ed line. 
- </summary>
- <param name="NumberString">Number to transfer the call to.</param>
- <param name="SourceNumber">Number of the line which transfers the call.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkPlayDTMF(System.String)">
-      <summary>
- Plays DTMF code on the Link'ed line. 
- </summary>
- <param name="DTMFString">DTMF code to play.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkPlayDTMF(System.String,System.Int32)">
-      <summary>
- Plays DTMF code on the Link'ed line. 
- </summary>
- <param name="DTMFString">DTMF code to play.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkPlayFile(System.String)">
-      <summary>
- Plays file on the Link'ed line. 
- </summary>
- <param name="FileString">Path to the file to play.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkPlayFile(System.String,System.String)">
-      <summary>
- Plays file on the Link'ed line. 
- </summary>
- <param name="FileString">Path to the file to play.</param>
- <param name="CutoutString">Cutoff digits.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkPlayFile(System.String,System.String,System.Int32)">
-      <summary>
- Plays file on the Link'ed line. 
- </summary>
- <param name="FileString">Path to the file to play.</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkRecordFile(System.String)">
-      <summary>
- Records the file on the Link'ed line. 
- </summary>
- <param name="FileString">Path to store the file.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkRecordFile(System.String,System.String)">
-      <summary>
- Records the file on the Link'ed line. 
- </summary>
- <param name="FileString">Path to store the file.</param>
- <param name="CutoutString">Cutoff digits.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkRecordFile(System.String,System.String,System.Int32)">
-      <summary>
- Records the file on the Link'ed line. 
- </summary>
- <param name="FileString">Path to store the file.</param>
- <param name="CutoutString">Cutoff digits.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkStopPlay">
-      <summary>
- Stops playing file on the Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkStopRecord">
-      <summary>
- Stops file recording on the Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkReset">
-      <summary>
- Resets the Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkClear">
-      <summary>
- Clears the Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkWaitDigit">
-      <summary>
- Tells the Link'ed line to wait for a digit. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkWaitDigit(System.Int32)">
-      <summary>
- Tells the Link'ed line to wait a digit. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkWaitComplete">
-      <summary>
- Tells the Link'ed line to wait while all commands will complete. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkWaitComplete(System.Int32)">
-      <summary>
- Tells the Link'ed line to wait while all commands will complete at the specified time. 
- </summary>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkPause(System.Int32)">
-      <summary>
- Pauses the Link'ed line. 
- </summary>
- <param name="TimeoutVal">Time to pause for.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkWaitTimer(System.Int32)">
-      <summary>
- Pauses the Link'ed line. 
- </summary>
- <param name="TimeoutVal">Time to pause for.</param></member>
-    <member name="P:Diacom.APCLineControl.Var(System.String)">
-      <summary>
- Gets access to the named variable. 
- </summary>
- <param name="NameVar">Name to the variable to take access to.</param>
- <value>The named variable.</value></member>
-    <member name="P:Diacom.APCLineControl.Item(System.String)">
-      <summary>
- Gets access to the named variable. 
- </summary>
- <param name="NameVar">Name to the variable to take access to.</param>
- <value>The named variable.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkVar(System.String)">
-      <summary>
- Gets access to the named variable of the Link'ed line. 
- </summary>
- <param name="NameVar">Name to the variable to take access to.</param>
- <value>The named variable.</value></member>
-    <member name="M:Diacom.APCLineControl.SQLNonQuery(System.String,System.String)">
-      <summary>
- Executes non-queried SQL command. 
- </summary>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLNonQuery(System.String,System.String,System.String)">
-      <summary>
- Executes non-queried SQL command. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLNonQuery(System.String,System.String,System.String,System.Int32)">
-      <summary>
- Executes non-queried SQL command. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLGetValue(System.String,System.String)">
-      <summary>
- Retrieves scalar value as a result of specified query. 
- </summary>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLGetValue(System.String,System.String,System.String)">
-      <summary>
- Retrieves scalar value as a result of specified query. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLGetValue(System.String,System.String,System.String,System.Int32)">
-      <summary>
- Retrieves scalar value as a result of specified query. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLGetRecord(System.String,System.String)">
-      <summary>
- Retrieves data as a result of specified query. 
- </summary>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLGetRecord(System.String,System.String,System.String)">
-      <summary>
- Retrieves data as a result of specified query. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLGetRecord(System.String,System.String,System.String,System.Int32)">
-      <summary>
- Retrieves data as a result of specified query. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The command to execute.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String)">
-      <summary>
- Executes stored procedure. 
- </summary>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The stored procedure to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String,System.String)">
-      <summary>
- Executes stored procedure. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The stored procedure to execute.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLExecProcedure(System.String,System.String,System.String,System.Int32)">
-      <summary>
- Executes stored procedure. 
- </summary>
- <param name="NameVar">Variable to store the result of the command.</param>
- <param name="SQLServerString">Name of the SQL server to execute command on.</param>
- <param name="SQLCommand">The stored procedure to execute.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.SQLReset">
-      <summary>
- Resets all SQL queries for the line. 
- </summary>
-    </member>
-    <member name="P:Diacom.APCLineControl.LineNumber">
-      <summary>
- Gets number of the line. 
- </summary>
- <value>Number of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.LineName">
-      <summary>
- Gets name of the line. 
- </summary>
- <value>Name of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.PortName">
-      <summary>
- Gets port of the line. 
- </summary>
- <value>Port of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.LineType">
-      <summary>
- Gets type of the line. 
- </summary>
- <value>Type of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.AccessCode">
-      <summary>
- Gets access code for the line. 
- </summary>
- <value>Access code for the line.</value></member>
-    <member name="P:Diacom.APCLineControl.DIDNumber">
-      <summary>
- Gets or sets DID number of the line. 
- </summary>
- <value>DID number of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.CIDNumber">
-      <summary>
- Gets or sets CID number of the line. 
- </summary>
- <value>CID number of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.UserNumber">
-      <summary>
- Gets or sets user number of the line. 
- </summary>
- <value>User number of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.LastEvent">
-      <summary>
- Gets or sets last event on the line. 
- </summary>
- <value>Last event on the line.</value></member>
-    <member name="P:Diacom.APCLineControl.LastEventParameter">
-      <summary>
- Gets or sets parameter of the last event. 
- </summary>
- <value>Parameter of the last event.</value></member>
-    <member name="P:Diacom.APCLineControl.LastDigit">
-      <summary>
- Gets or sets last digit on the line. 
- </summary>
- <value>Last digit on the line.</value></member>
-    <member name="P:Diacom.APCLineControl.AllDigits">
-      <summary>
- Gets or sets all digits on the line. 
- </summary>
- <value>All digits on the line.</value></member>
-    <member name="P:Diacom.APCLineControl.Timeout">
-      <summary>
- Gets or sets timeout for the line (delay the line will receive the <see cref="APCEvents.TIMEOUT" /> event. 
- </summary>
- <value>Timeout for the line (delay the line will receive the <see cref="APCEvents.TIMEOUT" /> event.</value></member>
-    <member name="P:Diacom.APCLineControl.State">
-      <summary>
- Gets the state of the line. 
- </summary>
- <value>State of the line.</value></member>
-    <member name="P:Diacom.APCLineControl.Line">
-      <summary>
- Gets the pure line (<see cref="APCLine" />). 
- </summary>
- <value>The pure line (<see cref="APCLine" />).</value></member>
-    <member name="P:Diacom.APCLineControl.SourceLine">
-      <summary>
- Gets or sets the event source line. 
- </summary>
- <value>Event source line.</value></member>
-    <member name="P:Diacom.APCLineControl.StateLine">
-      <summary>
- Gets or sets the line all events will came to. 
- </summary>
- <value>Line all events will came to.</value></member>
-    <member name="P:Diacom.APCLineControl.CurrentLine">
-      <summary>
- Gets the pure line (<see cref="APCLine" />). 
- </summary>
- <value>The pure line (<see cref="APCLine" />).</value></member>
-    <member name="P:Diacom.APCLineControl.APCInterface">
-      <summary>
- Sets the interface for line to communicate with APC. 
- </summary>
- <value>Inteface to APC.</value></member>
-    <member name="P:Diacom.APCLineControl.EventLine">
-      <summary>
- Gets the pure line (<see cref="APCLine" />) the event comes from. 
- </summary>
- <value>The pure line (<see cref="APCLine" />) the event comes from.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkLine">
-      <summary>
- Gets the pure (<see cref="APCLine" />) Link'ed line. 
- </summary>
- <value>The pure (<see cref="APCLine" />) Link'ed line.</value></member>
-    <member name="M:Diacom.APCLineControl.NewState(System.String)">
-      <summary>
- Tells the line to go to the specified state. 
- </summary>
- <param name="vNewState">The state line should go to.</param></member>
-    <member name="M:Diacom.APCLineControl.GotoState(System.String)">
-      <summary>
- Tells the line to go to the specified state. 
- </summary>
- <param name="vNewState">The state line should go to.</param></member>
-    <member name="M:Diacom.APCLineControl.ReturnState">
-      <summary>
- Tells the line to go to the previous state. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.StateReturn">
-      <summary>
- Tells the line to go to the previous state. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.LinkNewState(System.String)">
-      <summary>
- Tells the Link'ed line to go to the specified state. 
- </summary>
- <param name="vNewState">The state line should go to.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkGotoState(System.String)">
-      <summary>
- Tells the Link'ed line to go to the specified state. 
- </summary>
- <param name="vNewState">The state line should go to.</param></member>
-    <member name="M:Diacom.APCLineControl.LinkReturnState">
-      <summary>
- Tells the Link'ed line to go to the previous state. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.SendRejectEvent">
-      <summary>
- Sends the <see cref="APCEvents.ELSECONTINUE" /> (reject) event. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Init">
-      <summary>
- Initializes the line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Initialize(Diacom.APCLine)">
-      <summary>
- Initializes specified line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.ResetAll">
-      <summary>
- Resets both commands and SQL queues of the line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Connect">
-      <summary>
- Connects current line with it's Link'ed line. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Connect(System.Int32)">
-      <summary>
- Connects current line with it's Link'ed line. 
- </summary>
- <param name="TimeoutVal">Timeout for the opaeration.</param></member>
-    <member name="M:Diacom.APCLineControl.Disconnect">
-      <summary>
- Disconnects the line from the line it was connected to and snatches it under APC control. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.Disconnect(Diacom.APCLine)">
-      <summary>
- Disconnects specified line from the line it was connected to and snatches it under APC control. 
- </summary>
- <param name="TargetLine">Line to snatch.</param></member>
-    <member name="M:Diacom.APCLineControl.Disconnect(Diacom.APCLine,System.Int32)">
-      <summary>
- Disconnects specified line from the line it was connected to and snatches it under APC control. 
- </summary>
- <param name="TargetLine">Line to snatch.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="P:Diacom.APCLineControl.CallDuration">
-      <summary>
- Gets total duration of the call for the line. 
- </summary>
- <value>Duration of the call for the line.</value></member>
-    <member name="P:Diacom.APCLineControl.CallRingTime">
-      <summary>
- Gets the time ring was detected on the line. 
- </summary>
- <value>The time ring was detected on the line.</value></member>
-    <member name="P:Diacom.APCLineControl.CallConnectTime">
-      <summary>
- Gets time the line was connected to another. 
- </summary>
- <value>Time the line was connected to another.</value></member>
-    <member name="P:Diacom.APCLineControl.InCallTime">
-      <summary>
- Gets current duration of the call for the line. 
- </summary>
- <value>Current duration of the call for the line.</value></member>
-    <member name="P:Diacom.APCLineControl.CallDisconnectTime">
-      <summary>
- Gets the time the line was disconnected from another. 
- </summary>
- <value>The time the line was disconnected from another.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkCallDuration">
-      <summary>
- Gets total duration of the call for the Link'ed line. 
- </summary>
- <value>Duration of the call for the Link'ed line.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkCallRingTime">
-      <summary>
- Gets the time ring was detected on the Link'ed line. 
- </summary>
- <value>The time ring was detected on the Link'ed line.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkCallConnectTime">
-      <summary>
- Gets time the Link'ed line was connected to another. 
- </summary>
- <value>Time the Link'ed line was connected to another.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkInCallTime">
-      <summary>
- Gets current duration of the call for the Link'ed line. 
- </summary>
- <value>Current duration of the call for the Link'ed line.</value></member>
-    <member name="P:Diacom.APCLineControl.LinkCallDisconnectTime">
-      <summary>
- Gets the time the Link'ed line was disconnected from another. 
- </summary>
- <value>The time the Link'ed line was disconnected from another.</value></member>
-    <member name="M:Diacom.APCLineControl.UseLanguage(System.String)">
-      <summary>
- Sets the language the line uses. 
- </summary>
- <param name="LangName">The language the line will use.</param></member>
-    <member name="M:Diacom.APCLineControl.Convert(System.String,System.Object)">
-      <summary>
- Converts data using specified rule. 
- </summary>
- <param name="ConversionName">The rule to use.</param>
- <param name="DataNumber">Data to convert.</param>
- <returns>Converted data.</returns></member>
-    <member name="M:Diacom.APCLineControl.Convert(System.String,System.String,System.Object)">
-      <summary>
- Converts data using specified rule. 
- </summary>
- <param name="LangName">Language to use for conversion.</param>
- <param name="ConversionName">The rule to use.</param>
- <param name="DataNumber">Data to convert.</param>
- <returns>Converted data.</returns></member>
-    <member name="M:Diacom.APCLineControl.CreateDate(System.Int32,System.Int32,System.Int32)">
-      <summary>
- Creates date from the specified arguments. 
- </summary>
- <param name="Year">Year.</param>
- <param name="Month">Month.</param>
- <param name="Day">Day.</param>
- <returns>Date in <see cref="DateTime" /> format.</returns></member>
-    <member name="M:Diacom.APCLineControl.CreateTime(System.Int32,System.Int32,System.Int32)">
-      <summary>
- Creates date from the specified arguments. 
- </summary>
- <param name="Hours">Hours.</param>
- <param name="Minutes">Minutes.</param>
- <param name="Seconds">Seconds.</param>
- <returns>Date in <see cref="DateTime" /> format.</returns></member>
-    <member name="M:Diacom.APCLineControl.CreateDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-      <summary>
- Creates date from the specified arguments. 
- </summary>
- <param name="Year">Year.</param>
- <param name="Month">Month.</param>
- <param name="Day">Day.</param>
- <param name="Hours">Hours.</param>
- <param name="Minutes">Minutes.</param>
- <param name="Seconds">Seconds.</param>
- <returns>Date in <see cref="DateTime" /> format.</returns></member>
-    <member name="M:Diacom.APCLineControl.AsyncReset">
-      <summary>
- Resets all asyncronious operations for th eline. 
- </summary>
-    </member>
-    <member name="M:Diacom.APCLineControl.AsyncExecute(System.String,System.Object[])">
-      <summary>
- Asyncroniously executes specified procedure. 
- </summary>
- <param name="FunctionName">Procedure to execute.</param>
- <param name="stateParam">Procedure parameters.</param></member>
-    <member name="M:Diacom.APCLineControl.AsyncFunction(System.String,System.String,System.Object[])">
-      <summary>
- Asyncroniously executes specified function. 
- </summary>
- <param name="VariableName">Storage for the result of function.</param>
- <param name="FunctionName">Function to execute.</param>
- <param name="stateParam">Function parameters.</param></member>
-    <member name="M:Diacom.APCLineControl.OnEvent(System.String,System.String)">
-      <summary>
- Single event handler (handles only first event of specified type). 
- </summary>
- <param name="eventCode">Type of event to handle.</param>
- <param name="eventSub">Procedure to execute when event occurs.</param></member>
-    <member name="M:Diacom.APCLineControl.OnEvent(System.String,System.String,System.Int32)">
-      <summary>
- Sets single event handler (handles only first event of specified type). 
- </summary>
- <param name="eventCode">Type of event to handle.</param>
- <param name="eventSub">Procedure to execute when event occurs.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-    <member name="M:Diacom.APCLineControl.OnEventHandler(System.String,System.String)">
-      <summary>
- Sets event handler (handles every event of specified type). 
- </summary>
- <param name="eventCode">Type of event to handle.</param>
- <param name="eventSub">Procedure to execute when event occurs.</param></member>
-    <member name="M:Diacom.APCLineControl.OnEventHandler(System.String,System.String,System.Int32)">
-      <summary>
- Sets event handler (handles every event of specified type). 
- </summary>
- <param name="eventCode">Type of event to handle.</param>
- <param name="eventSub">Procedure to execute when event occurs.</param>
- <param name="TimeoutVal">Timeout for action.</param></member>
-  </members>
+ <see cref="T:System.InvalidOperationException"/>.</para>
+	</remarks>
+</member><member name="P:Diacom.DataRecord.Item(System.Int32)">
+	<summary>
+ Gets the element at the specified index.
+ </summary>
+	<param name="index">The zero-based index of the element to get.</param>
+	<exception cref="T:System.ArgumentOutOfRangeException">Index is less 
+ than zero or index is equal to or greater than <see cref="P:Diacom.DataRecord.Count"/>.</exception>
+	<value>The element at the specified index.</value>
+</member><member name="P:Diacom.DataRecord.Item(System.String)">
+	<summary>
+ Searches for the element with specified field name and returns it if found.
+ </summary>
+	<param name="Key">Name of the field to get the element from.</param>
+	<value>The element with the specified field name.</value>
+</member><member name="M:Diacom.DataRecord.NextRecord">
+	<summary>
+ Gets the element that positiones after the current and advances position.
+ </summary>
+</member><member name="P:Diacom.DataRecord.IsEmpty">
+	<summary>
+ Checks if current element is empty or not.
+ </summary>
+	<value>The current element is empty or not.</value>
+</member><member name="T:Diacom.DataRecord">
+	<summary>
+ Represents the data record retrieved from the SQL datbase.
+ </summary>
+</member><member name="F:Diacom.APCLineState.IDLE">
+	<summary>
+ Line is idle.
+ </summary>
+</member><member name="F:Diacom.APCLineState.EAP">
+	<summary>
+ EAP line state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.CONNECTED">
+	<summary>
+ Line is connected.
+ </summary>
+</member><member name="F:Diacom.APCLineState.INUSE">
+	<summary>
+ Line is in use.
+ </summary>
+</member><member name="F:Diacom.APCLineState.OFFHOOK">
+	<summary>
+ Offhook.
+ </summary>
+</member><member name="F:Diacom.APCLineState.CALLPENDING">
+	<summary>
+ Pending call is on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.RINGBACK">
+	<summary>
+ Ringback state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.CONFERENCING">
+	<summary>
+ Conference on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.AA">
+	<summary>
+ Autoateddant state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.VM">
+	<summary>
+ Voice mail state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.HOLD">
+	<summary>
+ Line is on hold.
+ </summary>
+</member><member name="F:Diacom.APCLineState.HOLDPENDING">
+	<summary>
+ On hold is pending on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PROCEEDING">
+	<summary>
+ Line is porceeding something.
+ </summary>
+</member><member name="F:Diacom.APCLineState.DISCONNECT">
+	<summary>
+ Line disconnects.
+ </summary>
+</member><member name="F:Diacom.APCLineState.ERROR">
+	<summary>
+ Error is on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.RING">
+	<summary>
+ Ring is on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PARK">
+	<summary>
+ Line is parked.
+ </summary>
+</member><member name="F:Diacom.APCLineState.SOFTOFFHOOK">
+	<summary>
+ Softoffhook.
+ </summary>
+</member><member name="F:Diacom.APCLineState.MUSICONHOLD">
+	<summary>
+ Line in in music on hold state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.XFER_WAITFORONHOOK">
+	<summary>
+ Line is waiting for onhook for XFER.
+ </summary>
+</member><member name="F:Diacom.APCLineState.XFER_RINGBACK">
+	<summary>
+ Ringback on line for XFER.
+ </summary>
+</member><member name="F:Diacom.APCLineState.BUSY">
+	<summary>
+ Line is busy.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PLAY">
+	<summary>
+ Something is playing on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.RECORD">
+	<summary>
+ Something is recording on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.APC">
+	<summary>
+ Line is under APC control.
+ </summary>
+</member><member name="F:Diacom.APCLineState.VOICE_RECORD_START">
+	<summary>
+ Voice recording started on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.VOICE_RECORD_STOP">
+	<summary>
+ Voice recording ended on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.SILENTMONITOR">
+	<summary>
+ Silent monitor on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.BARGEIN">
+	<summary>
+ Line is barged in.
+ </summary>
+</member><member name="F:Diacom.APCLineState.HOLD_CONFERENCE">
+	<summary>
+ Conference is held on the line (for conference mode).
+ </summary>
+</member><member name="F:Diacom.APCLineState.HFDTD_IDLE">
+	<summary>
+ Line is idle for offhook when hands free / dialtone disabled.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PLAY_CALL_STOP">
+	<summary>
+ Playing call is finished on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PLAY_CALL">
+	<summary>
+ Line is playing call.
+ </summary>
+</member><member name="F:Diacom.APCLineState.LINE_ADD">
+	<summary>
+ Line is added to the system.
+ </summary>
+</member><member name="F:Diacom.APCLineState.LINE_REMOVE">
+	<summary>
+ Line is removed from the system.
+ </summary>
+</member><member name="T:Diacom.APCLineState">
+	<summary>
+ APC line state.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineID">
+	<summary>
+ Line identificator (ID) - unique object that identifies the line.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineStatus">
+	<summary>
+ Current line status/state (see <see cref="T:Diacom.APCLineState"/> enumeration).
+ </summary>
+</member><member name="F:Diacom.LineClass.DIDNumber">
+	<summary>
+ DID number - the CO supplied DID.
+ </summary>
+</member><member name="F:Diacom.LineClass.CIDNumber">
+	<summary>
+ CID number - the CO supplied CID.
+ </summary>
+</member><member name="F:Diacom.LineClass.DNISNumber">
+	<summary>
+ DNIS number - the CO supplied DNIS.
+ </summary>
+</member><member name="F:Diacom.LineClass.UserNumber">
+	<summary>
+ User number.
+ </summary>
+</member><member name="F:Diacom.LineClass.CallNumber">
+	<summary>
+ Call number - the number that is currently called.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineName">
+	<summary>
+ Line name - the name (if any) assigned to that line.
+ </summary>
+</member><member name="F:Diacom.LineClass.DIDName">
+	<summary>
+ DID name - the CO supplied DID name.
+ </summary>
+</member><member name="F:Diacom.LineClass.CIDName">
+	<summary>
+ CID name - the CO supplied CID name.
+ </summary>
+</member><member name="F:Diacom.LineClass.DNISName">
+	<summary>
+ DNIS name  - the CO supplied DNIS name.
+ </summary>
+</member><member name="F:Diacom.LineClass.UserName">
+	<summary>
+ User name.
+ </summary>
+</member><member name="F:Diacom.LineClass.CallName">
+	<summary>
+ Call name - name that is currently called.
+ </summary>
+</member><member name="F:Diacom.LineClass.LinePort">
+	<summary>
+ Line port.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineNumber">
+	<summary>
+ Line number - the assigned line number.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineAccessCode">
+	<summary>
+ Line access code - the code that this line can be accessed.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineType">
+	<summary>
+ Line type.
+ </summary>
+</member><member name="M:Diacom.LineClass.Clone">
+	<summary>
+ Creates a new object that is a shallow copy of the current <see cref="T:Diacom.LineClass"/> instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="M:Diacom.LineClass.#ctor">
+	<summary>
+ Default class constructor.
+ </summary>
+	<remarks>
+		<para>All the fields of the class will have default (<c>Nothing</c> in most cases) values.</para>
+	</remarks>
+</member><member name="T:Diacom.LineClass">
+	<summary>
+ Describes a common information about a line shared by all components of the APCSDK.
+ </summary>
+</member>
+</members>
 </doc>

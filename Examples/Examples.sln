@@ -1,67 +1,37 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "APCLine", "..\APCLine\APCLine.vbproj", "{3D99DEB1-456B-421D-BDEF-D0F78741872D}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinesStateListener", "LinesStateListener\LinesStateListener.csproj", "{172E862B-83AA-4CC0-9657-F5AA5897E47C}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCore", "..\SP\SPCore.csproj", "{742943D6-9ED5-4F91-9A7F-518783AAD630}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MainScript", "MainScript\MainScript.vbproj", "{1C2C4274-284F-4AB3-A950-2177F4311395}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 5
-		SccLocalPath0 = .
-		CanCheckoutShared = false
-		SolutionUniqueID = {E119B1B2-FFC8-42B5-ACD4-15BC02766E85}
-		SccProjectUniqueName1 = ..\\APCLine\\APCLine.vbproj
-		SccProjectName1 = \u0022$/APCSDK/APCLine\u0022,\u0020DGBAAAAA
-		SccLocalPath1 = ..\\APCLine
-		CanCheckoutShared = false
-		SccProjectUniqueName2 = ..\\SP\\SPCore.csproj
-		SccProjectName2 = \u0022$/APCSDK/SP\u0022,\u0020XGBAAAAA
-		SccLocalPath2 = ..\\SP
-		CanCheckoutShared = false
-		SccProjectUniqueName3 = LinesStateListener\\LinesStateListener.csproj
-		SccLocalPath3 = .
-		CanCheckoutShared = false
-		SccProjectFilePathRelativizedFromConnection3 = LinesStateListener\\
-		SccProjectUniqueName4 = MainScript\\MainScript.vbproj
-		SccLocalPath4 = .
-		CanCheckoutShared = false
-		SccProjectFilePathRelativizedFromConnection4 = MainScript\\
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2C4274-284F-4AB3-A950-2177F4311395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2C4274-284F-4AB3-A950-2177F4311395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2C4274-284F-4AB3-A950-2177F4311395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2C4274-284F-4AB3-A950-2177F4311395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Debug.ActiveCfg = Debug|.NET
-		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Debug.Build.0 = Debug|.NET
-		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Release.ActiveCfg = Release|.NET
-		{3D99DEB1-456B-421D-BDEF-D0F78741872D}.Release.Build.0 = Release|.NET
-		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Debug.ActiveCfg = Debug|.NET
-		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Debug.Build.0 = Debug|.NET
-		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Release.ActiveCfg = Release|.NET
-		{172E862B-83AA-4CC0-9657-F5AA5897E47C}.Release.Build.0 = Release|.NET
-		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.ActiveCfg = Debug|.NET
-		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.Build.0 = Debug|.NET
-		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.ActiveCfg = Release|.NET
-		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.Build.0 = Release|.NET
-		{1C2C4274-284F-4AB3-A950-2177F4311395}.Debug.ActiveCfg = Debug|.NET
-		{1C2C4274-284F-4AB3-A950-2177F4311395}.Debug.Build.0 = Debug|.NET
-		{1C2C4274-284F-4AB3-A950-2177F4311395}.Release.ActiveCfg = Release|.NET
-		{1C2C4274-284F-4AB3-A950-2177F4311395}.Release.Build.0 = Release|.NET
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

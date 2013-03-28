@@ -3,3 +3,8 @@ I:\ProjectsGIT\APCSDK\APCSetup\APCRegKeys\bin\Debug\APCRegKeys.pdb
 I:\ProjectsGIT\APCSDK\APCSetup\APCRegKeys\obj\Debug\ResolveAssemblyReference.cache
 I:\ProjectsGIT\APCSDK\APCSetup\APCRegKeys\obj\Debug\APCRegKeys.exe
 I:\ProjectsGIT\APCSDK\APCSetup\APCRegKeys\obj\Debug\APCRegKeys.pdb
+C:\Projects\APCSDK\APCSetup\APCRegKeys\bin\Debug\APCRegKeys.exe
+C:\Projects\APCSDK\APCSetup\APCRegKeys\bin\Debug\APCRegKeys.pdb
+C:\Projects\APCSDK\APCSetup\APCRegKeys\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\APCSDK\APCSetup\APCRegKeys\obj\Debug\APCRegKeys.exe
+C:\Projects\APCSDK\APCSetup\APCRegKeys\obj\Debug\APCRegKeys.pdb

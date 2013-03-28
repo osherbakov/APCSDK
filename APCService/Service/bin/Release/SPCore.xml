@@ -4,6 +4,428 @@
         <name>SPCore</name>
     </assembly>
     <members>
+        <member name="T:Diacom.SPLineState">
+            <summary>
+            Service Provider (SP) line state.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.IDLE">
+            <summary>
+            Line is idle.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.EAP">
+            <summary>
+            EAP line state.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.CONNECTED">
+            <summary>
+            Line is connected.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.INUSE">
+            <summary>
+            Line is in use.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.OFFHOOK">
+            <summary>
+            Offhook.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.CALLPENDING">
+            <summary>
+            Pending call is on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.RINGBACK">
+            <summary>
+            Ring backs.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.CONFERENCING">
+            <summary>
+            Conference on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.AA">
+            <summary>
+            Autoateddant on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.VM">
+            <summary>
+            Voice message on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HOLD">
+            <summary>
+            Line is hold.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HOLDPENDING">
+            <summary>
+            Pending hold is on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PROCEEDING">
+            <summary>
+            Line is porceeding something.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.DISCONNECT">
+            <summary>
+            Line disconnects.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.ERROR">
+            <summary>
+            Error on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.RING">
+            <summary>
+            Ring on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PARK">
+            <summary>
+            Line is parked.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.SOFTOFFHOOK">
+            <summary>
+            Softoffhook.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.MUSICONHOLD">
+            <summary>
+            Line holds music on.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.XFER_WAITFORONHOOK">
+            <summary>
+            Line is waiting for onhook for XFER.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.XFER_RINGBACK">
+            <summary>
+            Ring is back on line for XFER.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.BUSY">
+            <summary>
+            Line is busy.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PLAY">
+            <summary>
+            Something plays on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.RECORD">
+            <summary>
+            Something records on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.APC">
+            <summary>
+            Line is under APC control.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.VOICE_RECORD_START">
+            <summary>
+            Voice recording started on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.VOICE_RECORD_STOP">
+            <summary>
+            Voice recording ended on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.SILENTMONITOR">
+            <summary>
+            Silent monitor on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.BARGEIN">
+            <summary>
+            Line is barged in.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HOLD_CONFERENCE">
+            <summary>
+            Conference holded on the line (for conference mode).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HFDTD_IDLE">
+            <summary>
+            Line is idle for offhook when hand free / dialtone disabled.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PLAY_CALL_STOP">
+            <summary>
+            Playing call is finished on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PLAY_CALL">
+            <summary>
+            Line is playing call.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.LINE_ADD">
+            <summary>
+            New line added.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.LINE_REMOVE">
+            <summary>
+            Line not accessible any more.
+            </summary>
+        </member>
+        <member name="T:Diacom.Identity">
+            <summary>
+            Identity for any possible name - number objects.
+            </summary>
+        </member>
+        <member name="F:Diacom.Identity._Name">
+            <summary>
+            Storage for a name.
+            </summary>
+        </member>
+        <member name="F:Diacom.Identity._Number">
+            <summary>
+            Storage for a number.
+            </summary>
+        </member>
+        <member name="M:Diacom.Identity.#ctor(System.String,System.String)">
+            <summary>
+            Creates and initializes new instance of a class.
+            </summary>
+            <param name="name">Name of the entity.</param>
+            <param name="number">Number of the entity.</param>
+        </member>
+        <member name="M:Diacom.Identity.ToString">
+            <summary>
+            Represents class information as a string.
+            </summary>
+            <returns>String with class information.</returns>
+        </member>
+        <member name="P:Diacom.Identity.Name">
+            <summary>
+            Gets entity name.
+            </summary>
+        </member>
+        <member name="P:Diacom.Identity.Number">
+            <summary>
+            Gets entity number.
+            </summary>
+        </member>
+        <member name="T:Diacom.CalleeIdentity">
+            <summary>
+            Represents information on callee.
+            </summary>
+        </member>
+        <member name="F:Diacom.CalleeIdentity._LineID">
+            <summary>
+            Storage for callee line PAD.
+            </summary>
+        </member>
+        <member name="M:Diacom.CalleeIdentity.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            Creates and initializes new instance of a class.
+            </summary>
+            <param name="name">Name of the callee.</param>
+            <param name="number">Number of the callee.</param>
+            <param name="lineID">Callee line ID.</param>
+        </member>
+        <member name="M:Diacom.CalleeIdentity.ToString">
+            <summary>
+            Represents class information as a string.
+            </summary>
+            <returns>String with information on callee.</returns>
+        </member>
+        <member name="P:Diacom.CalleeIdentity.LineID">
+            <summary>
+            gets callee line ID.
+            </summary>
+        </member>
+        <member name="T:Diacom.CallerIdentity">
+            <summary>
+            Represents information on caller.
+            </summary>
+        </member>
+        <member name="F:Diacom.CallerIdentity._IPAddress">
+            <summary>
+            Storage for caller IP address.
+            </summary>
+        </member>
+        <member name="F:Diacom.CallerIdentity._LineID">
+            <summary>
+            Storage for caller line PAD.
+            </summary>
+        </member>
+        <member name="M:Diacom.CallerIdentity.#ctor(System.String,System.String,System.Object,System.Net.IPAddress)">
+            <summary>
+            Creates and initializes new instance of a class.
+            </summary>
+            <param name="name">Name of the caller.</param>
+            <param name="number">Number of the caller.</param>
+            <param name="lineID">Caller line ID.</param>
+            <param name="sIPAddress">Caller IP address.</param>
+        </member>
+        <member name="M:Diacom.CallerIdentity.ToString">
+            <summary>
+            Represents class information as a string.
+            </summary>
+            <returns>String with information on callee.</returns>
+        </member>
+        <member name="P:Diacom.CallerIdentity.LineID">
+            <summary>
+            Gets caller line ID.
+            </summary>
+        </member>
+        <member name="P:Diacom.CallerIdentity.IP">
+            <summary>
+            Gets caller IP address.
+            </summary>
+        </member>
+        <member name="T:Diacom.SPLine">
+            <summary>
+            Implements information about a line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.ToStringFormat">
+            <summary>
+            Format string for <see cref="M:Diacom.SPLine.ToString"/>() method.
+            </summary>
+            <remarks>
+            Actually is the following string:
+            <pre>  ID | Number     | Name                           | Port     | Prefix   | Status               | Type | User Name                      | User Number | Call Name                      | Call Number | CID Name                       | CID NUmber  | DID Name                       | DID Number  | DNIS Name                      | DNIS Number</pre>
+            </remarks>
+        </member>
+        <member name="F:Diacom.SPLine.ToStringSeparator">
+            <summary>
+            Separator string for <see cref="M:Diacom.SPLine.ToString"/>() method.
+            </summary>
+            <remarks>
+            Actually is the following string:
+            <pre>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre>
+            </remarks>
+        </member>
+        <member name="F:Diacom.SPLine.AccessCode">
+            <summary>
+            Access code for a line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.ID">
+            <summary>
+            Line identificator (ID).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Name">
+            <summary>
+            Name of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Number">
+            <summary>
+            Line number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.PAD">
+            <summary>
+            Line PAD.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Port">
+            <summary>
+            Line port.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Prefix">
+            <summary>
+            Line prefix.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.State">
+            <summary>
+            Current line status (see <see cref="T:Diacom.SPLineState"/> enumeration).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Type">
+            <summary>
+            Line type.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CalledName">
+            <summary>
+            Call name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CalledNumber">
+            <summary>
+            Call number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CIDName">
+            <summary>
+            CID name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CIDNumber">
+            <summary>
+            CID number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DIDName">
+            <summary>
+            DID name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DIDNumber">
+            <summary>
+            DID number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DNISName">
+            <summary>
+            DNIS name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DNISNumber">
+            <summary>
+            DNIS number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.UserName">
+            <summary>
+            User name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.UserNumber">
+            <summary>
+            User number.
+            </summary>
+        </member>
+        <member name="M:Diacom.SPLine.Clone">
+            <summary>
+            Creates a shallow copy of the current object.
+            </summary>
+            <returns>Copy of SPLine class.</returns>
+        </member>
+        <member name="M:Diacom.SPLine.ToString">
+            <summary>
+            Converts content of class to string.
+            </summary>
+            <returns>String presentation of class properties.</returns>
+        </member>
+        <member name="M:Diacom.SPLine.#ctor">
+            <summary>
+            Creates class instance with default properties.
+            </summary>
+        </member>
         <member name="T:Diacom.SPLogonType">
             <summary>
             Possible logon types.
@@ -941,468 +1363,41 @@
             </summary>
             <param name="ex">Exception to handle.</param>
         </member>
-        <member name="T:Diacom.WaitingQueue">
+        <member name="T:Diacom.WaitingQueue`1">
             <summary>
             Implements thread-safe queue.
             </summary>
         </member>
-        <member name="F:Diacom.WaitingQueue.queueHasData">
+        <member name="F:Diacom.WaitingQueue`1.queueHasData">
             <summary>
             Event that signales about queue is not empty - data already stored in queue.
             </summary>
         </member>
-        <member name="F:Diacom.WaitingQueue.dataQueue">
+        <member name="F:Diacom.WaitingQueue`1.dataQueue">
             <summary>
             The queue itself.
             </summary>
         </member>
-        <member name="M:Diacom.WaitingQueue.#ctor">
-            <summary>
-            Initializes fiels - nothing else should be done.
-            </summary>
-        </member>
-        <member name="M:Diacom.WaitingQueue.Enqueue(System.Object)">
+        <member name="M:Diacom.WaitingQueue`1.Enqueue(`0)">
             <summary>
             Puts element into the queue.
             </summary>
             <param name="data">Element to put in.</param>
         </member>
-        <member name="M:Diacom.WaitingQueue.Dequeue">
+        <member name="M:Diacom.WaitingQueue`1.Dequeue">
             <summary>
             Extracts element from the queue.
             </summary>
             <returns>Extracted element.</returns>
         </member>
-        <member name="M:Diacom.WaitingQueue.Clear">
+        <member name="M:Diacom.WaitingQueue`1.Clear">
             <summary>
             Clears queue.
             </summary>
         </member>
-        <member name="P:Diacom.WaitingQueue.Count">
+        <member name="P:Diacom.WaitingQueue`1.Count">
             <summary>
             Gets quantity of elements in queue.
-            </summary>
-        </member>
-        <member name="T:Diacom.SPLineState">
-            <summary>
-            Service Provider (SP) line state.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.IDLE">
-            <summary>
-            Line is idle.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.EAP">
-            <summary>
-            EAP line state.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.CONNECTED">
-            <summary>
-            Line is connected.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.INUSE">
-            <summary>
-            Line is in use.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.OFFHOOK">
-            <summary>
-            Offhook.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.CALLPENDING">
-            <summary>
-            Pending call is on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.RINGBACK">
-            <summary>
-            Ring backs.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.CONFERENCING">
-            <summary>
-            Conference on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.AA">
-            <summary>
-            Autoateddant on line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.VM">
-            <summary>
-            Voice message on line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.HOLD">
-            <summary>
-            Line is hold.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.HOLDPENDING">
-            <summary>
-            Pending hold is on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.PROCEEDING">
-            <summary>
-            Line is porceeding something.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.DISCONNECT">
-            <summary>
-            Line disconnects.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.ERROR">
-            <summary>
-            Error on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.RING">
-            <summary>
-            Ring on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.PARK">
-            <summary>
-            Line is parked.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.SOFTOFFHOOK">
-            <summary>
-            Softoffhook.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.MUSICONHOLD">
-            <summary>
-            Line holds music on.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.XFER_WAITFORONHOOK">
-            <summary>
-            Line is waiting for onhook for XFER.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.XFER_RINGBACK">
-            <summary>
-            Ring is back on line for XFER.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.BUSY">
-            <summary>
-            Line is busy.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.PLAY">
-            <summary>
-            Something plays on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.RECORD">
-            <summary>
-            Something records on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.APC">
-            <summary>
-            Line is under APC control.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.VOICE_RECORD_START">
-            <summary>
-            Voice recording started on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.VOICE_RECORD_STOP">
-            <summary>
-            Voice recording ended on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.SILENTMONITOR">
-            <summary>
-            Silent monitor on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.BARGEIN">
-            <summary>
-            Line is barged in.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.HOLD_CONFERENCE">
-            <summary>
-            Conference holded on the line (for conference mode).
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.HFDTD_IDLE">
-            <summary>
-            Line is idle for offhook when hand free / dialtone disabled.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.PLAY_CALL_STOP">
-            <summary>
-            Playing call is finished on the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.PLAY_CALL">
-            <summary>
-            Line is playing call.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.LINE_ADD">
-            <summary>
-            New line added.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLineState.LINE_REMOVE">
-            <summary>
-            Line not accessible any more.
-            </summary>
-        </member>
-        <member name="T:Diacom.Identity">
-            <summary>
-            Identity for any possible name - number objects.
-            </summary>
-        </member>
-        <member name="F:Diacom.Identity._Name">
-            <summary>
-            Storage for a name.
-            </summary>
-        </member>
-        <member name="F:Diacom.Identity._Number">
-            <summary>
-            Storage for a number.
-            </summary>
-        </member>
-        <member name="M:Diacom.Identity.#ctor(System.String,System.String)">
-            <summary>
-            Creates and initializes new instance of a class.
-            </summary>
-            <param name="name">Name of the entity.</param>
-            <param name="number">Number of the entity.</param>
-        </member>
-        <member name="M:Diacom.Identity.ToString">
-            <summary>
-            Represents class information as a string.
-            </summary>
-            <returns>String with class information.</returns>
-        </member>
-        <member name="P:Diacom.Identity.Name">
-            <summary>
-            Gets entity name.
-            </summary>
-        </member>
-        <member name="P:Diacom.Identity.Number">
-            <summary>
-            Gets entity number.
-            </summary>
-        </member>
-        <member name="T:Diacom.CalleeIdentity">
-            <summary>
-            Represents information on callee.
-            </summary>
-        </member>
-        <member name="F:Diacom.CalleeIdentity._LineID">
-            <summary>
-            Storage for callee line PAD.
-            </summary>
-        </member>
-        <member name="M:Diacom.CalleeIdentity.#ctor(System.String,System.String,System.Object)">
-            <summary>
-            Creates and initializes new instance of a class.
-            </summary>
-            <param name="name">Name of the callee.</param>
-            <param name="number">Number of the callee.</param>
-            <param name="lineID">Callee line ID.</param>
-        </member>
-        <member name="M:Diacom.CalleeIdentity.ToString">
-            <summary>
-            Represents class information as a string.
-            </summary>
-            <returns>String with information on callee.</returns>
-        </member>
-        <member name="P:Diacom.CalleeIdentity.LineID">
-            <summary>
-            gets callee line ID.
-            </summary>
-        </member>
-        <member name="T:Diacom.CallerIdentity">
-            <summary>
-            Represents information on caller.
-            </summary>
-        </member>
-        <member name="F:Diacom.CallerIdentity._IPAddress">
-            <summary>
-            Storage for caller IP address.
-            </summary>
-        </member>
-        <member name="F:Diacom.CallerIdentity._LineID">
-            <summary>
-            Storage for caller line PAD.
-            </summary>
-        </member>
-        <member name="M:Diacom.CallerIdentity.#ctor(System.String,System.String,System.Object,System.Net.IPAddress)">
-            <summary>
-            Creates and initializes new instance of a class.
-            </summary>
-            <param name="name">Name of the caller.</param>
-            <param name="number">Number of the caller.</param>
-            <param name="lineID">Caller line ID.</param>
-            <param name="sIPAddress">Caller IP address.</param>
-        </member>
-        <member name="M:Diacom.CallerIdentity.ToString">
-            <summary>
-            Represents class information as a string.
-            </summary>
-            <returns>String with information on callee.</returns>
-        </member>
-        <member name="P:Diacom.CallerIdentity.LineID">
-            <summary>
-            Gets caller line ID.
-            </summary>
-        </member>
-        <member name="P:Diacom.CallerIdentity.IP">
-            <summary>
-            Gets caller IP address.
-            </summary>
-        </member>
-        <member name="T:Diacom.SPLine">
-            <summary>
-            Implements information about a line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.ToStringFormat">
-            <summary>
-            Format string for <see cref="M:Diacom.SPLine.ToString"/>() method.
-            </summary>
-            <remarks>
-            Actually is the following string:
-            <pre>  ID | Number     | Name                           | Port     | Prefix   | Status               | Type | User Name                      | User Number | Call Name                      | Call Number | CID Name                       | CID NUmber  | DID Name                       | DID Number  | DNIS Name                      | DNIS Number</pre>
-            </remarks>
-        </member>
-        <member name="F:Diacom.SPLine.ToStringSeparator">
-            <summary>
-            Separator string for <see cref="M:Diacom.SPLine.ToString"/>() method.
-            </summary>
-            <remarks>
-            Actually is the following string:
-            <pre>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre>
-            </remarks>
-        </member>
-        <member name="F:Diacom.SPLine.AccessCode">
-            <summary>
-            Access code for a line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.ID">
-            <summary>
-            Line identificator (ID).
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.Name">
-            <summary>
-            Name of the line.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.Number">
-            <summary>
-            Line number.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.PAD">
-            <summary>
-            Line PAD.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.Port">
-            <summary>
-            Line port.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.Prefix">
-            <summary>
-            Line prefix.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.State">
-            <summary>
-            Current line status (see <see cref="T:Diacom.SPLineState"/> enumeration).
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.Type">
-            <summary>
-            Line type.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.CalledName">
-            <summary>
-            Call name.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.CalledNumber">
-            <summary>
-            Call number.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.CIDName">
-            <summary>
-            CID name.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.CIDNumber">
-            <summary>
-            CID number.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.DIDName">
-            <summary>
-            DID name.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.DIDNumber">
-            <summary>
-            DID number.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.DNISName">
-            <summary>
-            DNIS name.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.DNISNumber">
-            <summary>
-            DNIS number.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.UserName">
-            <summary>
-            User name.
-            </summary>
-        </member>
-        <member name="F:Diacom.SPLine.UserNumber">
-            <summary>
-            User number.
-            </summary>
-        </member>
-        <member name="M:Diacom.SPLine.Clone">
-            <summary>
-            Creates a shallow copy of the current object.
-            </summary>
-            <returns>Copy of SPLine class.</returns>
-        </member>
-        <member name="M:Diacom.SPLine.ToString">
-            <summary>
-            Converts content of class to string.
-            </summary>
-            <returns>String presentation of class properties.</returns>
-        </member>
-        <member name="M:Diacom.SPLine.#ctor">
-            <summary>
-            Creates class instance with default properties.
             </summary>
         </member>
     </members>

@@ -97,6 +97,31 @@
             <param name="ProviderFileName">A type of the Service provider to instantiate.</param>
             <returns></returns>
         </member>
+        <member name="T:Diacom.APCService.ScriptHandler">
+            <summary>
+            Represents all needfull actions for script to run.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ScriptHandler.LoginToServer">
+            <summary>
+            Login to Server.
+            </summary>
+            <returns>True if success, otherwise false.</returns>
+        </member>
+        <member name="M:Diacom.APCService.ScriptHandler.Dispose">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ScriptHandler.#ctor(System.String,System.String,System.Type,Diacom.APCService.APCServiceOptions)">
+            <summary>
+            Creates the instance of the class with specified parameters.
+            </summary>
+            <param name="aScriptFileName">The name of the main script file.</param>
+            <param name="aServiceName">The name of current Service.</param>
+            <param name="aSPType">The type of Service Provider for that script.</param>
+            <param name="aAPCServiceOptions">The options (like Logon info and so on) of type <see cref="T:Diacom.APCService.APCServiceOptions"/>.</param>
+        </member>
         <member name="T:Diacom.APCService.ProjectInstaller">
             <summary>
             Summary description for ProjectInstaller.
@@ -121,22 +146,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Diacom.APCService.ScriptHandler">
-            <summary>
-            Represents all needfull actions for script to run.
-            </summary>
-        </member>
-        <member name="M:Diacom.APCService.ScriptHandler.LoginToServer">
-            <summary>
-            Login to Server.
-            </summary>
-            <returns>True if success, otherwise false.</returns>
-        </member>
-        <member name="M:Diacom.APCService.ScriptHandler.Dispose">
-            <summary>
-            Cleans up any resources being used.
             </summary>
         </member>
     </members>

@@ -3,3 +3,6 @@ I:\ProjectsGIT\APCSDK\APCExe\obj\Debug\APCExe.csproj.ResolveComReference.cache
 I:\ProjectsGIT\APCSDK\APCExe\obj\Debug\APCExe.exe
 I:\ProjectsGIT\APCSDK\APCExe\obj\Debug\APCExe.pdb
 I:\ProjectsGIT\APCSDK\APCExe\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\APCSDK\APCExe\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\APCSDK\APCExe\obj\Debug\Interop.AltiComLib.dll
+C:\Projects\APCSDK\APCExe\obj\Debug\APCExe.csproj.ResolveComReference.cache
