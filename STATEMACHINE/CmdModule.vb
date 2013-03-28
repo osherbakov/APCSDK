@@ -569,9 +569,7 @@ Namespace Diacom.APCStates
                                 DBGLN(_line, "Event from SP:" & [Enum].GetName(GetType(Ev.EventID), _eventType))
                                 _line.LastEvent = "I"
                                 _line.LastEventParameter = ""
-                                If (APCStateControl.ConfigData Xor Const1) = &H2012 Then
-                                    _line.FireStateEvent(_line.EventLine, APCEvents.CONNECT, Nothing, True)
-                                End If
+                                _line.FireStateEvent(_line.EventLine, APCEvents.CONNECT, Nothing, True)
 
                             Case Ev.EventID.DIGIT
                                 Dim _ed As Ev.Digit = CType(spEvent, Ev.Digit)

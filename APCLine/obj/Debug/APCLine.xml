@@ -6,363 +6,254 @@ APCLine
 </name>
 </assembly>
 <members>
-<member name="F:Diacom.APCLineState.IDLE">
+<member name="F:Diacom.APCEvents.NEWSTATE">
 	<summary>
- Line is idle.
+ Go to new state.
  </summary>
-</member><member name="F:Diacom.APCLineState.EAP">
+</member><member name="F:Diacom.APCEvents.EXECUTE">
 	<summary>
- EAP line state.
+ Execute the code thru the method.
  </summary>
-</member><member name="F:Diacom.APCLineState.CONNECTED">
+</member><member name="F:Diacom.APCEvents.COMMANDOK">
 	<summary>
- Line is connected.
+ The last command was executed and returned status is OK.
  </summary>
-</member><member name="F:Diacom.APCLineState.INUSE">
+</member><member name="F:Diacom.APCEvents.COMMANDFAIL">
 	<summary>
- Line is in use.
+ The last command was executed and returned FAIL status.
  </summary>
-</member><member name="F:Diacom.APCLineState.OFFHOOK">
+</member><member name="F:Diacom.APCEvents.RINGBACK">
 	<summary>
- Offhook.
+ The DIAL or RING command had executed and the given line is ringing now.
  </summary>
-</member><member name="F:Diacom.APCLineState.CALLPENDING">
+</member><member name="F:Diacom.APCEvents.THENCONTINUE">
 	<summary>
- Pending call is on the line.
+ The block of previously issued commands was successfully executed.
  </summary>
-</member><member name="F:Diacom.APCLineState.RINGBACK">
+</member><member name="F:Diacom.APCEvents.ELSECONTINUE">
 	<summary>
- Ringback state.
+ The block of previously issued commands had failed.
  </summary>
-</member><member name="F:Diacom.APCLineState.CONFERENCING">
+</member><member name="F:Diacom.APCEvents.DIGIT">
 	<summary>
- Conference on the line.
+ DTMF Digit was issued on the selected line.
  </summary>
-</member><member name="F:Diacom.APCLineState.AA">
+</member><member name="F:Diacom.APCEvents.RING">
 	<summary>
- Autoateddant state.
+ There is an incoming ring on the line.
  </summary>
-</member><member name="F:Diacom.APCLineState.VM">
+</member><member name="F:Diacom.APCEvents.CONNECT">
 	<summary>
- Voice mail state.
+ The line is either under APC control or connect signal came from the line.
  </summary>
-</member><member name="F:Diacom.APCLineState.HOLD">
+</member><member name="F:Diacom.APCEvents.DISCONNECT">
 	<summary>
- Line is on hold.
+ Disconnect / Hang up signal came from the line.
  </summary>
-</member><member name="F:Diacom.APCLineState.HOLDPENDING">
+</member><member name="F:Diacom.APCEvents.ALERTED">
 	<summary>
- On hold is pending on the line.
+ Voice activity or other signal came from the line.
  </summary>
-</member><member name="F:Diacom.APCLineState.PROCEEDING">
+</member><member name="F:Diacom.APCEvents.DISCONNECTLINK">
 	<summary>
- Line is porceeding something.
+ The disconnect signal came from the linked line.
  </summary>
-</member><member name="F:Diacom.APCLineState.DISCONNECT">
+</member><member name="F:Diacom.APCEvents.WAITERROR">
 	<summary>
- Line disconnects.
+ The command that was issued with timeout parameter was not executed withing a specified time.
  </summary>
-</member><member name="F:Diacom.APCLineState.ERROR">
+</member><member name="F:Diacom.APCEvents.TIMEOUT">
 	<summary>
- Error is on the line.
+ Global timeout for the line was exceeded.
  </summary>
-</member><member name="F:Diacom.APCLineState.RING">
+</member><member name="F:Diacom.APCEvents.QUERYREADY">
 	<summary>
- Ring is on the line.
+ The async query from SQL server returned result or async function call was executed.
  </summary>
-</member><member name="F:Diacom.APCLineState.PARK">
+</member><member name="F:Diacom.APCEvents.LINKREQUEST">
 	<summary>
- Line is parked.
+ The line is requesting to be placed under the control of another line.
  </summary>
-</member><member name="F:Diacom.APCLineState.SOFTOFFHOOK">
+</member><member name="F:Diacom.APCEvents.LINKRELEASE">
 	<summary>
- Softoffhook.
+ The line is returning from the control of another line .
  </summary>
-</member><member name="F:Diacom.APCLineState.MUSICONHOLD">
+</member><member name="F:Diacom.APCEvents.GRANTREQUEST">
 	<summary>
- Line in in music on hold state.
+ The line is informing that it is ready to be under control of another line.
  </summary>
-</member><member name="F:Diacom.APCLineState.XFER_WAITFORONHOOK">
+</member><member name="T:Diacom.APCEvents">
 	<summary>
- Line is waiting for onhook for XFER.
+ Represents the internal system-independent events that state machine processes.
  </summary>
-</member><member name="F:Diacom.APCLineState.XFER_RINGBACK">
+</member><member name="F:Diacom.APCEventArgs.DestinationLine">
 	<summary>
- Ringback on line for XFER.
+ The line for which that event is assigned.
  </summary>
-</member><member name="F:Diacom.APCLineState.BUSY">
+</member><member name="F:Diacom.APCEventArgs.EventType">
 	<summary>
- Line is busy.
+ Event type (member of <see cref="T:Diacom.APCEvents"/> enumeration).
  </summary>
-</member><member name="F:Diacom.APCLineState.PLAY">
+</member><member name="F:Diacom.APCEventArgs.EventParam">
 	<summary>
- Something is playing on the line.
+ Parameters for one of the <see cref="T:Diacom.APCEvents"/> enumeration member.
  </summary>
-</member><member name="F:Diacom.APCLineState.RECORD">
+</member><member name="F:Diacom.APCEventArgs.CallLineFilter">
 	<summary>
- Something is recording on the line.
+ Specifies if the event should go through the line filter or not.
  </summary>
-</member><member name="F:Diacom.APCLineState.APC">
+</member><member name="T:Diacom.APCEventArgs">
 	<summary>
- Line is under APC control.
+ Holds parameters passed with the APCEvents.
  </summary>
-</member><member name="F:Diacom.APCLineState.VOICE_RECORD_START">
+</member><member name="F:Diacom.APCLine.CallRingTime">
 	<summary>
- Voice recording started on the line.
+ Total time the call continued.
  </summary>
-</member><member name="F:Diacom.APCLineState.VOICE_RECORD_STOP">
+</member><member name="F:Diacom.APCLine.CallConnectTime">
 	<summary>
- Voice recording ended on the line.
+ Time the connection started.
  </summary>
-</member><member name="F:Diacom.APCLineState.SILENTMONITOR">
+</member><member name="F:Diacom.APCLine.CallDisconnectTime">
 	<summary>
- Silent monitor on the line.
+ Time the connection ended.
  </summary>
-</member><member name="F:Diacom.APCLineState.BARGEIN">
+</member><member name="F:Diacom.APCLine.Timeout">
 	<summary>
- Line is barged in.
+ Timeout for the line.
  </summary>
-</member><member name="F:Diacom.APCLineState.HOLD_CONFERENCE">
+</member><member name="F:Diacom.APCLine.CurrentLanguageSet">
 	<summary>
- Conference is held on the line (for conference mode).
+ Current language for the line.
  </summary>
-</member><member name="F:Diacom.APCLineState.HFDTD_IDLE">
+</member><member name="F:Diacom.APCLine.LinkLine">
 	<summary>
- Line is idle for offhook when hands free / dialtone disabled.
+ Line to link to.
  </summary>
-</member><member name="F:Diacom.APCLineState.PLAY_CALL_STOP">
+</member><member name="F:Diacom.APCLine.EventLine">
 	<summary>
- Playing call is finished on the line.
+ The line all events will came to.
  </summary>
-</member><member name="F:Diacom.APCLineState.PLAY_CALL">
+</member><member name="E:Diacom.APCLine.APCStateEvent">
 	<summary>
- Line is playing call.
+ Occurs when line status has been chanded.
  </summary>
-</member><member name="F:Diacom.APCLineState.LINE_ADD">
+</member><member name="M:Diacom.APCLine.#ctor(System.String)">
 	<summary>
- Line is added to the system.
+ Initializes new instance of the class with default parameters.
  </summary>
-</member><member name="F:Diacom.APCLineState.LINE_REMOVE">
+</member><member name="P:Diacom.APCLine.Item(System.String)">
 	<summary>
- Line is removed from the system.
+ Implements access to a named variables.
  </summary>
-</member><member name="T:Diacom.APCLineState">
+	<param name="NameString">Name of the variable.</param>
+	<value>Variable value or <c>Nothing</c> if no variable with this name available.</value>
+</member><member name="P:Diacom.APCLine.Var(System.String)">
 	<summary>
- APC line state.
+ Implements access to a named variables.
  </summary>
-</member><member name="F:Diacom.LineClass.LineID">
+	<param name="NameString">Name of the variable.</param>
+	<value>Variable value or <c>Nothing</c> if no variable with this name available.</value>
+</member><member name="P:Diacom.APCLine.Vars">
 	<summary>
- Line identificator (ID) - unique object that identifies the line.
+ Gets a <see cref="T:System.Collections.Hashtable"/> of all named variables.
  </summary>
-</member><member name="F:Diacom.LineClass.LineStatus">
+	<value><see cref="T:System.Collections.Hashtable"/> of all named variables.</value>
+</member><member name="M:Diacom.APCLine.FullStateName(System.String)">
 	<summary>
- Current line status/state (see <see cref="T:Diacom.APCLineState"/> enumeration).
+ Function that returns a full state name.
  </summary>
-</member><member name="F:Diacom.LineClass.DIDNumber">
+	<param name="StateName">Name of the state.</param>
+	<returns>Full state name.</returns>
+	<remarks>
+		<para>Full state name for the state is something like:</para>
+		<para>ZZZZ with no module -&gt; ZZZZ</para>
+		<para>ZZZZ with module MMMM -&gt; MMMM.ZZZZ</para>
+		<para>.ZZZZ with any module -&gt; ZZZZ</para>
+	</remarks>
+</member><member name="P:Diacom.APCLine.State">
 	<summary>
- DID number - the CO supplied DID.
+ Gets current line state.
  </summary>
-</member><member name="F:Diacom.LineClass.CIDNumber">
+	<value>Current line state.</value>
+</member><member name="M:Diacom.APCLine.PopState">
 	<summary>
- CID number - the CO supplied CID.
+ Returns line to the previous state.
  </summary>
-</member><member name="F:Diacom.LineClass.DNISNumber">
+</member><member name="M:Diacom.APCLine.Init">
 	<summary>
- DNIS number - the CO supplied DNIS.
- </summary>
-</member><member name="F:Diacom.LineClass.UserNumber">
-	<summary>
- User number.
- </summary>
-</member><member name="F:Diacom.LineClass.CallNumber">
-	<summary>
- Call number - the number that is currently called.
- </summary>
-</member><member name="F:Diacom.LineClass.LineName">
-	<summary>
- Line name - the name (if any) assigned to that line.
- </summary>
-</member><member name="F:Diacom.LineClass.DIDName">
-	<summary>
- DID name - the CO supplied DID name.
- </summary>
-</member><member name="F:Diacom.LineClass.CIDName">
-	<summary>
- CID name - the CO supplied CID name.
- </summary>
-</member><member name="F:Diacom.LineClass.DNISName">
-	<summary>
- DNIS name  - the CO supplied DNIS name.
- </summary>
-</member><member name="F:Diacom.LineClass.UserName">
-	<summary>
- User name.
- </summary>
-</member><member name="F:Diacom.LineClass.CallName">
-	<summary>
- Call name - name that is currently called.
- </summary>
-</member><member name="F:Diacom.LineClass.LinePort">
-	<summary>
- Line port.
- </summary>
-</member><member name="F:Diacom.LineClass.LineNumber">
-	<summary>
- Line number - the assigned line number.
- </summary>
-</member><member name="F:Diacom.LineClass.LineAccessCode">
-	<summary>
- Line access code - the code that this line can be accessed.
- </summary>
-</member><member name="F:Diacom.LineClass.LineType">
-	<summary>
- Line type.
- </summary>
-</member><member name="M:Diacom.LineClass.Clone">
-	<summary>
- Creates a new object that is a shallow copy of the current <see cref="T:Diacom.LineClass"/> instance.
- </summary>
-	<returns>A new object that is a copy of this instance.</returns>
-</member><member name="M:Diacom.LineClass.#ctor">
-	<summary>
- Default class constructor.
+ Initializes the line.
  </summary>
 	<remarks>
-		<para>All the fields of the class will have default (<c>Nothing</c> in most cases) values.</para>
-	</remarks>
-</member><member name="T:Diacom.LineClass">
+ All the values will be set by default.
+ </remarks>
+</member><member name="P:Diacom.APCLine.InitialState">
 	<summary>
- Describes a common information about a line shared by all components of the APCSDK.
+ Gets initial state of the line.
  </summary>
-</member><member name="F:Diacom.DataRecord.m_Records">
+	<value>Initial state of the line.</value>
+</member><member name="P:Diacom.APCLine.LastEvent">
 	<summary>
- Collection of elements in record.
+ Gets last event occurred on the line.
  </summary>
-</member><member name="F:Diacom.DataRecord.m_FieldNames">
+	<value>Last event occurred on the line.</value>
+</member><member name="P:Diacom.APCLine.LastEventParameter">
 	<summary>
- Collection of field names.
+ Gets  parameter of the last event occurred on the line.
  </summary>
-</member><member name="F:Diacom.DataRecord.m_Index">
+	<value>Parameter of the last event occurred on the line.</value>
+</member><member name="P:Diacom.APCLine.LastDigit">
 	<summary>
- Index for NextRecord interface.
+ Gets last digit on the line if available.
  </summary>
-</member><member name="F:Diacom.DataRecord.m_Enum">
+	<value>Last digit on the line if available.</value>
+</member><member name="P:Diacom.APCLine.AllDigits">
 	<summary>
- Index for IEnumerator interface.
+ Gets all digits for the line.
  </summary>
-</member><member name="F:Diacom.DataRecord.m_Data">
+	<value>All digits for the line.</value>
+</member><member name="P:Diacom.APCLine.InCallTime">
 	<summary>
- Current data.
+ Gets current duration of the call.
  </summary>
-</member><member name="M:Diacom.DataRecord.#ctor">
+	<value>Current duration of the call.</value>
+</member><member name="P:Diacom.APCLine.CallDuration">
 	<summary>
- Creates a new instance of <see cref="T:Diacom.DataRecord"/> class with default parameters.
+ Gets total duration of the call.
  </summary>
-</member><member name="M:Diacom.DataRecord.#ctor(System.String[])">
+	<value>Total duration of the call.</value>
+</member><member name="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)">
 	<summary>
- Creates a new instance of <see cref="T:Diacom.DataRecord"/> class with Field names as parameters.
+ Raizes event of given type for the given line with given event data and data filter.
  </summary>
-	<param name="fieldNames">An array of field names to initialize the field names.</param>
-</member><member name="M:Diacom.DataRecord.Reset">
+	<param name="destLine">Destination line.</param>
+	<param name="eventType">Type of event will raized.</param>
+	<param name="eventData">Data for the event.</param>
+	<param name="useLineFilter">Filter used for this event.</param>
+</member><member name="F:Diacom.APCLine.ToStringFormat">
 	<summary>
- Resets the Data Record, implements <see cref="M:System.Collections.IEnumerator.Reset"/> method of <see cref="T:System.Collections.IEnumerator"/> interface.
- Sets the enumerator to its initial position, which is before the first element in the collection.
+ Format string for <see cref="M:Diacom.APCLine.ToString"/>() method.
  </summary>
-	<exception cref="T:System.InvalidOperationException">The collection was modified after the 
- enumerator was created.</exception>
 	<remarks>
-		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
- to the collection, such as adding, modifying or deleting elements, the enumerator is irrecoverably 
- invalidated and the next call to <see cref="M:Diacom.DataRecord.MoveNext"/> or <see cref="M:Diacom.DataRecord.Reset"/> throws an 
- <see cref="T:System.InvalidOperationException"/>.</para>
-		<para><b>Notes to Implementers:</b></para>
-		<para>All calls to <see cref="M:Diacom.DataRecord.Reset"/> must result in the same state for the enumerator. The preferred 
- implementation is to move the enumerator to the beginning of the collection, before the first element. 
- This invalidates the enumerator if the collection has been modified since the enumerator was created, 
- which is consistent with <see cref="M:Diacom.DataRecord.MoveNext"/> and <see cref="P:Diacom.DataRecord.Current"/>.</para>
+ Actually is the following string:
+ <pre>  ID | Number     | Name                           | Port     | Prefix   | Status               | Type | User Name                      | User Number | Call Name                      | Call Number | CID Name                       | CID NUmber  | DID Name                       | DID Number  | DNIS Name                      | DNIS Number</pre>
 	</remarks>
-</member><member name="M:Diacom.DataRecord.Add(System.Collections.ArrayList)">
+</member><member name="F:Diacom.APCLine.ToStringSeparator">
 	<summary>
- Adds specified data to the record.
+ Separator string for <see cref="M:Diacom.APCLine.ToString"/>() method.
  </summary>
-	<param name="oRow">The data to add.</param>
-</member><member name="P:Diacom.DataRecord.Count">
-	<summary>
- Gets the number of elements actually contained in record.
- </summary>
-	<value>Number of data fields in record.</value>
-</member><member name="M:Diacom.DataRecord.GetEnumerator">
-	<summary>
- Returns an enumerator that can iterate through a collection.
- </summary>
-	<returns>An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate 
- through the collection.</returns>
-</member><member name="P:Diacom.DataRecord.Current">
-	<summary>
- Gets the current element in the collection.
- </summary>
-	<value>The current element in the collection.</value>
-	<exception cref="T:System.InvalidOperationException">The enumerator is positioned before the 
- first element of the collection or after the last element.</exception>
 	<remarks>
-		<para>After an enumerator is created or after a <see cref="M:Diacom.DataRecord.Reset"/>, <see cref="M:Diacom.DataRecord.MoveNext"/> must be 
- called to advance the enumerator to the first element of the collection before reading the value 
- of <see cref="P:Diacom.DataRecord.Current"/>; otherwise, <see cref="P:Diacom.DataRecord.Current"/> is undefined.</para>
-		<para><see cref="P:Diacom.DataRecord.Current"/> also throws an exception if the last call to 
- <see cref="M:Diacom.DataRecord.MoveNext"/> returned false, which indicates the end of the collection.</para>
-		<para><see cref="P:Diacom.DataRecord.Current"/> does not move the position of the enumerator and consecutive calls to 
- <see cref="P:Diacom.DataRecord.Current"/> return the same object until either <see cref="M:Diacom.DataRecord.MoveNext"/> or 
- <see cref="M:Diacom.DataRecord.Reset"/> is called.</para>
-		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
- to the collection, such as adding, modifying or deleting elements, the enumerator is irrecoverably 
- invalidated and the next call to <see cref="M:Diacom.DataRecord.MoveNext"/> or <see cref="M:Diacom.DataRecord.Reset"/> throws an 
- <see cref="T:System.InvalidOperationException"/>. If the collection is modified between 
- <see cref="M:Diacom.DataRecord.MoveNext"/> and <see cref="P:Diacom.DataRecord.Current"/>, <see cref="P:Diacom.DataRecord.Current"/> will return the element 
- that it is set to, even if the enumerator is already invalidated.</para>
+ Actually is the following string:
+ <pre>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre>
 	</remarks>
-</member><member name="M:Diacom.DataRecord.MoveNext">
+</member><member name="M:Diacom.APCLine.ToString">
 	<summary>
- Advances the enumerator to the next element of the collection.
+ Converts content of class to string.
  </summary>
-	<returns><c>Nothing</c> if the enumerator was successfully advanced to the next element;
- <c>False</c> if the enumerator has passed the end of the collection.</returns>
-	<remarks>
-		<para>After an enumerator is created or after a call to Reset, an enumerator is positioned before 
- the first element of the collection, and the first call to <see cref="M:Diacom.DataRecord.MoveNext"/> moves the enumerator 
- over the first element of the collection.</para>
-		<para>After the end of the collection is passed, subsequent calls to <see cref="M:Diacom.DataRecord.MoveNext"/> return 
- <c>False</c> until <see cref="M:Diacom.DataRecord.Reset"/> is called.</para>
-		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are 
- made to the collection, such as adding, modifying or deleting elements, the enumerator is 
- irrecoverably invalidated and the next call to MoveNext or Reset throws an 
- <see cref="T:System.InvalidOperationException"/>.</para>
-	</remarks>
-</member><member name="P:Diacom.DataRecord.Item(System.Int32)">
+	<returns>String presentation of class properties.</returns>
+</member><member name="T:Diacom.APCLine">
 	<summary>
- Gets the element at the specified index.
- </summary>
-	<param name="index">The zero-based index of the element to get.</param>
-	<exception cref="T:System.ArgumentOutOfRangeException">Index is less 
- than zero or index is equal to or greater than <see cref="P:Diacom.DataRecord.Count"/>.</exception>
-	<value>The element at the specified index.</value>
-</member><member name="P:Diacom.DataRecord.Item(System.String)">
-	<summary>
- Searches for the element with specified field name and returns it if found.
- </summary>
-	<param name="Key">Name of the field to get the element from.</param>
-	<value>The element with the specified field name.</value>
-</member><member name="M:Diacom.DataRecord.NextRecord">
-	<summary>
- Gets the element that positiones after the current and advances position.
- </summary>
-</member><member name="P:Diacom.DataRecord.IsEmpty">
-	<summary>
- Checks if current element is empty or not.
- </summary>
-	<value>The current element is empty or not.</value>
-</member><member name="T:Diacom.DataRecord">
-	<summary>
- Represents the data record retrieved from the SQL datbase.
+ Represents the line under the APC control.
  </summary>
 </member><member name="F:Diacom.APCLineControl.oSourceLine">
 	<summary>
@@ -1410,254 +1301,363 @@ APCLine
 	<summary>
  Represents the control from which all other controlling classes are derived.
  </summary>
-</member><member name="F:Diacom.APCEvents.NEWSTATE">
+</member><member name="F:Diacom.DataRecord.m_Records">
 	<summary>
- Go to new state.
+ Collection of elements in record.
  </summary>
-</member><member name="F:Diacom.APCEvents.EXECUTE">
+</member><member name="F:Diacom.DataRecord.m_FieldNames">
 	<summary>
- Execute the code thru the method.
+ Collection of field names.
  </summary>
-</member><member name="F:Diacom.APCEvents.COMMANDOK">
+</member><member name="F:Diacom.DataRecord.m_Index">
 	<summary>
- The last command was executed and returned status is OK.
+ Index for NextRecord interface.
  </summary>
-</member><member name="F:Diacom.APCEvents.COMMANDFAIL">
+</member><member name="F:Diacom.DataRecord.m_Enum">
 	<summary>
- The last command was executed and returned FAIL status.
+ Index for IEnumerator interface.
  </summary>
-</member><member name="F:Diacom.APCEvents.RINGBACK">
+</member><member name="F:Diacom.DataRecord.m_Data">
 	<summary>
- The DIAL or RING command had executed and the given line is ringing now.
+ Current data.
  </summary>
-</member><member name="F:Diacom.APCEvents.THENCONTINUE">
+</member><member name="M:Diacom.DataRecord.#ctor">
 	<summary>
- The block of previously issued commands was successfully executed.
+ Creates a new instance of <see cref="T:Diacom.DataRecord"/> class with default parameters.
  </summary>
-</member><member name="F:Diacom.APCEvents.ELSECONTINUE">
+</member><member name="M:Diacom.DataRecord.#ctor(System.String[])">
 	<summary>
- The block of previously issued commands had failed.
+ Creates a new instance of <see cref="T:Diacom.DataRecord"/> class with Field names as parameters.
  </summary>
-</member><member name="F:Diacom.APCEvents.DIGIT">
+	<param name="fieldNames">An array of field names to initialize the field names.</param>
+</member><member name="M:Diacom.DataRecord.Reset">
 	<summary>
- DTMF Digit was issued on the selected line.
+ Resets the Data Record, implements <see cref="M:System.Collections.IEnumerator.Reset"/> method of <see cref="T:System.Collections.IEnumerator"/> interface.
+ Sets the enumerator to its initial position, which is before the first element in the collection.
  </summary>
-</member><member name="F:Diacom.APCEvents.RING">
-	<summary>
- There is an incoming ring on the line.
- </summary>
-</member><member name="F:Diacom.APCEvents.CONNECT">
-	<summary>
- The line is either under APC control or connect signal came from the line.
- </summary>
-</member><member name="F:Diacom.APCEvents.DISCONNECT">
-	<summary>
- Disconnect / Hang up signal came from the line.
- </summary>
-</member><member name="F:Diacom.APCEvents.ALERTED">
-	<summary>
- Voice activity or other signal came from the line.
- </summary>
-</member><member name="F:Diacom.APCEvents.DISCONNECTLINK">
-	<summary>
- The disconnect signal came from the linked line.
- </summary>
-</member><member name="F:Diacom.APCEvents.WAITERROR">
-	<summary>
- The command that was issued with timeout parameter was not executed withing a specified time.
- </summary>
-</member><member name="F:Diacom.APCEvents.TIMEOUT">
-	<summary>
- Global timeout for the line was exceeded.
- </summary>
-</member><member name="F:Diacom.APCEvents.QUERYREADY">
-	<summary>
- The async query from SQL server returned result or async function call was executed.
- </summary>
-</member><member name="F:Diacom.APCEvents.LINKREQUEST">
-	<summary>
- The line is requesting to be placed under the control of another line.
- </summary>
-</member><member name="F:Diacom.APCEvents.LINKRELEASE">
-	<summary>
- The line is returning from the control of another line .
- </summary>
-</member><member name="F:Diacom.APCEvents.GRANTREQUEST">
-	<summary>
- The line is informing that it is ready to be under control of another line.
- </summary>
-</member><member name="T:Diacom.APCEvents">
-	<summary>
- Represents the internal system-independent events that state machine processes.
- </summary>
-</member><member name="F:Diacom.APCEventArgs.DestinationLine">
-	<summary>
- The line for which that event is assigned.
- </summary>
-</member><member name="F:Diacom.APCEventArgs.EventType">
-	<summary>
- Event type (member of <see cref="T:Diacom.APCEvents"/> enumeration).
- </summary>
-</member><member name="F:Diacom.APCEventArgs.EventParam">
-	<summary>
- Parameters for one of the <see cref="T:Diacom.APCEvents"/> enumeration member.
- </summary>
-</member><member name="F:Diacom.APCEventArgs.CallLineFilter">
-	<summary>
- Specifies if the event should go through the line filter or not.
- </summary>
-</member><member name="T:Diacom.APCEventArgs">
-	<summary>
- Holds parameters passed with the APCEvents.
- </summary>
-</member><member name="F:Diacom.APCLine.CallRingTime">
-	<summary>
- Total time the call continued.
- </summary>
-</member><member name="F:Diacom.APCLine.CallConnectTime">
-	<summary>
- Time the connection started.
- </summary>
-</member><member name="F:Diacom.APCLine.CallDisconnectTime">
-	<summary>
- Time the connection ended.
- </summary>
-</member><member name="F:Diacom.APCLine.Timeout">
-	<summary>
- Timeout for the line.
- </summary>
-</member><member name="F:Diacom.APCLine.CurrentLanguageSet">
-	<summary>
- Current language for the line.
- </summary>
-</member><member name="F:Diacom.APCLine.LinkLine">
-	<summary>
- Line to link to.
- </summary>
-</member><member name="F:Diacom.APCLine.EventLine">
-	<summary>
- The line all events will came to.
- </summary>
-</member><member name="E:Diacom.APCLine.APCStateEvent">
-	<summary>
- Occurs when line status has been chanded.
- </summary>
-</member><member name="M:Diacom.APCLine.#ctor(System.String)">
-	<summary>
- Initializes new instance of the class with default parameters.
- </summary>
-</member><member name="P:Diacom.APCLine.Item(System.String)">
-	<summary>
- Implements access to a named variables.
- </summary>
-	<param name="NameString">Name of the variable.</param>
-	<value>Variable value or <c>Nothing</c> if no variable with this name available.</value>
-</member><member name="P:Diacom.APCLine.Var(System.String)">
-	<summary>
- Implements access to a named variables.
- </summary>
-	<param name="NameString">Name of the variable.</param>
-	<value>Variable value or <c>Nothing</c> if no variable with this name available.</value>
-</member><member name="P:Diacom.APCLine.Vars">
-	<summary>
- Gets a <see cref="T:System.Collections.Hashtable"/> of all named variables.
- </summary>
-	<value><see cref="T:System.Collections.Hashtable"/> of all named variables.</value>
-</member><member name="M:Diacom.APCLine.FullStateName(System.String)">
-	<summary>
- Function that returns a full state name.
- </summary>
-	<param name="StateName">Name of the state.</param>
-	<returns>Full state name.</returns>
+	<exception cref="T:System.InvalidOperationException">The collection was modified after the 
+ enumerator was created.</exception>
 	<remarks>
-		<para>Full state name for the state is something like:</para>
-		<para>ZZZZ with no module -&gt; ZZZZ</para>
-		<para>ZZZZ with module MMMM -&gt; MMMM.ZZZZ</para>
-		<para>.ZZZZ with any module -&gt; ZZZZ</para>
+		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
+ to the collection, such as adding, modifying or deleting elements, the enumerator is irrecoverably 
+ invalidated and the next call to <see cref="M:Diacom.DataRecord.MoveNext"/> or <see cref="M:Diacom.DataRecord.Reset"/> throws an 
+ <see cref="T:System.InvalidOperationException"/>.</para>
+		<para><b>Notes to Implementers:</b></para>
+		<para>All calls to <see cref="M:Diacom.DataRecord.Reset"/> must result in the same state for the enumerator. The preferred 
+ implementation is to move the enumerator to the beginning of the collection, before the first element. 
+ This invalidates the enumerator if the collection has been modified since the enumerator was created, 
+ which is consistent with <see cref="M:Diacom.DataRecord.MoveNext"/> and <see cref="P:Diacom.DataRecord.Current"/>.</para>
 	</remarks>
-</member><member name="P:Diacom.APCLine.State">
+</member><member name="M:Diacom.DataRecord.Add(System.Collections.ArrayList)">
 	<summary>
- Gets current line state.
+ Adds specified data to the record.
  </summary>
-	<value>Current line state.</value>
-</member><member name="M:Diacom.APCLine.PopState">
+	<param name="oRow">The data to add.</param>
+</member><member name="P:Diacom.DataRecord.Count">
 	<summary>
- Returns line to the previous state.
+ Gets the number of elements actually contained in record.
  </summary>
-</member><member name="M:Diacom.APCLine.Init">
+	<value>Number of data fields in record.</value>
+</member><member name="M:Diacom.DataRecord.GetEnumerator">
 	<summary>
- Initializes the line.
+ Returns an enumerator that can iterate through a collection.
  </summary>
+	<returns>An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate 
+ through the collection.</returns>
+</member><member name="P:Diacom.DataRecord.Current">
+	<summary>
+ Gets the current element in the collection.
+ </summary>
+	<value>The current element in the collection.</value>
+	<exception cref="T:System.InvalidOperationException">The enumerator is positioned before the 
+ first element of the collection or after the last element.</exception>
 	<remarks>
- All the values will be set by default.
- </remarks>
-</member><member name="P:Diacom.APCLine.InitialState">
-	<summary>
- Gets initial state of the line.
- </summary>
-	<value>Initial state of the line.</value>
-</member><member name="P:Diacom.APCLine.LastEvent">
-	<summary>
- Gets last event occurred on the line.
- </summary>
-	<value>Last event occurred on the line.</value>
-</member><member name="P:Diacom.APCLine.LastEventParameter">
-	<summary>
- Gets  parameter of the last event occurred on the line.
- </summary>
-	<value>Parameter of the last event occurred on the line.</value>
-</member><member name="P:Diacom.APCLine.LastDigit">
-	<summary>
- Gets last digit on the line if available.
- </summary>
-	<value>Last digit on the line if available.</value>
-</member><member name="P:Diacom.APCLine.AllDigits">
-	<summary>
- Gets all digits for the line.
- </summary>
-	<value>All digits for the line.</value>
-</member><member name="P:Diacom.APCLine.InCallTime">
-	<summary>
- Gets current duration of the call.
- </summary>
-	<value>Current duration of the call.</value>
-</member><member name="P:Diacom.APCLine.CallDuration">
-	<summary>
- Gets total duration of the call.
- </summary>
-	<value>Total duration of the call.</value>
-</member><member name="M:Diacom.APCLine.FireStateEvent(Diacom.APCLine,Diacom.APCEvents,System.Object,System.Boolean)">
-	<summary>
- Raizes event of given type for the given line with given event data and data filter.
- </summary>
-	<param name="destLine">Destination line.</param>
-	<param name="eventType">Type of event will raized.</param>
-	<param name="eventData">Data for the event.</param>
-	<param name="useLineFilter">Filter used for this event.</param>
-</member><member name="F:Diacom.APCLine.ToStringFormat">
-	<summary>
- Format string for <see cref="M:Diacom.APCLine.ToString"/>() method.
- </summary>
-	<remarks>
- Actually is the following string:
- <pre>  ID | Number     | Name                           | Port     | Prefix   | Status               | Type | User Name                      | User Number | Call Name                      | Call Number | CID Name                       | CID NUmber  | DID Name                       | DID Number  | DNIS Name                      | DNIS Number</pre>
+		<para>After an enumerator is created or after a <see cref="M:Diacom.DataRecord.Reset"/>, <see cref="M:Diacom.DataRecord.MoveNext"/> must be 
+ called to advance the enumerator to the first element of the collection before reading the value 
+ of <see cref="P:Diacom.DataRecord.Current"/>; otherwise, <see cref="P:Diacom.DataRecord.Current"/> is undefined.</para>
+		<para><see cref="P:Diacom.DataRecord.Current"/> also throws an exception if the last call to 
+ <see cref="M:Diacom.DataRecord.MoveNext"/> returned false, which indicates the end of the collection.</para>
+		<para><see cref="P:Diacom.DataRecord.Current"/> does not move the position of the enumerator and consecutive calls to 
+ <see cref="P:Diacom.DataRecord.Current"/> return the same object until either <see cref="M:Diacom.DataRecord.MoveNext"/> or 
+ <see cref="M:Diacom.DataRecord.Reset"/> is called.</para>
+		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are made 
+ to the collection, such as adding, modifying or deleting elements, the enumerator is irrecoverably 
+ invalidated and the next call to <see cref="M:Diacom.DataRecord.MoveNext"/> or <see cref="M:Diacom.DataRecord.Reset"/> throws an 
+ <see cref="T:System.InvalidOperationException"/>. If the collection is modified between 
+ <see cref="M:Diacom.DataRecord.MoveNext"/> and <see cref="P:Diacom.DataRecord.Current"/>, <see cref="P:Diacom.DataRecord.Current"/> will return the element 
+ that it is set to, even if the enumerator is already invalidated.</para>
 	</remarks>
-</member><member name="F:Diacom.APCLine.ToStringSeparator">
+</member><member name="M:Diacom.DataRecord.MoveNext">
 	<summary>
- Separator string for <see cref="M:Diacom.APCLine.ToString"/>() method.
+ Advances the enumerator to the next element of the collection.
+ </summary>
+	<returns><c>Nothing</c> if the enumerator was successfully advanced to the next element;
+ <c>False</c> if the enumerator has passed the end of the collection.</returns>
+	<remarks>
+		<para>After an enumerator is created or after a call to Reset, an enumerator is positioned before 
+ the first element of the collection, and the first call to <see cref="M:Diacom.DataRecord.MoveNext"/> moves the enumerator 
+ over the first element of the collection.</para>
+		<para>After the end of the collection is passed, subsequent calls to <see cref="M:Diacom.DataRecord.MoveNext"/> return 
+ <c>False</c> until <see cref="M:Diacom.DataRecord.Reset"/> is called.</para>
+		<para>An enumerator remains valid as long as the collection remains unchanged. If changes are 
+ made to the collection, such as adding, modifying or deleting elements, the enumerator is 
+ irrecoverably invalidated and the next call to MoveNext or Reset throws an 
+ <see cref="T:System.InvalidOperationException"/>.</para>
+	</remarks>
+</member><member name="P:Diacom.DataRecord.Item(System.Int32)">
+	<summary>
+ Gets the element at the specified index.
+ </summary>
+	<param name="index">The zero-based index of the element to get.</param>
+	<exception cref="T:System.ArgumentOutOfRangeException">Index is less 
+ than zero or index is equal to or greater than <see cref="P:Diacom.DataRecord.Count"/>.</exception>
+	<value>The element at the specified index.</value>
+</member><member name="P:Diacom.DataRecord.Item(System.String)">
+	<summary>
+ Searches for the element with specified field name and returns it if found.
+ </summary>
+	<param name="Key">Name of the field to get the element from.</param>
+	<value>The element with the specified field name.</value>
+</member><member name="M:Diacom.DataRecord.NextRecord">
+	<summary>
+ Gets the element that positiones after the current and advances position.
+ </summary>
+</member><member name="P:Diacom.DataRecord.IsEmpty">
+	<summary>
+ Checks if current element is empty or not.
+ </summary>
+	<value>The current element is empty or not.</value>
+</member><member name="T:Diacom.DataRecord">
+	<summary>
+ Represents the data record retrieved from the SQL datbase.
+ </summary>
+</member><member name="F:Diacom.APCLineState.IDLE">
+	<summary>
+ Line is idle.
+ </summary>
+</member><member name="F:Diacom.APCLineState.EAP">
+	<summary>
+ EAP line state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.CONNECTED">
+	<summary>
+ Line is connected.
+ </summary>
+</member><member name="F:Diacom.APCLineState.INUSE">
+	<summary>
+ Line is in use.
+ </summary>
+</member><member name="F:Diacom.APCLineState.OFFHOOK">
+	<summary>
+ Offhook.
+ </summary>
+</member><member name="F:Diacom.APCLineState.CALLPENDING">
+	<summary>
+ Pending call is on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.RINGBACK">
+	<summary>
+ Ringback state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.CONFERENCING">
+	<summary>
+ Conference on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.AA">
+	<summary>
+ Autoateddant state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.VM">
+	<summary>
+ Voice mail state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.HOLD">
+	<summary>
+ Line is on hold.
+ </summary>
+</member><member name="F:Diacom.APCLineState.HOLDPENDING">
+	<summary>
+ On hold is pending on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PROCEEDING">
+	<summary>
+ Line is porceeding something.
+ </summary>
+</member><member name="F:Diacom.APCLineState.DISCONNECT">
+	<summary>
+ Line disconnects.
+ </summary>
+</member><member name="F:Diacom.APCLineState.ERROR">
+	<summary>
+ Error is on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.RING">
+	<summary>
+ Ring is on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PARK">
+	<summary>
+ Line is parked.
+ </summary>
+</member><member name="F:Diacom.APCLineState.SOFTOFFHOOK">
+	<summary>
+ Softoffhook.
+ </summary>
+</member><member name="F:Diacom.APCLineState.MUSICONHOLD">
+	<summary>
+ Line in in music on hold state.
+ </summary>
+</member><member name="F:Diacom.APCLineState.XFER_WAITFORONHOOK">
+	<summary>
+ Line is waiting for onhook for XFER.
+ </summary>
+</member><member name="F:Diacom.APCLineState.XFER_RINGBACK">
+	<summary>
+ Ringback on line for XFER.
+ </summary>
+</member><member name="F:Diacom.APCLineState.BUSY">
+	<summary>
+ Line is busy.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PLAY">
+	<summary>
+ Something is playing on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.RECORD">
+	<summary>
+ Something is recording on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.APC">
+	<summary>
+ Line is under APC control.
+ </summary>
+</member><member name="F:Diacom.APCLineState.VOICE_RECORD_START">
+	<summary>
+ Voice recording started on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.VOICE_RECORD_STOP">
+	<summary>
+ Voice recording ended on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.SILENTMONITOR">
+	<summary>
+ Silent monitor on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.BARGEIN">
+	<summary>
+ Line is barged in.
+ </summary>
+</member><member name="F:Diacom.APCLineState.HOLD_CONFERENCE">
+	<summary>
+ Conference is held on the line (for conference mode).
+ </summary>
+</member><member name="F:Diacom.APCLineState.HFDTD_IDLE">
+	<summary>
+ Line is idle for offhook when hands free / dialtone disabled.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PLAY_CALL_STOP">
+	<summary>
+ Playing call is finished on the line.
+ </summary>
+</member><member name="F:Diacom.APCLineState.PLAY_CALL">
+	<summary>
+ Line is playing call.
+ </summary>
+</member><member name="F:Diacom.APCLineState.LINE_ADD">
+	<summary>
+ Line is added to the system.
+ </summary>
+</member><member name="F:Diacom.APCLineState.LINE_REMOVE">
+	<summary>
+ Line is removed from the system.
+ </summary>
+</member><member name="T:Diacom.APCLineState">
+	<summary>
+ APC line state.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineID">
+	<summary>
+ Line identificator (ID) - unique object that identifies the line.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineStatus">
+	<summary>
+ Current line status/state (see <see cref="T:Diacom.APCLineState"/> enumeration).
+ </summary>
+</member><member name="F:Diacom.LineClass.DIDNumber">
+	<summary>
+ DID number - the CO supplied DID.
+ </summary>
+</member><member name="F:Diacom.LineClass.CIDNumber">
+	<summary>
+ CID number - the CO supplied CID.
+ </summary>
+</member><member name="F:Diacom.LineClass.DNISNumber">
+	<summary>
+ DNIS number - the CO supplied DNIS.
+ </summary>
+</member><member name="F:Diacom.LineClass.UserNumber">
+	<summary>
+ User number.
+ </summary>
+</member><member name="F:Diacom.LineClass.CallNumber">
+	<summary>
+ Call number - the number that is currently called.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineName">
+	<summary>
+ Line name - the name (if any) assigned to that line.
+ </summary>
+</member><member name="F:Diacom.LineClass.DIDName">
+	<summary>
+ DID name - the CO supplied DID name.
+ </summary>
+</member><member name="F:Diacom.LineClass.CIDName">
+	<summary>
+ CID name - the CO supplied CID name.
+ </summary>
+</member><member name="F:Diacom.LineClass.DNISName">
+	<summary>
+ DNIS name  - the CO supplied DNIS name.
+ </summary>
+</member><member name="F:Diacom.LineClass.UserName">
+	<summary>
+ User name.
+ </summary>
+</member><member name="F:Diacom.LineClass.CallName">
+	<summary>
+ Call name - name that is currently called.
+ </summary>
+</member><member name="F:Diacom.LineClass.LinePort">
+	<summary>
+ Line port.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineNumber">
+	<summary>
+ Line number - the assigned line number.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineAccessCode">
+	<summary>
+ Line access code - the code that this line can be accessed.
+ </summary>
+</member><member name="F:Diacom.LineClass.LineType">
+	<summary>
+ Line type.
+ </summary>
+</member><member name="M:Diacom.LineClass.Clone">
+	<summary>
+ Creates a new object that is a shallow copy of the current <see cref="T:Diacom.LineClass"/> instance.
+ </summary>
+	<returns>A new object that is a copy of this instance.</returns>
+</member><member name="M:Diacom.LineClass.#ctor">
+	<summary>
+ Default class constructor.
  </summary>
 	<remarks>
- Actually is the following string:
- <pre>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre>
+		<para>All the fields of the class will have default (<c>Nothing</c> in most cases) values.</para>
 	</remarks>
-</member><member name="M:Diacom.APCLine.ToString">
+</member><member name="T:Diacom.LineClass">
 	<summary>
- Converts content of class to string.
- </summary>
-	<returns>String presentation of class properties.</returns>
-</member><member name="T:Diacom.APCLine">
-	<summary>
- Represents the line under the APC control.
+ Describes a common information about a line shared by all components of the APCSDK.
  </summary>
 </member>
 </members>

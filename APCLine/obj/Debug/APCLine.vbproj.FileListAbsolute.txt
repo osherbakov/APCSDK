@@ -8,3 +8,13 @@ I:\ProjectsGIT\APCSDK\APCLine\obj\Debug\ResolveAssemblyReference.cache
 I:\ProjectsGIT\APCSDK\APCLine\obj\Debug\APCLine.dll
 I:\ProjectsGIT\APCSDK\APCLine\obj\Debug\APCLine.xml
 I:\ProjectsGIT\APCSDK\APCLine\obj\Debug\APCLine.pdb
+C:\Projects\APCSDK\APCLine\bin\Debug\APCLine.dll
+C:\Projects\APCSDK\APCLine\bin\Debug\APCLine.pdb
+C:\Projects\APCSDK\APCLine\bin\Debug\APCLine.xml
+C:\Projects\APCSDK\APCLine\bin\Debug\SPCore.dll
+C:\Projects\APCSDK\APCLine\bin\Debug\SPCore.pdb
+C:\Projects\APCSDK\APCLine\bin\Debug\SPCore.xml
+C:\Projects\APCSDK\APCLine\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\APCSDK\APCLine\obj\Debug\APCLine.dll
+C:\Projects\APCSDK\APCLine\obj\Debug\APCLine.xml
+C:\Projects\APCSDK\APCLine\obj\Debug\APCLine.pdb

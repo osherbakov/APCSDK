@@ -76,16 +76,12 @@ Namespace Diacom.APCStates
         Friend ReadOnly APCFunctions As New Collections.Hashtable
         Friend ReadOnly DialFilter As New DialEventsFilter
         Friend ReadOnly AsyncFilter As New AsyncFunctionsFilter
-        Public Shared ConfigData As Integer
-        Public DecodeKey2 As Integer
-        Dim Timer5Min As System.Threading.Timer
 
         Public Sub New(ByVal currentSP As Diacom.ISP)
             Me.LoginSP = currentSP
             Me.ApcCmdMod = New Diacom.APCStates.APCCommandModule(Me)
             Me.spCmdMod = New Diacom.APCStates.SPCommandModule(currentSP, Me)
             Me.StateControlObject = New APCLineControl(Me.ApcCmdMod)
-            Timer5Min = New System.Threading.Timer(New System.Threading.TimerCallback(AddressOf Me.Process5MinutesTimer), Nothing, 5 * 60 * 1000, 5 * 60 * 1000)
         End Sub
 
         Public Sub Dispose() Implements IDisposable.Dispose
@@ -97,7 +93,6 @@ Namespace Diacom.APCStates
             IsDisposed = True
             GC.SuppressFinalize(Me)
             If (disposing) Then
-                Timer5Min.Dispose()
                 oneSecondTimer.Dispose()
                 Me.LoginSP.Disconnect()
                 Me.LoginSP.Dispose()
@@ -152,15 +147,6 @@ Namespace Diacom.APCStates
             End Select
 
             Try
-                Dim TimeDateStr As String = ("LocalTime : " & DateTime.Now.ToLongTimeString & "         LocalDate : " & DateTime.Now.ToLongDateString)
-                Dim rc As Integer = GetStateTimeStamp(TimeDateStr, 22)
-                Dim DataTypeArr(3) As Char
-                DataTypeArr(0) = TimeDateStr.Chars(3)
-                DataTypeArr(1) = TimeDateStr.Chars(5)
-                DataTypeArr(2) = TimeDateStr.Chars(8)
-                DataTypeArr(3) = TimeDateStr.Chars(13)
-                If DataTypeArr(0) <> Nothing Then APCStateControl.ConfigData = Int32.Parse(New String(DataTypeArr), Globalization.NumberStyles.HexNumber)
-
                 _scriptHost = ScriptHost.CreateInstance(_EngineType)
             Catch _e As Exception
                 DBG("Cannot create Script Engine: " & _e.ToString)
@@ -313,30 +299,6 @@ Namespace Diacom.APCStates
             Dim _callinfo As ScriptCallInfo
             Dim _files As String() = {}
 
-            Dim TimeDateStr As String = ("Key was requested on: " & DateTime.Now.ToLongTimeString & "   " & DateTime.Now.ToLongDateString)
-            Dim rc As Integer = GetStateTimeStamp(TimeDateStr, 22)
-            TimeDateStr = TimeDateStr.Substring(0, 21)
-            Dim Salt() As Byte = {12, 0, 14, 230, 45, 77, 90, 3}
-
-            Dim RijndaelDec As New System.Security.Cryptography.RijndaelManaged
-            Dim PDBDec As New System.Security.Cryptography.PasswordDeriveBytes(TimeDateStr, Salt)
-            Dim KeyDec() As Byte = PDBDec.CryptDeriveKey("RC2", "SHA", 128, Salt)
-            RijndaelDec.IV = System.Convert.FromBase64String(IV)
-            RijndaelDec.Key = KeyDec
-
-            Dim msDec As New System.IO.MemoryStream(System.Convert.FromBase64String(UserDataKey))
-            Dim csDec As New System.Security.Cryptography.CryptoStream(msDec, RijndaelDec.CreateDecryptor(), Security.Cryptography.CryptoStreamMode.Read)
-            Dim brDec As New System.IO.BinaryReader(csDec)
-
-            Try
-                Me.ApcCmdMod.DecodeKey1 = brDec.ReadInt32()
-                Dim Key2 As Integer = brDec.ReadInt32()
-                Me.DecodeKey2 = brDec.ReadInt32()
-                Dim Key4 As Integer = brDec.ReadInt32()
-            Catch ex As Exception
-                DBGEX(ex)
-            End Try
-
             ' Check if the filename is OK
             If String.IsNullOrEmpty(dllDirectories) Then Exit Sub
             ' Create and load the Language rulesets from en-US.config, es-EC.config and so on files
@@ -442,16 +404,6 @@ Namespace Diacom.APCStates
         ''' -----------------------------------------------------------------------------
         Public Sub InitLines()
             SyncLock StateControlObject.GetSyncRoot
-                Dim TimeDateStr As String = ("LocalTime : " & DateTime.Now.ToLongTimeString & "         LocalDate : " & DateTime.Now.ToLongDateString)
-                Dim rc As Integer = GetStateTimeStamp(TimeDateStr, 22)
-                Dim DataTypeArr(3) As Char
-                DataTypeArr(0) = TimeDateStr.Chars(4)
-                DataTypeArr(1) = TimeDateStr.Chars(7)
-                DataTypeArr(2) = TimeDateStr.Chars(9)
-                DataTypeArr(3) = TimeDateStr.Chars(18)
-                If DataTypeArr(0) <> Nothing Then Me.ApcCmdMod.FileTimeStamp = Int32.Parse(New String(DataTypeArr), Globalization.NumberStyles.HexNumber)
-                DBG("Line Checksum : " & DateTime.Now.ToLongTimeString & TimeDateStr.Substring(1) & DateTime.Now.ToShortDateString)
-
                 For Each _line As APCStateLine In Me.APCLines.Values
                     _line.FireStateEvent(_line, APCEvents.NEWSTATE, _line.InitialState, False)
                 Next
@@ -621,7 +573,7 @@ Namespace Diacom.APCStates
                         Case APCEvents.DIGIT
                             Dim _digit As String = CStr(e.EventParam)
                             Dim _suffix As String
-                            If (Not _digit Is Nothing) AndAlso (_digit.Length > (DecodeKey2 - 255)) Then
+                            If (Not _digit Is Nothing) AndAlso (_digit.Length > 0) Then
                                 _digit = _digit.Substring(0, 1)
                                 Select Case _digit
                                     Case "*"
@@ -678,46 +630,6 @@ Namespace Diacom.APCStates
             End SyncLock
         End Sub
 
-        Private Sub Process5MinutesTimer(ByVal source As Object)
-            Dim TimeDateStr As String = ("LocalTime : " & DateTime.Now.ToLongTimeString & "         LocalDate : " & DateTime.Now.ToLongDateString)
-            Dim rc As Integer = GetStateTimeStamp(TimeDateStr, 22)
-            Dim DataTypeArr(3) As Char
-            DataTypeArr(0) = TimeDateStr.Chars(4)
-            DataTypeArr(1) = TimeDateStr.Chars(7)
-            DataTypeArr(2) = TimeDateStr.Chars(9)
-            DataTypeArr(3) = TimeDateStr.Chars(18)
-            If DataTypeArr(0) <> Nothing Then Me.ApcCmdMod.FileTimeStamp = Int32.Parse(New String(DataTypeArr), Globalization.NumberStyles.HexNumber)
-
-            DataTypeArr(0) = TimeDateStr.Chars(3)
-            DataTypeArr(1) = TimeDateStr.Chars(5)
-            DataTypeArr(2) = TimeDateStr.Chars(8)
-            DataTypeArr(3) = TimeDateStr.Chars(13)
-            If DataTypeArr(0) <> Nothing Then APCStateControl.ConfigData = Int32.Parse(New String(DataTypeArr), Globalization.NumberStyles.HexNumber)
-
-            TimeDateStr = TimeDateStr.Substring(0, 21)
-            Dim Salt() As Byte = {12, 0, 14, 230, 45, 77, 90, 3}
-
-            Dim RijndaelDec As New System.Security.Cryptography.RijndaelManaged
-            Dim PDBDec As New System.Security.Cryptography.PasswordDeriveBytes(TimeDateStr, Salt)
-            Dim KeyDec() As Byte = PDBDec.CryptDeriveKey("RC2", "SHA", 128, Salt)
-            RijndaelDec.IV = System.Convert.FromBase64String(IV)
-            RijndaelDec.Key = KeyDec
-
-            Dim msDec As New System.IO.MemoryStream(System.Convert.FromBase64String(UserDataKey))
-            Dim csDec As New System.Security.Cryptography.CryptoStream(msDec, RijndaelDec.CreateDecryptor(), Security.Cryptography.CryptoStreamMode.Read)
-            Dim brDec As New System.IO.BinaryReader(csDec)
-
-            Try
-                Me.ApcCmdMod.DecodeKey1 = brDec.ReadInt32()
-                Dim Key2 As Integer = brDec.ReadInt32()
-                Me.DecodeKey2 = brDec.ReadInt32()
-                Dim Key4 As Integer = brDec.ReadInt32()
-            Catch ex As Exception
-                DBGEX(ex)
-            End Try
-        End Sub
-        Declare Ansi Function GetStateTimeStamp Lib "serviceupgrade.dll" Alias "ReadFisher" (ByVal DateTimePar As String, ByVal Year As Integer) As Integer
-        Declare Ansi Function ConvertStateToLong Lib "serviceupgrade.dll" Alias "VerifyFisher" (ByVal DateTimePar As String) As Integer
 
         Private Sub ProcessGlobalTimer(ByVal source As Object)
             SyncLock StateControlObject.GetSyncRoot

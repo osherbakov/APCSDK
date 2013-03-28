@@ -4,19 +4,14 @@
         <name>APCServiceControl</name>
     </assembly>
     <members>
-        <member name="T:Diacom.APCService.Control.MessageBox">
+        <member name="T:Diacom.APCService.Control.CMain">
             <summary>
-            Summary description for APCServiceControlMessage.
+            Represents entry point for APCServiceTrayController application class.
             </summary>
         </member>
-        <member name="F:Diacom.APCService.Control.MessageBox.components">
+        <member name="M:Diacom.APCService.Control.CMain.Main(System.String[])">
             <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Diacom.APCService.Control.MessageBox.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
+            Entry point for APCServiceTrayController application.
             </summary>
         </member>
         <member name="T:Diacom.APCService.ServiceAction">
@@ -358,49 +353,6 @@
             No messages (empty entry).
             </summary>
         </member>
-        <member name="T:Diacom.APCService.ConfigureForm">
-            <summary>
-            Summary description for ConfigureForm.
-            </summary>
-        </member>
-        <member name="F:Diacom.APCService.ConfigureForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Diacom.APCService.ConfigureForm.#ctor(System.String,System.String,Diacom.APCService.APCServiceOptions)">
-            <summary>
-            Constructor for the form.
-            </summary>
-        </member>
-        <member name="M:Diacom.APCService.ConfigureForm.Dispose(System.Boolean)">
-            <summary>
-            Cleans up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Diacom.APCService.ConfigureForm.ConfigureForm_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
-            <summary>
-            Form is closing - check if checkbox is checked and closing is not cancelling operation.
-            </summary>
-            <param name="sender">Sender of the event.</param>
-            <param name="e">Event parameters.</param>
-        </member>
-        <member name="M:Diacom.APCService.ConfigureForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Diacom.APCService.Control.CMain">
-            <summary>
-            Represents entry point for APCServiceTrayController application class.
-            </summary>
-        </member>
-        <member name="M:Diacom.APCService.Control.CMain.Main(System.String[])">
-            <summary>
-            Entry point for APCServiceTrayController application.
-            </summary>
-        </member>
         <member name="T:Diacom.APCService.Control.APCServiceControlConfiguratorForm">
             <summary>
             Represents APCServiceControlConfiguratorForm class.
@@ -474,6 +426,21 @@
             <param name="sender">Sender of the event.</param>
             <param name="e">Event parameters.</param>
         </member>
+        <member name="T:Diacom.APCService.Control.MessageBox">
+            <summary>
+            Summary description for APCServiceControlMessage.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.MessageBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.MessageBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
         <member name="T:Diacom.APCService.Control.AboutForm">
             <summary>
             Summary description for AboutForm.
@@ -496,6 +463,39 @@
             </summary>
         </member>
         <member name="M:Diacom.APCService.Control.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ConfigureForm">
+            <summary>
+            Summary description for ConfigureForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.ConfigureForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.#ctor(System.String,System.String,Diacom.APCService.APCServiceOptions)">
+            <summary>
+            Constructor for the form.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.ConfigureForm_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Form is closing - check if checkbox is checked and closing is not cancelling operation.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

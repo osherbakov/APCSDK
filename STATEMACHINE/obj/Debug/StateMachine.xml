@@ -6,27 +6,7 @@ StateMachine
 </name>
 </assembly>
 <members>
-<member name="T:Diacom.APCStates.PlayFileModule">
-	<summary>
- Class to initiate the Play File on the line command.
-</summary>
-</member><member name="T:Diacom.APCStates.ReleaseModule">
-	<summary>
- Class to initiate the disconnect (drop call)line command.
-</summary>
-</member><member name="T:Diacom.APCStates.AnswerModule">
-	<summary>
- Class to initiate the answer call command.
-</summary>
-</member><member name="T:Diacom.APCStates.RejectModule">
-	<summary>
- Class to initiate the reject call command.
-</summary>
-</member><member name="T:Diacom.APCStates.PassModule">
-	<summary>
- Class to initiate the pass call command.
-</summary>
-</member><member name="T:Diacom.APCStates.APCCommandModule">
+<member name="T:Diacom.APCStates.APCCommandModule">
  -----------------------------------------------------------------------------
  <summary>
  Implements the <see cref="T:Diacom.IAPCInterface"/> interface for work with a state machine.
@@ -47,14 +27,6 @@ StateMachine
 	<summary>
  Defines the class that communicates with Service Provider (SP) module.
  </summary>
-</member><member name="T:Diacom.APCStates.RecordFileModule">
-	<summary>
- Class to initiate the Record File on the line command.
-</summary>
-</member><member name="T:Diacom.APCStates.PlayDTMFModule">
-	<summary>
- Class to initiate the Play DTMF on the line command.
-</summary>
 </member><member name="T:Diacom.APCStates.ConnectModule">
 	<summary>
  Class to initiate the connect lines command.
@@ -62,6 +34,26 @@ StateMachine
 </member><member name="T:Diacom.APCStates.DisconnectModule">
 	<summary>
  Class to initiate disconnect lines command.
+</summary>
+</member><member name="T:Diacom.APCStates.PlayDTMFModule">
+	<summary>
+ Class to initiate the Play DTMF on the line command.
+</summary>
+</member><member name="T:Diacom.APCStates.ReleaseModule">
+	<summary>
+ Class to initiate the disconnect (drop call)line command.
+</summary>
+</member><member name="T:Diacom.APCStates.AnswerModule">
+	<summary>
+ Class to initiate the answer call command.
+</summary>
+</member><member name="T:Diacom.APCStates.RejectModule">
+	<summary>
+ Class to initiate the reject call command.
+</summary>
+</member><member name="T:Diacom.APCStates.PassModule">
+	<summary>
+ Class to initiate the pass call command.
 </summary>
 </member><member name="P:Diacom.APCStates.APCStateLine.LineReference">
  -----------------------------------------------------------------------------
@@ -194,6 +186,14 @@ StateMachine
 	<remarks>
  Thinking all entries are of the following type: ".\dir" or "dir", and can start and end with "\".
  </remarks>
+</member><member name="T:Diacom.APCStates.RecordFileModule">
+	<summary>
+ Class to initiate the Record File on the line command.
+</summary>
+</member><member name="T:Diacom.APCStates.PlayFileModule">
+	<summary>
+ Class to initiate the Play File on the line command.
+</summary>
 </member>
 </members>
 </doc>

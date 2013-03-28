@@ -7,3 +7,12 @@ I:\ProjectsGIT\APCSDK\APCService\Core\bin\Debug\SPCore.xml
 I:\ProjectsGIT\APCSDK\APCService\Core\obj\Debug\ResolveAssemblyReference.cache
 I:\ProjectsGIT\APCSDK\APCService\Core\obj\Debug\APCServiceCore.dll
 I:\ProjectsGIT\APCSDK\APCService\Core\obj\Debug\APCServiceCore.pdb
+C:\Projects\APCSDK\APCService\Core\bin\Debug\APCServiceCore.dll
+C:\Projects\APCSDK\APCService\Core\bin\Debug\APCServiceCore.pdb
+C:\Projects\APCSDK\APCService\Core\bin\Debug\APCServiceCore.xml
+C:\Projects\APCSDK\APCService\Core\bin\Debug\SPCore.dll
+C:\Projects\APCSDK\APCService\Core\bin\Debug\SPCore.pdb
+C:\Projects\APCSDK\APCService\Core\bin\Debug\SPCore.xml
+C:\Projects\APCSDK\APCService\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\APCSDK\APCService\Core\obj\Debug\APCServiceCore.dll
+C:\Projects\APCSDK\APCService\Core\obj\Debug\APCServiceCore.pdb
