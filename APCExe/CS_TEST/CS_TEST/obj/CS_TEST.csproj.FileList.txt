@@ -1,0 +1,11 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\CS_TEST.dll
+bin\Debug\CS_TEST.pdb
+bin\Debug\APCLine.dll
+bin\Debug\SPCore.dll
+bin\Debug\SPCore.pdb
+bin\Debug\SPCore.xml
+bin\Debug\APCLine.pdb
+bin\Debug\APCLine.xml
+obj\Debug\CS_TEST.dll
+obj\Debug\CS_TEST.pdb

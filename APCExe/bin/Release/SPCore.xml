@@ -1,0 +1,1481 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SPCore</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.SPLogonType">
+            <summary>
+            Possible logon types.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLogonType.EXTENSION">
+            <summary>
+            Logon as extension.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLogonType.AGENT">
+            <summary>
+            Logon as agent.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLogonType.SUPERVISOR">
+            <summary>
+            Logon as supervisor.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLogonType.IP_EXTENSION">
+            <summary>
+            Logon as IP extension.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLogonType.ADMINISTRATOR">
+            <summary>
+            Logon as administrator.
+            </summary>
+        </member>
+        <member name="T:Diacom.SPStatus">
+            <summary>
+            Posssible status values (result of any operation).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.DISCONNECTED">
+            <summary>
+            Initial status - no connection available or execution is in progress.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_REGISTERING">
+            <summary>
+            Application could not register itself.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_CONNECTION">
+            <summary>
+            Something wrong with connection...
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_CREATING_COMPONENTS">
+            <summary>
+            Can't create socket.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_CREATING_THREADS">
+            <summary>
+            Can't create or start threads.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_INVALID_PARAMETERS">
+            <summary>
+            Invalid parameters (mean cast is not valid).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_INVALID_OPERATION">
+            <summary>
+            Invalid operation.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_LOGON">
+            <summary>
+            Can't logon to server (bad parameters in implementation constructor).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_OBJECT_DISPOSED">
+            <summary>
+            Object is disposed before the call to it.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_SHUTTING_THREADS">
+            <summary>
+            Can't finalize threads.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.ERROR_UNHANDLED_EXCEPTION">
+            <summary>
+            Unhandled exception was raised.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatus.OK">
+            <summary>
+            All is OK.
+            </summary>
+        </member>
+        <member name="T:Diacom.SPStatusEventArgs">
+            <summary>
+            Implements arguments for event.
+            </summary>
+        </member>
+        <member name="M:Diacom.SPStatusEventArgs.#ctor(Diacom.SPStatus,System.String)">
+            <summary>
+            Raises event with specified arguments if <see cref="T:Diacom.ISP"/> status is not OK.
+            </summary>
+            <param name="status">Service Provider status.</param>
+            <param name="info">Additional information.</param>
+        </member>
+        <member name="F:Diacom.SPStatusEventArgs.Status">
+            <summary>
+            <see cref="T:Diacom.ISP"/> status.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatusEventArgs.Info">
+            <summary>
+            Additional information for the event.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPStatusEventArgs.Time">
+            <summary>
+            The time event was raised.
+            </summary>
+        </member>
+        <member name="T:Diacom.SPStatusEventHandler">
+            <summary>
+            Delegate for <see cref="E:Diacom.ISP.SPStatusEvent"/> event.
+            </summary>
+        </member>
+        <member name="T:Diacom.ISP">
+            <summary>
+            Exposes methods for working with hardware part.
+            </summary>
+        </member>
+        <member name="M:Diacom.ISP.Status">
+            <summary>
+            Indicates status of execution of any method.
+            </summary>
+            <remarks>
+            Check this property every time you think there can be an error during execution.
+            </remarks>
+        </member>
+        <member name="M:Diacom.ISP.Connect(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Connects to the server with given parameters.
+            </summary>
+            <param name="serverIP">IP address of server.</param>
+            <param name="serverPort">Port to connect.</param>
+            <param name="account">Account.</param>
+            <param name="password">Password.</param>
+            <remarks>
+            <para>
+            Creates new TCP socket, connects to server with given IP address and port,
+            tries to logon as administrator to "account" with given "password".
+            </para>
+            <para>
+            Blocks the current thread until initialization is finished. Waits for connection indefinitely.
+            </para>
+            <para>
+            To check execution results, use <see cref="M:Diacom.ISP.Status"/> property and <see cref="T:Diacom.SPStatus"/> enumeration.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.ISP.Connect(System.String,System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            Connects to the server with given parameters.
+            </summary>
+            <param name="serverIP">IP address of server.</param>
+            <param name="serverPort">Port to connect.</param>
+            <param name="account">Account.</param>
+            <param name="password">Password.</param>
+            <param name="timeout">Timeout interval.</param>
+            <remarks>
+            <para>
+            Creates new TCP socket, connects to server with given IP address and port,
+            tries to logon as administrator to "account" with given "password".
+            </para>
+            <para>
+            Blocks the current thread until initialization is finished.
+            Waits for connection "timeout" miliseconds.
+            </para>
+            <para>
+            To check execution results, use <see cref="M:Diacom.ISP.Status"/> property and <see cref="T:Diacom.SPStatus"/> enumeration.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.ISP.Connect(System.String,System.Int32,Diacom.SPLogonType,System.String,System.String)">
+            <summary>
+            Connects to the server with given parameters.
+            </summary>
+            <param name="serverIP">IP address of server.</param>
+            <param name="serverPort">Port to connect.</param>
+            <param name="logonType">Type of logon.</param>
+            <param name="account">Account.</param>
+            <param name="password">Password.</param>
+            <remarks>
+            <para>
+            Creates new TCP socket, connects to server with given IP address and port,
+            tries to logon as "logonType" to "account" with given "password".
+            </para>
+            <para>
+            Blocks the current thread until initialization is finished.
+            Waits for connection infinitely.
+            </para>
+            <para>
+            To check execution results, use <see cref="M:Diacom.ISP.Status"/> property and <see cref="T:Diacom.SPStatus"/> enumeration.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.ISP.Connect(System.String,System.Int32,Diacom.SPLogonType,System.String,System.String,System.Int32)">
+            <summary>
+            Connects to the server with given parameters.
+            </summary>
+            <param name="serverIP">IP address of server.</param>
+            <param name="serverPort">Port to connect.</param>
+            <param name="logonType">Type of logon.</param>
+            <param name="account">Account.</param>
+            <param name="password">Password.</param>
+            <param name="timeout">Timeout interval.</param>
+            <remarks>
+            <para>
+            Creates new TCP socket, connects to server with given IP address and port,
+            tries to logon as "logonType" to "account" with given "password".
+            </para>
+            <para>
+            Blocks the current thread until initialization is finished.
+            Waits for connection "timeout" miliseconds.
+            </para>
+            <para>
+            To check execution results, use <see cref="M:Diacom.ISP.Status"/> property and <see cref="T:Diacom.SPStatus"/> enumeration.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.ISP.Disconnect">
+             <summary>
+             Disconnects from the server.
+             </summary>
+             <remarks>
+             <para>
+             Stops threads, closes socket, etc.
+             </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.ISP.Receive">
+            <summary>
+            Retrieves next available event (one of <see cref="N:Diacom.Ev"/> namespace classes).
+            </summary>
+            <returns>Next available event of <see cref="N:Diacom.Ev"/> type.</returns>
+            <remarks>Waits while queue is empty.</remarks>
+        </member>
+        <member name="M:Diacom.ISP.Send(Diacom.Cmd.CmdBase)">
+            <summary>
+            Sends command (one of <see cref="N:Diacom.Cmd"/> neamespace classes).
+            </summary>
+            <param name="cmd">Command to send of <see cref="N:Diacom.Cmd"/> type.</param>
+            <remarks>Returns immediately.</remarks>
+        </member>
+        <member name="M:Diacom.ISP.GetLines">
+            <summary>
+            Provides an access to all the lines available.
+            </summary>
+            <returns>Pointer to array of <see cref="T:Diacom.SPLine"/> [] type.</returns>
+        </member>
+        <member name="M:Diacom.ISP.GetLine(System.Object)">
+            <summary>
+            Provides an access to specified line.
+            </summary>
+            <param name="lineID">Line ID.</param>
+            <returns><see cref="T:Diacom.SPLine"/> instance if line exists, null otherwise.</returns>
+        </member>
+        <member name="E:Diacom.ISP.SPStatusEvent">
+            <summary>
+            Event with information about <see cref="T:Diacom.ISP"/> status.
+            </summary>
+            <remarks>
+            Raised when any thread raises exception - i.e. when <see cref="M:Diacom.ISP.Send(Diacom.Cmd.CmdBase)"/> or <see cref="M:Diacom.ISP.Receive"/> methods of <see cref="T:Diacom.ISP"/> interface are failed.
+            </remarks>
+        </member>
+        <member name="T:Diacom.Cmd.CommandID">
+            <summary>
+            Commands enumeration.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.ANSWER_CALL">
+            <summary>
+            Answer the call.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.REJECT_CALL">
+            <summary>
+            Reject the call.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.DROP_CALL">
+            <summary>
+            Drop call.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.PASS_CALL">
+            <summary>
+            Pass call.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.CONNECT_LINES">
+            <summary>
+            Connect two lines to each other.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.DISCONNECT_LINE">
+            <summary>
+            Snatch line.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.DIAL">
+            <summary>
+            Dial specified number.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.PLAY_DTMF">
+            <summary>
+            Play DTMF code.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.PLAY_FILE">
+            <summary>
+            Play file.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.RECORD_FILE">
+            <summary>
+            Record file.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.RESET">
+            <summary>
+            Reset line (terminate execution of current command, if possible).
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.RING_EXTENSION">
+            <summary>
+            Ring specified extension.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.SWITCH_MUSIC">
+            <summary>
+            Switch music mode.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CommandID.TRANSFER">
+            <summary>
+            Transfer call.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.CmdBase">
+            <summary>
+            Base class for all commands.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CmdBase.cmdID">
+            <summary>
+            Storage for command ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CmdBase.cmdSender">
+            <summary>
+            Storage for command sender ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.CmdBase.targetLine">
+            <summary>
+            Storage for the line on which the command is executed.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.CmdBase.#ctor(Diacom.Cmd.CommandID,System.Object,System.Object)">
+            <summary>
+            Implements a constructor for the command base class.
+            </summary>
+            <param name="commandID">Command ID (see <see cref="T:Diacom.Cmd.CommandID">CommandID</see> enumeration).</param>
+            <param name="sender">Line the command comes from.</param>
+            <param name="target">Target line - the line on which command should be executed.</param>
+        </member>
+        <member name="P:Diacom.Cmd.CmdBase.ID">
+            <summary>
+            Command ID (see <see cref="T:Diacom.Cmd.CommandID">CommandID</see> enumeration).
+            </summary>
+        </member>
+        <member name="P:Diacom.Cmd.CmdBase.Sender">
+            <summary>
+            Line the command comes from.
+            </summary>
+        </member>
+        <member name="P:Diacom.Cmd.CmdBase.Line">
+            <summary>
+            Line the command should be executed on.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.AnswerCall">
+            <summary>
+            Implements Answer Call command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.AnswerCall.#ctor(System.Object,System.Object)">
+            <summary>
+            Answers call from specified line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to answer the call from.</param>
+        </member>
+        <member name="T:Diacom.Cmd.RejectCall">
+            <summary>
+            Rejects call.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.RejectCall.#ctor(System.Object,System.Object,System.Int32)">
+            <summary>
+            Rejects the call from specified line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to reject the call from.</param>
+            <param name="rejectCode">Rejection reason code.</param>
+        </member>
+        <member name="F:Diacom.Cmd.RejectCall.rejectReasonCode">
+            <summary>
+            Reason for rejecting the call.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.PassCall">
+            <summary>
+            Implements Pass Call command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.PassCall.#ctor(System.Object,System.Object)">
+            <summary>
+            Passes the call on specified line to regular processing.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to pass the call.</param>
+        </member>
+        <member name="T:Diacom.Cmd.DropCall">
+            <summary>
+            Implements Drop Call command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.DropCall.#ctor(System.Object,System.Object)">
+            <summary>
+            Drops the call.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to drop call on.</param>
+        </member>
+        <member name="T:Diacom.Cmd.Connect">
+            <summary>
+            Implements Connect command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.Connect.#ctor(System.Object,System.Object,System.Object)">
+            <summary>
+            Connects two lines each other.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line1">First line to connect.</param>
+            <param name="line2">Second line to connect.</param>
+        </member>
+        <member name="F:Diacom.Cmd.Connect.LineOne">
+            <summary>
+            First line to connect.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.Connect.LineTwo">
+            <summary>
+            Second line to connect.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.Dial">
+            <summary>
+            Implements Dial command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.Dial.#ctor(System.Object,System.Object,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Dials specified line number.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to dial on.</param>
+            <param name="destination">Destination number (to dial).</param>
+            <param name="source">Source number (who dials).</param>
+            <param name="account">Account.</param>
+            <param name="tone">Tone detect: 0 - disabled, 1 - enabled.</param>
+        </member>
+        <member name="F:Diacom.Cmd.Dial.Destination">
+            <summary>
+            Destination number (to dial).
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.Dial.Source">
+            <summary>
+            Source number (who dials).
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.Dial.Account">
+            <summary>
+            Account.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.Dial.Tone">
+            <summary>
+            Tone detect: 0 - disabled, 1 - enabled.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.Disconnect">
+            <summary>
+            Implements Disconnect command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.Disconnect.#ctor(System.Object,System.Object)">
+            <summary>
+            Disconnects specified line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to disconnect.</param>
+        </member>
+        <member name="T:Diacom.Cmd.PlayDTMF">
+            <summary>
+            Implements Play DTMF command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.PlayDTMF.#ctor(System.Object,System.Object,System.String)">
+            <summary>
+            Plays specified DTMF code on appropriate line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to play DTMF.</param>
+            <param name="DTMFCode">DTMF code.</param>
+        </member>
+        <member name="F:Diacom.Cmd.PlayDTMF.DTMFCode">
+            <summary>
+            DTMF code.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.PlayFile">
+            <summary>
+            Implements Play File command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.PlayFile.#ctor(System.Object,System.Object,System.String,System.String)">
+            <summary>
+            Plays specified file on appropriate line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to play file.</param>
+            <param name="filePath">Path to the file to play.</param>
+            <param name="cutOffString">CutOff string.</param>
+        </member>
+        <member name="F:Diacom.Cmd.PlayFile.FilePath">
+            <summary>
+            Path to the file to play.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.PlayFile.CutOffString">
+            <summary>
+            CutOff string.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.RecordFile">
+            <summary>
+            Implements Record File command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.RecordFile.#ctor(System.Object,System.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Records file with specified path on appropriate line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to record the file.</param>
+            <param name="filePath">Path to record the file to.</param>
+            <param name="cutOffString">CutOff string.</param>
+            <param name="appendMode">Append mode: 0 - create new, 1 - append to existing.</param>
+        </member>
+        <member name="F:Diacom.Cmd.RecordFile.FilePath">
+            <summary>
+            Path to record the file to.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.RecordFile.CutOffString">
+            <summary>
+            CutOff string.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.RecordFile.AppendMode">
+            <summary>
+            Append mode: 0 - create new, 1 - append to existing.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.Reset">
+            <summary>
+            Resets line (stops current command).
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.Reset.#ctor(System.Object,System.Object)">
+            <summary>
+            Resets specified line.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to reset.</param>
+        </member>
+        <member name="T:Diacom.Cmd.RingExtension">
+            <summary>
+            Implements Ring Extension command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.RingExtension.#ctor(System.Object,System.Object,System.String,System.Int32)">
+            <summary>
+            Rings specified extension.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to Ring extension on.</param>
+            <param name="extension">Extension to ring to.</param>
+            <param name="ringType">Type of ring: 0 - default, 1 - normal, 2 - intercom.</param>
+        </member>
+        <member name="F:Diacom.Cmd.RingExtension.Extension">
+            <summary>
+            Extension to ring to.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.RingExtension.RingType">
+            <summary>
+            Type of ring: 0 - default, 1 - normal, 2 - intercom.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.SwitchMusic">
+            <summary>
+            Implements Switch Music command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.SwitchMusic.#ctor(System.Object,System.Object,System.Int32)">
+            <summary>
+            Switches play music or not.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line to switch music.</param>
+            <param name="musicMode">Music mode: 0 - music on, 1 - music off.</param>
+        </member>
+        <member name="F:Diacom.Cmd.SwitchMusic.MusicMode">
+            <summary>
+            Music mode: 0 - music on, 1 - music off.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.TransferCallType">
+            <summary>
+            Possible trasfer types.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCallType.AUTOATEDDANT">
+            <summary>
+            Transfer to autoattedant.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCallType.EXTENSION">
+            <summary>
+            Transfer to extension.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCallType.EXTENSION_VOICE_MESSAGE">
+            <summary>
+            Transfer to extension (to voice message).
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCallType.OPERATOR">
+            <summary>
+            Transfer to operator.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCallType.TRUNK">
+            <summary>
+            Transfer to trunk.
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.TransferCall">
+            <summary>
+            Implements Transfer Call command.
+            </summary>
+        </member>
+        <member name="M:Diacom.Cmd.TransferCall.#ctor(System.Object,System.Object,System.Object,System.String,Diacom.Cmd.TransferCallType)">
+            <summary>
+            Transfers call.
+            </summary>
+            <param name="sender">Line the command comes from.</param>
+            <param name="line">Line which is used to transfer call from.</param>
+            <param name="targetLine">Line which is used to transfer call to.</param>
+            <param name="destination">Destination number.</param>
+            <param name="type">Type of transfer (see <see cref="T:Diacom.Cmd.TransferCallType"/> enumeration).</param>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCall.Target">
+            <summary>
+            Destination number.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCall.Destination">
+            <summary>
+            Destination number.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.TransferCall.Type">
+            <summary>
+            Type of transfer (see <see cref="T:Diacom.Cmd.TransferCallType"/> enumeration).
+            </summary>
+        </member>
+        <member name="T:Diacom.Cmd.AgentState">
+            <summary>
+            Possible agent states.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.AgentState.READY">
+            <summary>
+            Agent is ready.
+            </summary>
+        </member>
+        <member name="F:Diacom.Cmd.AgentState.NOT_READY">
+            <summary>
+            Agent is not ready yet.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.EventID">
+            <summary>
+            Events enumeration.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.COMMAND_STATUS">
+            <summary>
+            Status of the command execution (see CmdStatus enumeration).
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.CONNECT">
+            <summary>
+            Connection established.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.DIGIT">
+            <summary>
+            Digit was pressed.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.DISCONNECT">
+            <summary>
+            End of connection.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.LINE_STATE_CHANGED">
+            <summary>
+            Changing of line state.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.RING">
+            <summary>
+            Have a call.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.RING_BACK">
+            <summary>
+            Have a response on dialing the number.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EventID.TONE">
+            <summary>
+            Have a tone.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.EvBase">
+            <summary>
+            Base class for all events.
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.EvBase.#ctor(System.Object,Diacom.Ev.EventID)">
+            <summary>
+            Initializes new instance of class with specified parameters.
+            </summary>
+            <param name="eventLine">Object that uniquely identifies the line.</param>
+            <param name="eventType">Type of the event (see <see cref="T:Diacom.Ev.EventID"/> enumeration).</param>
+        </member>
+        <member name="F:Diacom.Ev.EvBase.evID">
+            <summary>
+            Storage for event ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.EvBase.evLine">
+            <summary>
+            Storage for line where event was raised.
+            </summary>
+        </member>
+        <member name="P:Diacom.Ev.EvBase.ID">
+            <summary>
+            Event ID (see <see cref="T:Diacom.Ev.EventID">EventID</see> enumeration).
+            </summary>
+        </member>
+        <member name="P:Diacom.Ev.EvBase.Line">
+            <summary>
+            Line number.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.Ring">
+            <summary>
+            Implements Ring event (J).
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.Ring.#ctor(System.Object,Diacom.SPLine)">
+            <summary>
+            Initializes new instance of class with specified parameters.
+            </summary>
+            <param name="line">Object that identifies the line on which ring came.</param>
+            <param name="lineInfo">Parameter of type <see cref="T:Diacom.SPLine"/> that contains all info about the call.</param>
+        </member>
+        <member name="F:Diacom.Ev.Ring.ringInfo">
+            <summary>
+            Information about the incoming ring.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.RingBack">
+            <summary>
+            Implements Ring Back event (V).
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.RingBack.#ctor(System.Object,Diacom.SPLine)">
+            <summary>
+            Initializes new instance of class with specified parameters.
+            </summary>
+            <param name="line">Object that identifies the line on which ringback came.</param>
+            <param name="lineInfo">Parameter of type <see cref="T:Diacom.SPLine"/> that contains all info about the call.</param>
+        </member>
+        <member name="F:Diacom.Ev.RingBack.ringInfo">
+            <summary>
+            Information about the incoming ring.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.Connect">
+            <summary>
+            Implements Connect event (I).
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.Connect.#ctor(System.Object)">
+            <summary>
+            Initializes new instance of class with specified line number.
+            </summary>
+            <param name="line">Connected line number.</param>
+        </member>
+        <member name="T:Diacom.Ev.Digit">
+            <summary>
+            Implements Digit event (0-F, P, R).
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.Digit.#ctor(System.Object,System.Char)">
+            <summary>
+            Initializes new instance of class with specified line number and digit code.
+            </summary>
+            <param name="line">Number of line on which Digit event was detected.</param>
+            <param name="digit">Digit code.</param>
+        </member>
+        <member name="F:Diacom.Ev.Digit.Code">
+            <summary>
+            Digit code.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.Disconnect">
+            <summary>
+            Implements Disconnect event (X).
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.Disconnect.#ctor(System.Object)">
+            <summary>
+            Initializes new instance of class with specified line number.
+            </summary>
+            <param name="line">Disconnected line number.</param>
+        </member>
+        <member name="T:Diacom.Ev.ToneType">
+            <summary>
+            Type of tone.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.UNKNOWN">
+            <summary>
+            Unknown tone type.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.BUSY">
+            <summary>
+            Busy tone type.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.RINGBACK">
+            <summary>
+            Ring back tone type.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.CED">
+            <summary>
+            CED tone type.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.CNG">
+            <summary>
+            CNG tone type.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.USER">
+            <summary>
+            User tone type.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.ToneType.VOICE">
+            <summary>
+            Voice tone type.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.Tone">
+            <summary>
+            Implements Tone event.
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.Tone.#ctor(System.Object,Diacom.Ev.ToneType)">
+            <summary>
+            Initializes new instance of class with specified line number.
+            </summary>
+            <param name="line">Line number.</param>
+            <param name="tone">Tone type: 0 - unknown, 1 - busy, 2 - ring back, 3 - CED, 4 - CNG, 5 - user, 6 - voice (see <see cref="T:Diacom.Ev.ToneType">ToneType</see> enumeration).</param>
+        </member>
+        <member name="F:Diacom.Ev.Tone.Type">
+            <summary>
+            Tone type: 0 - unknown, 1 - busy, 2 - ring back, 3 - CED, 4 - CNG, 5 - user, 6 - voice (see <see cref="T:Diacom.Ev.ToneType">ToneType</see> enumeration).
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.LineStateChanged">
+            <summary>
+            Implements LineStateChange event.
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.LineStateChanged.#ctor(System.Object,Diacom.SPLineState)">
+            <summary>
+            Initializes new instance of class with specified line number.
+            </summary>
+            <param name="line">Line number.</param>
+            <param name="state">State of the line.</param>
+        </member>
+        <member name="F:Diacom.Ev.LineStateChanged.State">
+            <summary>
+            State of the line.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.CmdStatus">
+            <summary>
+            Possible command execution statuses.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.CmdStatus.OK">
+            <summary>
+            Command successfully executed.
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.CmdStatus.ERROR">
+            <summary>
+            Command execution was not successfull.
+            </summary>
+        </member>
+        <member name="T:Diacom.Ev.CommandStatus">
+            <summary>
+            Implements Command Status event (S).
+            </summary>
+        </member>
+        <member name="M:Diacom.Ev.CommandStatus.#ctor(System.Object,Diacom.Cmd.CommandID,Diacom.Ev.CmdStatus)">
+            <summary>
+            Initializes new instance of class with specified parameters.
+            </summary>
+            <param name="line">Line on which the command was executed.</param>
+            <param name="commandID">Command ID (see <see cref="T:Diacom.Cmd.CommandID">CommandID</see> enumeration).</param>
+            <param name="status">Command execution status (see <see cref="T:Diacom.Ev.CmdStatus">CmdStatus</see> enumeration).</param>
+        </member>
+        <member name="F:Diacom.Ev.CommandStatus.CommandID">
+            <summary>
+            Command ID (see <see cref="T:Diacom.Cmd.CommandID">CommandID</see> enumeration).
+            </summary>
+        </member>
+        <member name="F:Diacom.Ev.CommandStatus.Status">
+            <summary>
+            Command execution status (see <see cref="T:Diacom.Ev.CmdStatus">CmdStatus</see> enumeration).
+            </summary>
+        </member>
+        <member name="T:Diacom.TraceOut">
+            <summary>
+            Implements output to a standard application error stream.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceOut.TraceWriter">
+            <summary>
+            Gets messages from queue and puts them to a trace output.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceOut.#cctor">
+            <summary>
+            Creates messages queue and starts messages-processing thread.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceOut.Put(System.String)">
+            <summary>
+            Puts given string to trace output, adding the time it happends.
+            </summary>
+            <param name="aMessage">String to put.</param>
+        </member>
+        <member name="M:Diacom.TraceOut.Put(System.Exception)">
+            <summary>
+            Puts given exception to trace output, adding the time it happends.
+            </summary>
+            <param name="ex">Exception to handle.</param>
+        </member>
+        <member name="T:Diacom.WaitingQueue">
+            <summary>
+            Implements thread-safe queue.
+            </summary>
+        </member>
+        <member name="F:Diacom.WaitingQueue.queueHasData">
+            <summary>
+            Event that signales about queue is not empty - data already stored in queue.
+            </summary>
+        </member>
+        <member name="F:Diacom.WaitingQueue.dataQueue">
+            <summary>
+            The queue itself.
+            </summary>
+        </member>
+        <member name="M:Diacom.WaitingQueue.#ctor">
+            <summary>
+            Initializes fiels - nothing else should be done.
+            </summary>
+        </member>
+        <member name="M:Diacom.WaitingQueue.Enqueue(System.Object)">
+            <summary>
+            Puts element into the queue.
+            </summary>
+            <param name="data">Element to put in.</param>
+        </member>
+        <member name="M:Diacom.WaitingQueue.Dequeue">
+            <summary>
+            Extracts element from the queue.
+            </summary>
+            <returns>Extracted element.</returns>
+        </member>
+        <member name="M:Diacom.WaitingQueue.Clear">
+            <summary>
+            Clears queue.
+            </summary>
+        </member>
+        <member name="P:Diacom.WaitingQueue.Count">
+            <summary>
+            Gets quantity of elements in queue.
+            </summary>
+        </member>
+        <member name="T:Diacom.SPLineState">
+            <summary>
+            Service Provider (SP) line state.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.IDLE">
+            <summary>
+            Line is idle.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.EAP">
+            <summary>
+            EAP line state.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.CONNECTED">
+            <summary>
+            Line is connected.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.INUSE">
+            <summary>
+            Line is in use.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.OFFHOOK">
+            <summary>
+            Offhook.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.CALLPENDING">
+            <summary>
+            Pending call is on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.RINGBACK">
+            <summary>
+            Ring backs.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.CONFERENCING">
+            <summary>
+            Conference on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.AA">
+            <summary>
+            Autoateddant on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.VM">
+            <summary>
+            Voice message on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HOLD">
+            <summary>
+            Line is hold.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HOLDPENDING">
+            <summary>
+            Pending hold is on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PROCEEDING">
+            <summary>
+            Line is porceeding something.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.DISCONNECT">
+            <summary>
+            Line disconnects.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.ERROR">
+            <summary>
+            Error on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.RING">
+            <summary>
+            Ring on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PARK">
+            <summary>
+            Line is parked.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.SOFTOFFHOOK">
+            <summary>
+            Softoffhook.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.MUSICONHOLD">
+            <summary>
+            Line holds music on.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.XFER_WAITFORONHOOK">
+            <summary>
+            Line is waiting for onhook for XFER.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.XFER_RINGBACK">
+            <summary>
+            Ring is back on line for XFER.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.BUSY">
+            <summary>
+            Line is busy.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PLAY">
+            <summary>
+            Something plays on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.RECORD">
+            <summary>
+            Something records on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.APC">
+            <summary>
+            Line is under APC control.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.VOICE_RECORD_START">
+            <summary>
+            Voice recording started on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.VOICE_RECORD_STOP">
+            <summary>
+            Voice recording ended on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.SILENTMONITOR">
+            <summary>
+            Silent monitor on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.BARGEIN">
+            <summary>
+            Line is barged in.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HOLD_CONFERENCE">
+            <summary>
+            Conference holded on the line (for conference mode).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.HFDTD_IDLE">
+            <summary>
+            Line is idle for offhook when hand free / dialtone disabled.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PLAY_CALL_STOP">
+            <summary>
+            Playing call is finished on the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.PLAY_CALL">
+            <summary>
+            Line is playing call.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.LINE_ADD">
+            <summary>
+            New line added.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLineState.LINE_REMOVE">
+            <summary>
+            Line not accessible any more.
+            </summary>
+        </member>
+        <member name="T:Diacom.Identity">
+            <summary>
+            Identity for any possible name - number objects.
+            </summary>
+        </member>
+        <member name="F:Diacom.Identity._Name">
+            <summary>
+            Storage for a name.
+            </summary>
+        </member>
+        <member name="F:Diacom.Identity._Number">
+            <summary>
+            Storage for a number.
+            </summary>
+        </member>
+        <member name="M:Diacom.Identity.#ctor(System.String,System.String)">
+            <summary>
+            Creates and initializes new instance of a class.
+            </summary>
+            <param name="name">Name of the entity.</param>
+            <param name="number">Number of the entity.</param>
+        </member>
+        <member name="M:Diacom.Identity.ToString">
+            <summary>
+            Represents class information as a string.
+            </summary>
+            <returns>String with class information.</returns>
+        </member>
+        <member name="P:Diacom.Identity.Name">
+            <summary>
+            Gets entity name.
+            </summary>
+        </member>
+        <member name="P:Diacom.Identity.Number">
+            <summary>
+            Gets entity number.
+            </summary>
+        </member>
+        <member name="T:Diacom.CalleeIdentity">
+            <summary>
+            Represents information on callee.
+            </summary>
+        </member>
+        <member name="F:Diacom.CalleeIdentity._LineID">
+            <summary>
+            Storage for callee line PAD.
+            </summary>
+        </member>
+        <member name="M:Diacom.CalleeIdentity.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            Creates and initializes new instance of a class.
+            </summary>
+            <param name="name">Name of the callee.</param>
+            <param name="number">Number of the callee.</param>
+            <param name="lineID">Callee line ID.</param>
+        </member>
+        <member name="M:Diacom.CalleeIdentity.ToString">
+            <summary>
+            Represents class information as a string.
+            </summary>
+            <returns>String with information on callee.</returns>
+        </member>
+        <member name="P:Diacom.CalleeIdentity.LineID">
+            <summary>
+            gets callee line ID.
+            </summary>
+        </member>
+        <member name="T:Diacom.CallerIdentity">
+            <summary>
+            Represents information on caller.
+            </summary>
+        </member>
+        <member name="F:Diacom.CallerIdentity._IPAddress">
+            <summary>
+            Storage for caller IP address.
+            </summary>
+        </member>
+        <member name="F:Diacom.CallerIdentity._LineID">
+            <summary>
+            Storage for caller line PAD.
+            </summary>
+        </member>
+        <member name="M:Diacom.CallerIdentity.#ctor(System.String,System.String,System.Object,System.Net.IPAddress)">
+            <summary>
+            Creates and initializes new instance of a class.
+            </summary>
+            <param name="name">Name of the caller.</param>
+            <param name="number">Number of the caller.</param>
+            <param name="lineID">Caller line ID.</param>
+            <param name="sIPAddress">Caller IP address.</param>
+        </member>
+        <member name="M:Diacom.CallerIdentity.ToString">
+            <summary>
+            Represents class information as a string.
+            </summary>
+            <returns>String with information on callee.</returns>
+        </member>
+        <member name="P:Diacom.CallerIdentity.LineID">
+            <summary>
+            Gets caller line ID.
+            </summary>
+        </member>
+        <member name="P:Diacom.CallerIdentity.IP">
+            <summary>
+            Gets caller IP address.
+            </summary>
+        </member>
+        <member name="T:Diacom.SPLine">
+            <summary>
+            Implements information about a line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.ToStringFormat">
+            <summary>
+            Format string for <see cref="M:Diacom.SPLine.ToString"/>() method.
+            </summary>
+            <remarks>
+            Actually is the following string:
+            <pre>  ID | Number     | Name                           | Port     | Prefix   | Status               | Type | User Name                      | User Number | Call Name                      | Call Number | CID Name                       | CID NUmber  | DID Name                       | DID Number  | DNIS Name                      | DNIS Number</pre>
+            </remarks>
+        </member>
+        <member name="F:Diacom.SPLine.ToStringSeparator">
+            <summary>
+            Separator string for <see cref="M:Diacom.SPLine.ToString"/>() method.
+            </summary>
+            <remarks>
+            Actually is the following string:
+            <pre>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre>
+            </remarks>
+        </member>
+        <member name="F:Diacom.SPLine.AccessCode">
+            <summary>
+            Access code for a line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.ID">
+            <summary>
+            Line identificator (ID).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Name">
+            <summary>
+            Name of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Number">
+            <summary>
+            Line number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.PAD">
+            <summary>
+            Line PAD.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Port">
+            <summary>
+            Line port.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Prefix">
+            <summary>
+            Line prefix.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.State">
+            <summary>
+            Current line status (see <see cref="T:Diacom.SPLineState"/> enumeration).
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.Type">
+            <summary>
+            Line type.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CalledName">
+            <summary>
+            Call name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CalledNumber">
+            <summary>
+            Call number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CIDName">
+            <summary>
+            CID name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.CIDNumber">
+            <summary>
+            CID number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DIDName">
+            <summary>
+            DID name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DIDNumber">
+            <summary>
+            DID number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DNISName">
+            <summary>
+            DNIS name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.DNISNumber">
+            <summary>
+            DNIS number.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.UserName">
+            <summary>
+            User name.
+            </summary>
+        </member>
+        <member name="F:Diacom.SPLine.UserNumber">
+            <summary>
+            User number.
+            </summary>
+        </member>
+        <member name="M:Diacom.SPLine.Clone">
+            <summary>
+            Creates a shallow copy of the current object.
+            </summary>
+            <returns>Copy of SPLine class.</returns>
+        </member>
+        <member name="M:Diacom.SPLine.ToString">
+            <summary>
+            Converts content of class to string.
+            </summary>
+            <returns>String presentation of class properties.</returns>
+        </member>
+        <member name="M:Diacom.SPLine.#ctor">
+            <summary>
+            Creates class instance with default properties.
+            </summary>
+        </member>
+    </members>
+</doc>

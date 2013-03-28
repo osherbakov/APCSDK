@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APCExe</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.SPCommandModuleExe">
+            <summary>
+            Defines the module that communicates with Service Provider (SP) module.
+            </summary>
+        </member>
+        <member name="M:Diacom.SPCommandModuleExe.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.SPCommandModuleExe"/> class with no parameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.SPCommandModuleExe.Main">
+            <summary>
+            Main entry point to the executable.
+            </summary>
+        </member>
+    </members>
+</doc>

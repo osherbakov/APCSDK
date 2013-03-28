@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>AEPScript</name>
+    <version>1.0.1840.26581</version>
+    <fullname>AEPScript, Version=1.0.1840.26581, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="M:.AEPScript.IsAddressOK(System.Collections.IEnumerable,System.String)">
+      <summary>
+ Checks if the specified address is in the supplied control access list. 
+ </summary>
+ <param name="arrayOfAddresses">Array or collection of addresses.</param>
+ <param name="Address">Address to check.</param>
+ <returns>True - if found match, False - if not</returns></member>
+    <member name="T:.Password">
+      <summary>
+ Represents the class that asks for the password from the user. 
+ </summary>
+    </member>
+  </members>
+</doc>

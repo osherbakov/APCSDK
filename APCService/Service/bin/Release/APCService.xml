@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APCService</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.APCService.APCService">
+            <summary>
+            Main class for windows service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.#ctor">
+            <summary>
+            Initializes all class components.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.OnStart(System.String[])">
+            <summary>
+            Set things in motion so your service can do its work.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.OnStop">
+            <summary>
+            Stop this service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.ReadConfig">
+            <summary>
+            Reads options for APCService.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.RegisterTCPChannel">
+            <summary>
+            Creats TCP channel for sharing APCServiceCore::GetOptions() 
+            and APCServiceCore::SetOptions(...) functions.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.RegisterRemoteTypes">
+            <summary>
+            Registers remote types.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.UnRegisterRemoteTypes">
+            <summary>
+            Unegisters remote types.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.RestartTimerCallbackEntry(System.Object)">
+            <summary>
+            Executes when timer ticks.
+            </summary>
+            <param name="state">Parameter, which is the name of the script file.</param>
+        </member>
+        <member name="M:Diacom.APCService.APCService.StartHandlers">
+            <summary>
+            Main thread for APCService application.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCService.Main">
+            <summary>
+            The main entry point for the process. Starts the service.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ServiceProviders">
+            <summary>
+            Represents the class to scan the directories for service providers.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServiceProviders.GetProviders">
+            <summary>
+            Gets the array of found service providers.
+            </summary>
+            <returns>A string array of Service Providers names.</returns>
+        </member>
+        <member name="M:Diacom.APCService.ServiceProviders.FindProviders(System.String)">
+            <summary>
+            Initiates a search for all nested service providers starting from a specified directory.
+            </summary>
+            <param name="ProvidersDirectory">The Directory to start search in.</param>
+        </member>
+        <member name="M:Diacom.APCService.ServiceProviders.GetProviderFileName(System.String)">
+            <summary>
+            Returns service provider filename based on the Provider Name.
+            </summary>
+            <param name="ServiceProviderName">Name of the service provider.</param>
+            <returns>Full filename to access a specified Service Provider.</returns>
+        </member>
+        <member name="M:Diacom.APCService.ServiceProviders.GetProviderType(System.String)">
+            <summary>
+            Gets the type of the service provider given it's name.
+            </summary>
+            <param name="ProviderFileName">A type of the Service provider to instantiate.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Diacom.APCService.ProjectInstaller">
+            <summary>
+            Summary description for ProjectInstaller.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.ProjectInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ProjectInstaller.#ctor">
+            <summary>
+            Installer for the service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ProjectInstaller.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ProjectInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ScriptHandler">
+            <summary>
+            Represents all needfull actions for script to run.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ScriptHandler.LoginToServer">
+            <summary>
+            Login to Server.
+            </summary>
+            <returns>True if success, otherwise false.</returns>
+        </member>
+        <member name="M:Diacom.APCService.ScriptHandler.Dispose">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+    </members>
+</doc>

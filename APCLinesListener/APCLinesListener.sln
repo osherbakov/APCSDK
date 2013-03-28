@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCore", "SP\SPCore.csproj", "{742943D6-9ED5-4F91-9A7F-518783AAD630}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltiGenSP", "SP\AltiGen\AltiGenSP.csproj", "{7157FA11-6E5A-47DB-9D29-F92127924442}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APCLinesListener", "APCLinesListener\APCLinesListener.csproj", "{4B45F0B7-7FF9-4F0D-8318-9E4BF09DF625}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {AB79D550-2B9D-4867-8322-0456B2F5C4B2}
+		SccProjectUniqueName1 = APCLinesListener\\APCLinesListener.csproj
+		SccLocalPath1 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = APCLinesListener\\
+		SccProjectUniqueName2 = SP\\AltiGen\\AltiGenSP.csproj
+		SccLocalPath2 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = SP\\AltiGen\\
+		SccProjectUniqueName3 = SP\\SPCore.csproj
+		SccLocalPath3 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection3 = SP\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.ActiveCfg = Debug|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.Build.0 = Debug|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.ActiveCfg = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.Build.0 = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Debug.ActiveCfg = Debug|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Debug.Build.0 = Debug|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Release.ActiveCfg = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Release.Build.0 = Release|.NET
+		{4B45F0B7-7FF9-4F0D-8318-9E4BF09DF625}.Debug.ActiveCfg = Debug|.NET
+		{4B45F0B7-7FF9-4F0D-8318-9E4BF09DF625}.Debug.Build.0 = Debug|.NET
+		{4B45F0B7-7FF9-4F0D-8318-9E4BF09DF625}.Release.ActiveCfg = Release|.NET
+		{4B45F0B7-7FF9-4F0D-8318-9E4BF09DF625}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

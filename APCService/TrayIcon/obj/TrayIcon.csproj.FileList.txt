@@ -1,0 +1,7 @@
+bin\Debug\TrayIcon.dll
+bin\Debug\TrayIcon.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Diacom.APCService.Control.SystemTrayControl.resources
+obj\Debug\TrayIcon.csproj.GenerateResource.Cache
+obj\Debug\TrayIcon.dll
+obj\Debug\TrayIcon.pdb

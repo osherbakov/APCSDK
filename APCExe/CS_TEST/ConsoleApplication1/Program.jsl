@@ -1,0 +1,42 @@
+package ConsoleApplication1;
+
+/**
+ * Summary description for Program
+ */
+public class Program
+{
+	public static void main(String[] args)
+	{
+		System.Collections.Hashtable test = new System.Collections.Hashtable();
+		
+		String age;
+		String Key;
+		//
+		// TODO: Add code to start application here
+		//
+		test.Add("Oleg", "Papa");
+		test.Add("Elena", "Mama");
+		test.Add("Toki", "Son");
+
+		System.Console.WriteLine("What is your age?");
+		age = System.Console.ReadLine();
+		System.Console.WriteLine("So your age is " + age);
+		System.Console.WriteLine("Size = " + test.get_Count());
+		for ( ; ; )
+		{
+			System.Console.WriteLine("Enter Key :");
+			Key = System.Console.ReadLine();
+			if (test.ContainsKey(Key))
+			{
+				System.Console.WriteLine("For Key " + Key + " Value is " + test.get_Item(Key));
+			}
+			else
+			{
+				System.Console.WriteLine("No such key!!!!");
+			}
+		}
+
+//		System.Console.ReadLine();
+
+	}
+}

@@ -1,0 +1,17 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:APCServiceOptions id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Diacom.APCService/APCServiceCore%2C%20Version%3D1.1.1.33560%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<APCScriptFileName id="ref-4">C:\APCSDK\APCExe\TESTSCRIPT\Class1.vb</APCScriptFileName>
+<APCServiceStatesFolders id="ref-5"></APCServiceStatesFolders>
+<ControlLineID id="ref-6">222</ControlLineID>
+<ControlLineLogonType xsi:type="a2:SPLogonType" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Diacom/SPCore%2C%20Version%3D1.1.1.33557%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">ADMINISTRATOR</ControlLineLogonType>
+<ControlLinePassword id="ref-7">2222</ControlLinePassword>
+<LogonTimeout>60000</LogonTimeout>
+<ServerIPAddress id="ref-8">192.168.1.3</ServerIPAddress>
+<ServerPort>10025</ServerPort>
+<ServiceProviderType id="ref-9">AltiGen Service Provider</ServiceProviderType>
+<MachineName id="ref-10">127.0.0.1</MachineName>
+<MachinePort>8088</MachinePort>
+</a1:APCServiceOptions>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

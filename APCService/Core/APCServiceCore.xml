@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APCServiceCore</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.APCService.APCServiceProviderStatus">
+            <summary>
+            Class used to pass the information about current SP status.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceProviderStatus.Status">
+            <summary>
+            Represents the status of the Service Provider.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceProviderStatus.AdditionalInfo">
+            <summary>
+            Gives an additional Information for the status.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceProviderStatus.InitializeLifetimeService">
+            <summary>
+            Obtains a lifetime service object to control the lifetime policy for this instance.
+            </summary>
+            <returns>An object of type <see cref="T:System.Runtime.Remoting.Lifetime.ILease"/> or <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/csref/html/vclrfnull.htm">null</see> to indicate an indefinite life.</returns>
+        </member>
+        <member name="T:Diacom.APCService.APCServiceProviderTypeConverter">
+            <summary>
+            TypeConverter for service provider type.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceProviderTypeConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether this object supports a standard set of values that can be picked from a list, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>true if <see cref="M:Diacom.APCService.APCServiceProviderTypeConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)"/> should be called to find a common set of values the object supports; otherwise, false.</returns>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceProviderTypeConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns a collection of standard values for the data type this type converter is designed for when provided with a format context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context that can be used to extract additional information about the environment from which this converter is invoked. This parameter or properties of this parameter can be a null reference (Nothing in Visual Basic).</param>
+            <returns>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection"/> that holds a standard set of valid values, or a null reference (Nothing in Visual Basic) if the data type does not support a standard set of values.</returns>
+        </member>
+        <member name="T:Diacom.APCService.APCServiceStatesEditor">
+            <summary>
+            Class for type editing for folders list.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceStatesEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Style of editing.
+            </summary>
+            <param name="context">Context of the execution.</param>
+            <returns>Style of editing.</returns>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceStatesEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Edits current value.
+            </summary>
+            <param name="context">Context of the execution.</param>
+            <param name="provider">Service provider.</param>
+            <param name="value">Value to edit.</param>
+            <returns>New edited value.</returns>
+        </member>
+        <member name="T:Diacom.APCService.APCServiceOptions">
+            <summary>
+            APCService options class.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.InitializeLifetimeService">
+            <summary>
+            Obtains a lifetime service object to control the lifetime policy for this instance.
+            </summary>
+            <returns>An object of type <see cref="T:System.Runtime.Remoting.Lifetime.ILease"/> or <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/csref/html/vclrfnull.htm">null</see> to indicate an indefinite life.</returns>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._ServiceProviderType">
+            <summary>
+            Service provide type.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._ServerIPAddress">
+            <summary>
+            AltiGen server IP.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._ServerPort">
+            <summary>
+            AltiGen server port.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._ControlLineID">
+            <summary>
+            AltiGen server control line ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._ControlLinePassword">
+            <summary>
+            AltiGen server control password.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._ControlLineLogonType">
+            <summary>
+            Admin logon type.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._LogonTimeout">
+            <summary>
+            Timeout.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._APCServiceStatesFolders">
+            <summary>
+            Directories with scripts.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._APCScriptFileName">
+            <summary>
+            Main script file for execution.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._SPTypes">
+            <summary>
+            Storage for service provider's types.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._MachineName">
+            <summary>
+            Name of the computer the service is running on.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.APCServiceOptions._MachinePort">
+            <summary>
+            Port to connect to service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.#ctor">
+            <summary>
+            Creates class instance with default parameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.GetSPTypes">
+            <summary>
+            Gets types of service providers which could be used.
+            </summary>
+            <returns>Types of service providers which could be used.</returns>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.SetSPTypes(System.String[])">
+            <summary>
+            Sets types of service providers which could be used.
+            </summary>
+            <param name="aSPTypes">Types of service providers which could be used.</param>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.GetSPTypesDinamically">
+            <summary>
+            Gets types of service providers which could be used.
+            </summary>
+            <returns>Types of service providers which could be used.</returns>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.SetSPTypesDinamically(System.String[])">
+            <summary>
+            Sets types of service providers which could be used.
+            </summary>
+            <param name="aSPTypes">Types of service providers which could be used.</param>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.ToString">
+            <summary>
+            Represents class information as text.
+            </summary>
+            <returns>Class information.</returns>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.CopyTo(Diacom.APCService.APCServiceOptions)">
+            <summary>
+            Copies data from specified class.
+            </summary>
+            <param name="aDestination">Destination class.</param>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates class instance based on serialization information.
+            </summary>
+            <param name="info">Serialization information.</param>
+            <param name="context">Serialization context.</param>
+        </member>
+        <member name="M:Diacom.APCService.APCServiceOptions.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Populates a SerializationInfo with the data needed to serialize the target object.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> to populate with data.</param>
+            <param name="context">The destination (see <see cref="T:System.Runtime.Serialization.StreamingContext"/>) for this serialization.</param>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.ServiceProviderType">
+            <summary>
+            Service Provider type.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.ServerIPAddress">
+            <summary>
+            Service Provider IP.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.ServerPort">
+            <summary>
+            Service Provider port.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.ControlLineID">
+            <summary>
+            Service Provider control line ID.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.ControlLinePassword">
+            <summary>
+            Service Provider control account password.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.ControlLineLogonType">
+            <summary>
+            Logon type.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.LogonTimeout">
+            <summary>
+            Timeout.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.APCServiceStatesFolders">
+            <summary>
+            Possible states files folders.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.APCScriptFileName">
+            <summary>
+            Main script file for execution.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.MachineName">
+            <summary>
+            Name of the computer the service is running on.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.APCServiceOptions.MachinePort">
+            <summary>
+            Port to connect to service.
+            </summary>
+        </member>
+    </members>
+</doc>

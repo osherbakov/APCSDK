@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltiGenSP", "AltiGenSP.csproj", "{7157FA11-6E5A-47DB-9D29-F92127924442}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCore", "..\SPCore.csproj", "{742943D6-9ED5-4F91-9A7F-518783AAD630}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = ..\\SPCore.csproj
+		SccProjectName0 = \u0022$/APCSDK/SP\u0022,\u0020XGBAAAAA
+		SccLocalPath0 = ..
+		CanCheckoutShared = false
+		SccLocalPath1 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {C63A77F2-D9F9-4B4B-85A6-D2736DEB0AE3}
+		SccProjectUniqueName2 = AltiGenSP.csproj
+		SccLocalPath2 = .
+		CanCheckoutShared = false
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Debug.ActiveCfg = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Debug.Build.0 = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Release.ActiveCfg = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Release.Build.0 = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.ActiveCfg = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.Build.0 = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.ActiveCfg = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

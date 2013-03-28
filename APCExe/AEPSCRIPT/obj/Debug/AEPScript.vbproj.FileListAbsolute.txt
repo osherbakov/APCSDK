@@ -1,0 +1,13 @@
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\AEPScript.dll
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\AEPScript.pdb
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\AEPScript.xml
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\APCLine.dll
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\SPCore.dll
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\SPCore.pdb
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\SPCore.xml
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\APCLine.pdb
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\bin\APCLine.xml
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\obj\Debug\ResolveAssemblyReference.cache
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\obj\Debug\AEPScript.dll
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\obj\Debug\AEPScript.xml
+I:\ProjectsGIT\APCSDK\APCExe\AEPSCRIPT\obj\Debug\AEPScript.pdb

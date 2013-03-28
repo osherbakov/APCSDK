@@ -1,0 +1,365 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AltiSDK28
+</name>
+</assembly>
+<members>
+<member name="F:Diacom.AltiSDK.ALPRespID.OK">
+	<summary>
+ All is OK.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_ID">
+	<summary>
+ ID is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_CMD">
+	<summary>
+ Command is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_PARAM">
+	<summary>
+ Parameter is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_PWD">
+	<summary>
+ PWD is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_STATE">
+	<summary>
+ State is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_APPID">
+	<summary>
+ Application ID is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_DATA">
+	<summary>
+ Data is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_SERIAL">
+	<summary>
+ Serial number is invalid.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.SYSTEM_ERROR">
+	<summary>
+ System error.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.PROTOCOL_ERROR">
+	<summary>
+ Protocol error.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.PORT_OUTOFREACH">
+	<summary>
+ Port is out of reach.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.APPID_LICENSE_FULL">
+	<summary>
+ Application has full licence.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NOT_LOGON">
+	<summary>
+ User is not logged in system.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.LOGON_ALREADY">
+	<summary>
+ User already logged in system.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.WEBCALL_REJECT">
+	<summary>
+ Web call rejected.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.ECHO">
+	<summary>
+ Echo.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.SERIAL_EXIST">
+	<summary>
+ Serial exists in system.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INSERT_DUPLICATE">
+	<summary>
+ Insert is duplicated.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.CALLDB_FULL">
+	<summary>
+ Calls database is overfulled.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.DBLINK_ERROR">
+	<summary>
+ Error to link to database.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_RECORD_SELECTED">
+	<summary>
+ No record was selected.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.CDRQUERY_DATA">
+	<summary>
+ CDR query data.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.APPID_REGISTERED">
+	<summary>
+ Application with this ID is already registered.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.LIST_END">
+	<summary>
+ End of list.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.LOGON_FAILED">
+	<summary>
+ logon failed.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.CALL_ABANDONED">
+	<summary>
+ Call abandoned.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.MAXDBCON_REACHED">
+	<summary>
+ Maximum number of connections to database reached.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.BACKUP_INPROCESS">
+	<summary>
+ Buckup is in processing.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.SQLTEMPDB_FULL">
+	<summary>
+ SQL temporary database is overfulled.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_MORE_SESSION">
+	<summary>
+ No free session.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.OPTIONPACK_NOT_INSTALLED">
+	<summary>
+ Option pack is not installed.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.IPEXT_NOTENABLED">
+	<summary>
+ IP extension not enabled.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.IPEXT_IPFIXED">
+	<summary>
+ IP extension is fixed.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.LINEBUSY">
+	<summary>
+ Line is busy.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.INVALID_ACCODE">
+	<summary>
+ Invalid access control code.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.APC_INVALID_CONTROLLER">
+	<summary>
+ Invalid SP controller.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.APC_EXTENSION_BUSY">
+	<summary>
+ Extension under SP control is busy.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.ACCESSDENY">
+	<summary>
+ Access denied.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_BAS_LICENSE">
+	<summary>
+ No basic license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_VRD_LICENSE">
+	<summary>
+ No VRD license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_APC_LICENSE">
+	<summary>
+ No SP license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_ECDR_LICENSE">
+	<summary>
+ No ECDR license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_ACRT_LICENSE">
+	<summary>
+ No AltiCRT license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_CSLE_LICENSE">
+	<summary>
+ No CSLE license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_AWEB_LICENSE">
+	<summary>
+ No AltiWeb license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_AVIEW_LICENSE">
+	<summary>
+ No AltiView license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_AWRG_LICENSE">
+	<summary>
+ No AltiWorkgroup license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NOT_REGISTERED">
+	<summary>
+ Application is not registered.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.ALREADY_REGISTERED">
+	<summary>
+ Application is registered alredy.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_MORE_CONSOLE">
+	<summary>
+ There are no more console.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.LOGIN_ISBLOCKED">
+	<summary>
+ Login is blocked.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.LOGIN_OK_UNSECURE_PWD">
+	<summary>
+ Login is OK (unsecure password).
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_IPPHONE_LICENSE">
+	<summary>
+ No IP phone license.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.NO_PRIVILEGE">
+	<summary>
+ No priviledge.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.WARN_VERSIONMISMATCH">
+	<summary>
+ Version mismatch warning.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.ERR_VERSIONMISMATCH">
+	<summary>
+ Version mismatch error.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_SYSTEM_DISABLE">
+	<summary>
+ System disabled voice recording.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_RECORDING_IN_PROGRESS">
+	<summary>
+ Voice recording in progress.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_FILE_CANNOT_OPEN">
+	<summary>
+ System can't open file for voice recording.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_DISK_FULL">
+	<summary>
+ Disk is full for voice recording.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_VRSERVICE_NOT_INSTALLED">
+	<summary>
+ Voice recording sevice is not installed.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_MAILBOX_IS_FULL">
+	<summary>
+ Mail box for voice recording is overfulled.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_INVALID_VRTYPE">
+	<summary>
+ Invalid voice recording type.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_EXT_DISABLE">
+	<summary>
+ Voice recording for this extension is disabled.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_NOT_SUPPORTED">
+	<summary>
+ Voice recording is not supported.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_NOT_START">
+	<summary>
+ Voice recording not started.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.VR_MAX">
+	<summary>
+ Voice recording processes maximum riched.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.ERROR">
+	<summary>
+ Error (reason is undefined).
+ </summary>
+</member><member name="F:Diacom.AltiSDK.ALPRespID.UNKNOWN">
+	<summary>
+ Unknown error.
+ </summary>
+</member><member name="T:Diacom.AltiSDK.ALPRespID">
+	<summary>
+ AltiLink Plus v.2 protocol responses on commands codes.
+ </summary>
+</member><member name="T:Diacom.AltiSDK.AltiSDKLine">
+ -----------------------------------------------------------------------------
+ <summary>
+ Represents SDK-specific Line.
+ </summary>
+ -----------------------------------------------------------------------------
+
+</member><member name="F:Diacom.AltiSDK.AltiSDKSP.eventsQueue">
+	<summary>
+Queue for events (incoming).
+ </summary>
+</member><member name="F:Diacom.AltiSDK.AltiSDKSP.commandsQueue">
+	<summary>
+ Queue for commands (outcoming).
+ </summary>
+</member><member name="F:Diacom.AltiSDK.AltiSDKSP.outThreadHandle">
+	<summary>
+ Thread handle for outcoming messages.
+ </summary>
+</member><member name="F:Diacom.AltiSDK.AltiSDKSP.outThreadTerminate">
+	<summary>
+ Flag for thread for outcoming messages to end his job.
+ </summary>
+</member><member name="M:Diacom.AltiSDK.AltiSDKSP.Receive">
+ -----------------------------------------------------------------------------
+ <summary>
+ Implements <see cref="M:Diacom.ISP.Receive"/> interface to receive events from SP.
+ </summary>
+	<returns>An event from SP of type derived from <see cref="T:Diacom.Ev.EvBase"/> class.</returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.AltiSDK.AltiSDKSP.Send(Diacom.Cmd.CmdBase)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Implements <see cref="M:Diacom.ISP.Send(Diacom.Cmd.CmdBase)"/> interface to send commands to SP.
+ </summary>
+	<param name="command"> Command derived from <see cref="T:Diacom.Cmd.CmdBase"/> class.</param>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.AltiSDK.AltiSDKSP.GetLine(System.Object)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Gets the line based on unique reference object.
+ </summary>
+	<param name="lineID">Unique reference.</param>
+	<returns>A Line of type <see cref="T:Diacom.SPLine"/></returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:Diacom.AltiSDK.AltiSDKSP.GetLines">
+ -----------------------------------------------------------------------------
+ <summary>
+ Returns an array of all lines registered with APC
+ </summary>
+	<returns>An array of type <see cref="T:Diacom.SPLine"/></returns>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Diacom.AltiSDK.AltiSDKSP.AsyncSPCommand">
+ -----------------------------------------------------------------------------
+ <summary>
+ Implements the command to be executed asynchronously by the thread from the thread pool.
+ </summary>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:Diacom.AltiSDK.AltiSDKSP">
+ -----------------------------------------------------------------------------
+ <summary>
+ Implements the SP class that directly communicates with AltiGen SDK
+ </summary>
+ -----------------------------------------------------------------------------
+
+</member>
+</members>
+</doc>

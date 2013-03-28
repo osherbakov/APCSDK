@@ -1,0 +1,11 @@
+bin\Debug\JS_TEST.dll
+bin\Debug\JS_TEST.pdb
+bin\Debug\APCLine.dll
+bin\Debug\SPCore.dll
+bin\Debug\SPCore.pdb
+bin\Debug\SPCore.xml
+bin\Debug\APCLine.pdb
+bin\Debug\APCLine.xml
+obj\x86\Debug\ResolveAssemblyReference.cache
+obj\x86\Debug\JS_TEST.dll
+obj\x86\Debug\JS_TEST.pdb

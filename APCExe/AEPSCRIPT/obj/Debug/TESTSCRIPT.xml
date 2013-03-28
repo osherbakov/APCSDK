@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>TESTSCRIPT</name>
+    <version>1.0.1811.17270</version>
+    <fullname>TESTSCRIPT, Version=1.0.1811.17270, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="M:TESTSCRIPT.testcall.IsAddressOK(System.Collections.IEnumerable,String)">
+      <summary>
+ Checks if the specified address is in the supplied control access list. 
+ </summary>
+ <param name="arrayOfAddresses">Array or collection of addresses.</param>
+ <param name="Address">Address to check.</param>
+ <returns>True - if found match, False - if not</returns></member>
+    <member name="T:TESTSCRIPT.Password">
+      <summary>
+ Represents the class that asks for the password from the user. 
+ </summary>
+    </member>
+  </members>
+</doc>

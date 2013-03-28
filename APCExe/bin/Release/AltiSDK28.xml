@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>AltiSDK28</name>
+    <version>1.1.0.26581</version>
+    <fullname>AltiSDK28, Version=1.1.0.26581, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="T:Diacom.AltiSDK.AltiSDKLine">
+      <summary>
+ Represents SDK-specific Line. 
+ </summary>
+    </member>
+    <member name="T:Diacom.AltiSDK.AltiSDKSP">
+      <summary>
+ Implements the SP class that directly communicates with AltiGen SDK 
+ </summary>
+    </member>
+    <member name="F:Diacom.AltiSDK.AltiSDKSP.eventsQueue">
+      <summary>
+Queue for events (incoming). 
+ </summary>
+    </member>
+    <member name="F:Diacom.AltiSDK.AltiSDKSP.commandsQueue">
+      <summary>
+ Queue for commands (outcoming). 
+ </summary>
+    </member>
+    <member name="F:Diacom.AltiSDK.AltiSDKSP.outThreadHandle">
+      <summary>
+ Thread handle for outcoming messages. 
+ </summary>
+    </member>
+    <member name="F:Diacom.AltiSDK.AltiSDKSP.outThreadTerminate">
+      <summary>
+ Flag for thread for outcoming messages to end his job. 
+ </summary>
+    </member>
+    <member name="M:Diacom.AltiSDK.AltiSDKSP.Receive">
+      <summary>
+ Implements <see cref="Diacom.ISP.Receive" /> interface to receive events from SP. 
+ </summary>
+ <returns>An event from SP of type derived from <see cref="Diacom.Ev.EvBase" /> class.</returns></member>
+    <member name="M:Diacom.AltiSDK.AltiSDKSP.Send(Diacom.Cmd.CmdBase)">
+      <summary>
+ Implements <see cref="Diacom.ISP.Send" /> interface to send commands to SP. 
+ </summary>
+ <param name="command"> Command derived from <see cref="Diacom.Cmd.CmdBase" /> class.</param></member>
+    <member name="M:Diacom.AltiSDK.AltiSDKSP.GetLine(System.Object)">
+      <summary>
+ Gets the line based on unique reference object. 
+ </summary>
+ <param name="lineID">Unique reference.</param>
+ <returns>A Line of type <see cref="Diacom.SPLine" /></returns></member>
+    <member name="M:Diacom.AltiSDK.AltiSDKSP.GetLines">
+      <summary>
+ Returns an array of all lines registered with APC 
+ </summary>
+ <returns>An array of type <see cref="Diacom.SPLine" /></returns></member>
+    <member name="T:Diacom.AltiSDK.AltiSDKSP.AsyncSPCommand">
+      <summary>
+ Implements the command to be executed asynchronously by the thread from the thread pool. 
+ </summary>
+    </member>
+  </members>
+</doc>

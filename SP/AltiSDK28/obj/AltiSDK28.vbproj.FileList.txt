@@ -1,0 +1,13 @@
+bin\AltiSDK28.dll
+bin\AltiSDK28.pdb
+bin\AltiSDK28.xml
+bin\SPCore.dll
+bin\SPCore.pdb
+bin\SPCore.xml
+bin\Interop.AltiComLib.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.AltiComLib.dll
+obj\Debug\AltiSDK28.vbproj.ResolveComReference.cache
+obj\Debug\AltiSDK28.dll
+obj\Debug\AltiSDK28.xml
+obj\Debug\AltiSDK28.pdb

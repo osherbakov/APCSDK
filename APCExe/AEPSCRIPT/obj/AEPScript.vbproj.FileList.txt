@@ -1,0 +1,13 @@
+bin\AEPScript.dll
+bin\AEPScript.pdb
+bin\AEPScript.xml
+bin\APCLine.dll
+bin\SPCore.dll
+bin\SPCore.pdb
+bin\SPCore.xml
+bin\APCLine.pdb
+bin\APCLine.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AEPScript.dll
+obj\Debug\AEPScript.xml
+obj\Debug\AEPScript.pdb

@@ -1,0 +1,7 @@
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\bin\Debug\TrayIcon.dll
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\bin\Debug\TrayIcon.pdb
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\obj\Debug\ResolveAssemblyReference.cache
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\obj\Debug\Diacom.APCService.Control.SystemTrayControl.resources
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\obj\Debug\TrayIcon.csproj.GenerateResource.Cache
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\obj\Debug\TrayIcon.dll
+I:\ProjectsGIT\APCSDK\APCService\TrayIcon\obj\Debug\TrayIcon.pdb

@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TraceListener</name>
+    </assembly>
+    <members>
+        <member name="T:System.HTML.HTMLColors">
+            <summary>
+            Represents HTML formatted text colors.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.White">
+            <summary>
+            White color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.Black">
+            <summary>
+            Black color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.Red">
+            <summary>
+            Red color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.Green">
+            <summary>
+            Green color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.Blue">
+            <summary>
+            Blue color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.LightGray">
+            <summary>
+            Light gray color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.DarkGray">
+            <summary>
+            Dark gray color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLColors.Gray">
+            <summary>
+            Gray color.
+            </summary>
+        </member>
+        <member name="T:System.HTML.HTMLElements">
+            <summary>
+            Represents HTML text elements.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLElements.LineBreak">
+            <summary>
+            Line break.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLElements.HorizontalRule">
+            <summary>
+            Horizontal rule.
+            </summary>
+        </member>
+        <member name="T:System.HTML.HTMLFont">
+            <summary>
+            Represents HTML font.
+            </summary>
+        </member>
+        <member name="M:System.HTML.HTMLFont.#ctor(System.String)">
+            <summary>
+            Creates new HTML font of specified family.
+            </summary>
+            <param name="Family">Font family.</param>
+        </member>
+        <member name="M:System.HTML.HTMLFont.#ctor(System.Int32)">
+            <summary>
+            Creates new HTML font with specified size.
+            </summary>
+            <param name="Size">Size of the font (from 1 to 6).</param>
+        </member>
+        <member name="M:System.HTML.HTMLFont.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates new HTML font of specified family and size.
+            </summary>
+            <param name="Family">Font family.</param>
+            <param name="Size">Size of the font.</param>
+        </member>
+        <member name="M:System.HTML.HTMLFont.GetFormat">
+            <summary>
+            Gets format string for methods like <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <returns>The format string for methods like <see cref="M:System.String.Format(System.String,System.Object)"/>.</returns>
+        </member>
+        <member name="T:System.HTML.HTMLStringBuilder">
+            <summary>
+            Represents HTML formatted string bulder.
+            </summary>
+        </member>
+        <member name="M:System.HTML.HTMLStringBuilder.#ctor">
+            <summary>
+            Creates new instance of the class.
+            </summary>
+        </member>
+        <member name="M:System.HTML.HTMLStringBuilder.Append(System.String)">
+            <summary>
+            Appends specified string to the end of the text.
+            </summary>
+            <param name="Text">String to append.</param>
+        </member>
+        <member name="M:System.HTML.HTMLStringBuilder.Append(System.String,System.String)">
+            <summary>
+            Appends specified string to the end of the text using specified color.
+            </summary>
+            <param name="Text">String to append.</param>
+            <param name="Color">Color of the appended text.</param>
+        </member>
+        <member name="M:System.HTML.HTMLStringBuilder.Append(System.String,System.HTML.HTMLFont)">
+            <summary>
+            Appends specified string to the end of the text using specified font.
+            </summary>
+            <param name="Text">String to append.</param>
+            <param name="Font">Font of the text.</param>
+        </member>
+        <member name="M:System.HTML.HTMLStringBuilder.Append(System.String,System.HTML.HTMLFont,System.String)">
+            <summary>
+            Appends specified string to the end of the text using specified font and color.
+            </summary>
+            <param name="Text">String to append.</param>
+            <param name="Font">Font of the text.</param>
+            <param name="Color">Color of the appended text.</param>
+        </member>
+        <member name="M:System.HTML.HTMLStringBuilder.Append(System.String,System.HTML.HTMLFont,System.String,System.Boolean)">
+            <summary>
+            Appends specified string to the end of the text using specified font and color.
+            </summary>
+            <param name="Text">String to append.</param>
+            <param name="Font">Font of the text.</param>
+            <param name="Color">Color of the appended text.</param>
+            <param name="Bold">Indicates should the text be bold or not.</param>
+        </member>
+        <member name="T:System.HTML.HTMLDocument">
+            <summary>
+            Represents the structure of HTML document.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLDocument.NL">
+            <summary>
+            Storage for 'new line' string - for shortest writing.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLDocument.Title">
+            <summary>
+            The title of the document.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLDocument.BodyBgColor">
+            <summary>
+            Document body background color.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLDocument.BodyHeader">
+            <summary>
+            The part of text to appear before the main text of the document.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLDocument.BodyFooter">
+            <summary>
+            The part of text to appear after the main text of the document.
+            </summary>
+        </member>
+        <member name="F:System.HTML.HTMLDocument.Paragraphs">
+            <summary>
+            The main text part of the document.
+            </summary>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor">
+            <summary>
+            Creates new unnamed blank HTML-formatted document with white background color.
+            </summary>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String)">
+            <summary>
+            Creates new blank HTML-formatted document with white background color and spacified title.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String)">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on white background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Content">Document content.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on white background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Header">The top part of the document contents.</param>
+            <param name="Footer">The bottom part of the document content.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on white background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Header">The top part of the document contents.</param>
+            <param name="Footer">The bottom part of the document contents.</param>
+            <param name="Content">Document content.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on specified background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Header">The top part of the document contents.</param>
+            <param name="Footer">The bottom part of the document contents.</param>
+            <param name="Content">Document content.</param>
+            <param name="BgColor">Text background color.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String[])">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on white background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Content">Document content.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on white background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Header">The top part of the document contents.</param>
+            <param name="Footer">The bottom part of the document contents.</param>
+            <param name="Content">Document content.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.#ctor(System.String,System.String,System.String,System.String[],System.String)">
+            <summary>
+            Creates new HTML-formatted document with specified title and content on specified background.
+            </summary>
+            <param name="DocumentTitle">Title for the document.</param>
+            <param name="Header">The top part of the document contents.</param>
+            <param name="Footer">The bottom part of the document contents.</param>
+            <param name="Content">Document content.</param>
+            <param name="BgColor">Text background color.</param>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.ToString">
+            <summary>
+            Represents the whole document as a single string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.ToFile(System.String)">
+            <summary>
+            Saves document to the file with specified path.
+            </summary>
+            <param name="FilePath">Path to file to save document to.</param>
+            <returns>True if document was successfully saved.</returns>
+        </member>
+        <member name="M:System.HTML.HTMLDocument.ToStream(System.IO.StreamWriter)">
+            <summary>
+            Puts document to a specified stream.
+            </summary>
+            <param name="TargetStream">The <see cref="T:System.IO.StreamWriter"/> to write document to.</param>
+            <returns>True if document was successfully written.</returns>
+        </member>
+        <member name="T:Diacom.TraceOutputListener">
+            <summary>
+            Represents new trace listener for whole application standard trace output.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceOutputListener.#ctor">
+            <summary>
+            Creates new trace output listener, that logs into new file, located in system temporary folder.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceOutputListener.Finalize">
+            <summary>
+            Closes the file and removes the listener from the list of trace listeners.
+            </summary>
+        </member>
+        <member name="T:Diacom.TraceStream">
+            <summary>
+            Implements main functionality of TextWriter.
+            </summary>
+        </member>
+        <member name="F:Diacom.TraceStream._NewLine">
+            <summary>
+            Storage for the line terminator string used by the current class.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Boolean)">
+            <summary>
+            Writes the text representation of a Boolean value to the text stream.
+            </summary>
+            <param name="value">The boolean to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Char)">
+            <summary>
+            Writes a character to the text stream.
+            </summary>
+            <param name="value">The character to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Char[])">
+            <summary>
+            Writes a character array to the text stream.
+            </summary>
+            <param name="buffer">The character array to write to the text stream.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Writes a subarray of characters to the text stream.
+            </summary>
+            <param name="buffer">The character array to write data from.</param>
+            <param name="index">Starting index in the buffer.</param>
+            <param name="count">The number of characters to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Decimal)">
+            <summary>
+            Writes the text representation of a decimal value followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The decimal to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Double)">
+            <summary>
+            Writes the text representation of an 8-byte floating-point value to the text stream.
+            </summary>
+            <param name="value">The double to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Single)">
+            <summary>
+            Writes the text representation of a 4-byte floating-point value to the text stream.
+            </summary>
+            <param name="value">The float to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Int32)">
+            <summary>
+            Writes the text representation of a 4-byte signed integer to the text stream.
+            </summary>
+            <param name="value">The integer to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Int64)">
+            <summary>
+            Writes the text representation of an 8-byte signed integer to the text stream.
+            </summary>
+            <param name="value">The long to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.Object)">
+            <summary>
+            Writes the text representation of an object to the text stream by calling ToString on that object.
+            </summary>
+            <param name="value">The object to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.String,System.Object)">
+            <summary>
+            Writes out a formatted string, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg0">An object to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.String,System.Object,System.Object)">
+            <summary>
+            Writes out a formatted string, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg0">An object to write into the formatted string.</param>
+            <param name="arg1">An object to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Writes out a formatted string, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg0">An object to write into the formatted string.</param>
+            <param name="arg1">An object to write into the formatted string.</param>
+            <param name="arg2">An object to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.String,System.Object[])">
+            <summary>
+            Writes out a formatted string, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg">The object array to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.String)">
+            <summary>
+            Writes a string to the text stream.
+            </summary>
+            <param name="value">The string to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.UInt32)">
+            <summary>
+            Writes the text representation of a 4-byte unsigned integer to the text stream. This method is not CLS-compliant.
+            </summary>
+            <param name="value">The unsigned integer to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.Write(System.UInt64)">
+            <summary>
+            Writes the text representation of an 8-byte unsigned integer to the text stream. This method is not CLS-compliant.
+            </summary>
+            <param name="value">The 8-byte unsigned integer to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine">
+            <summary>
+            Writes a line terminator to the text stream.
+            </summary>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Boolean)">
+            <summary>
+            Writes the text representation of a Boolean followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The boolean to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Char)">
+            <summary>
+            Writes a character followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The character to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Char[])">
+            <summary>
+            Writes an array of characters followed by a line terminator to the text stream.
+            </summary>
+            <param name="buffer">The array of characters to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Writes a subarray of characters followed by a line terminator to the text stream.
+            </summary>
+            <param name="buffer">The character array from which data is read.</param>
+            <param name="index">The index into buffer at which to begin reading.</param>
+            <param name="count">The maximum number of characters to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Decimal)">
+            <summary>
+            Writes the text representation of a decimal value followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The decimal to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Double)">
+            <summary>
+            Writes the text representation of a 8-byte floating-point value followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The double to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Single)">
+            <summary>
+            Writes the text representation of a 4-byte floating-point value followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The float to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Int32)">
+            <summary>
+            Writes the text representation of a 4-byte signed integer followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The integer value to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Int64)">
+            <summary>
+            Writes the text representation of an 8-byte signed integer followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The long value to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.Object)">
+            <summary>
+            Writes the text representation of an object by calling ToString on this object, followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The object to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.String,System.Object)">
+            <summary>
+            Writes out a formatted string and a new line, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg0">An object to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.String,System.Object,System.Object)">
+            <summary>
+            Writes out a formatted string and a new line, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg0">An object to write into the formatted string.</param>
+            <param name="arg1">An object to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Writes out a formatted string and a new line, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg0">An object to write into the formatted string.</param>
+            <param name="arg1">An object to write into the formatted string.</param>
+            <param name="arg2">An object to write into the formatted string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.String,System.Object[])">
+            <summary>
+            Writes out a formatted string and a new line, using the same semantics as <see cref="M:System.String.Format(System.String,System.Object)"/>.
+            </summary>
+            <param name="format">The formatting string.</param>
+            <param name="arg">The object array to write into format string.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.String)">
+            <summary>
+            Writes a string followed by a line terminator to the text stream.
+            </summary>
+            <param name="value">The string to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.UInt32)">
+            <summary>
+            Writes the text representation of a 4-byte unsigned integer followed by a line terminator to the text stream. This method is not CLS-compliant.
+            </summary>
+            <param name="value">The unsigned integer to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.WriteLine(System.UInt64)">
+            <summary>
+            Writes the text representation of an 8-byte unsigned integer followed by a line terminator to the text stream. This method is not CLS-compliant.
+            </summary>
+            <param name="value">The unsigned long to write.</param>
+        </member>
+        <member name="M:Diacom.TraceStream.ToString">
+            <summary>
+            Returns a string that represents the current class.
+            </summary>
+            <returns>A string that represents the current class.</returns>
+        </member>
+        <member name="P:Diacom.TraceStream.Encoding">
+            <summary>
+            Returns the Encoding in which the output is written.
+            </summary>
+        </member>
+        <member name="P:Diacom.TraceStream.NewLine">
+            <summary>
+            Gets or sets the line terminator string used by the current class.
+            </summary>
+        </member>
+        <member name="P:Diacom.TraceStream.Contents">
+            <summary>
+            Gets whole the stream contents as a string.
+            </summary>
+        </member>
+    </members>
+</doc>

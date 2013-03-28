@@ -1,0 +1,829 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APCServiceControl</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.APCService.Control.AboutForm">
+            <summary>
+            Summary description for AboutForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.AboutForm.#ctor(System.String)">
+            <summary>
+            Creates new windows form with for specified machine name.
+            </summary>
+            <param name="aMachineName">Name of the machine controlled.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.APCServiceControlConfiguratorForm">
+            <summary>
+            Represents APCServiceControlConfiguratorForm class.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceControlConfiguratorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceControlConfiguratorForm.opt">
+            <summary>
+            Variables for testing and configuring.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.#ctor">
+            <summary>
+            Creates new form for configuration.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.OnLoad(System.Object,System.EventArgs)">
+            <summary>
+            Executes when form is loaded.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.TestOptions(System.Object,System.EventArgs)">
+            <summary>
+            Tests configuration is valid (connects to service and gets its options).
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.SaveOptions(System.Object,System.EventArgs)">
+            <summary>
+            Saves all options.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.TargetMachineNameTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Where are some changes... User should test them before save.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.TargetMachinePortTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Where are some changes... User should test them before save.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.OnClose(System.Object,System.EventArgs)">
+            <summary>
+            Checking if we should run control tool after closing.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.MessageBox">
+            <summary>
+            Summary description for APCServiceControlMessage.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.MessageBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.MessageBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.APCServiceTrayForm">
+            <summary>
+            Summary description for APCServiceTrayForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.BalloonTimeout">
+            <summary>
+            Timeout for balloon to be shown (milliseconds).
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.TrayMenu">
+            <summary>
+            Context menu for an icon.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceNotControlledIcon">
+            <summary>
+            Icon, which appears in taskbar when service is not controlled.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceIsPendingIcon">
+            <summary>
+            Icon, which appears in taskbar when service is pending action.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceIsStoppedIcon">
+            <summary>
+            Icon, which appears in taskbar when service is stopped.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceIsRunningIcon">
+            <summary>
+            Icon, which appears in taskbar when service is running and all is OK.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceProviderIsNotOKIcon">
+            <summary>
+            Icon, which appears in taskbar when service is running but where is an error on service provider side.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceConfiguredIcon">
+            <summary>
+            Icon, which appears in taskbar when service is configured.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.Timer">
+            <summary>
+            Timer for refreshing information on service behavior.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.Info">
+            <summary>
+            information on class storage.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.APCSrvOpt">
+            <summary>
+            APCService options.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.SPst">
+            <summary>
+            Service provider status.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.APCServiceController">
+            <summary>
+            APCService service controller.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.RemoteChannel">
+            <summary>
+            TCP channel for remote connections with APCService.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.RunAPCServiceControlConfiguration">
+            <summary>
+            Flag which indicates what APCService Control Tool should be configured after exit.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.IsConfiguring">
+            <summary>
+            Flag which indicates if APCService is configuring now.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.IsUpdating">
+            <summary>
+            Flag which indicates if APCService is Updating now.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.LastKnownSPStatus">
+            <summary>
+            Last known service provider status.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.LastMessageShown">
+            <summary>
+            Last known Message shown.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ShowMessage(Diacom.APCService.Control.APCServiceTrayForm.MessageType,System.String,System.String)">
+            <summary>
+            Shows message to user.
+            </summary>
+            <param name="aType">Type of message <see cref="T:Diacom.APCService.Control.APCServiceTrayForm.MessageType"/> enumeration.</param>
+            <param name="aSPStatus">Status of service provider.</param>
+            <param name="aAddInf">Additional information.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.InitializeTray">
+            <summary>
+            Initializes tray icon components.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.GetServiceController">
+            <summary>
+            Gets service controller for APCService.
+            </summary>
+            <returns>True if service controller created and service is working properly.</returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ConfigureService">
+            <summary>
+            Shows service options dialog and restarts service if needed.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.RefreshAPCServiceStatus">
+            <summary>
+            Refreshes APCService and service provider status.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ToString">
+            <summary>
+            Class information as string (which machine is controlled).
+            </summary>
+            <returns>Information about controlled machine.</returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.OnDoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Occurs when user clicks twice in icon.
+            </summary>
+            <param name="sender">Sender of event.</param>
+            <param name="id">ID of message target.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.OnTimerTick(System.Object,System.EventArgs)">
+            <summary>
+            Occurs on timer activity (one per second).
+            </summary>
+            <param name="sender">Sender of event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ValidateContextMenuItems">
+            <summary>
+            Validates context menu items depending the status of service or on argument.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIAbout_Click(System.Object,System.EventArgs)">
+            <summary>
+            About context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exit context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIConfigureAPCService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Configure Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIStartService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Start Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIRestartService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Restart Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIStopService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Stop Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ContextMenu_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Occurs before context menu pops up. Validates menu items.
+            </summary>
+            <param name="sender">Sender of event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.APCServiceTrayForm.MessageType">
+            <summary>
+            Messages types.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorConnectionToMachine">
+            <summary>
+            Unable to connect to specified machine.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorNoServiceFound">
+            <summary>
+            Where is no service on machine specified.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorTCPConnection">
+            <summary>
+            TCP channels error.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorConfiguring">
+            <summary>
+            Error what occurs during APCService configuration.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorNoServiceControl">
+            <summary>
+            APCService not controlled.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorServiceActionTimeoutExpired">
+            <summary>
+            Command to stop, start or restart APCService timeout expired.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.MessageServiceIsRunning">
+            <summary>
+            Service is running.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.MessageSPStatus">
+            <summary>
+            Service provider status should be shown to user.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.WarningNoOptionsFile">
+            <summary>
+            No APCServiceControl.ini.xml file found.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.WarningServiceIsStopped">
+            <summary>
+            Service is stopped.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.None">
+            <summary>
+            No messages (empty entry).
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ConfigureForm">
+            <summary>
+            Summary description for ConfigureForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.ConfigureForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.#ctor(System.String,System.String,Diacom.APCService.APCServiceOptions)">
+            <summary>
+            Constructor for the form.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.ConfigureForm_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Form is closing - check if checkbox is checked and closing is not cancelling operation.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.CMain">
+            <summary>
+            Represents entry point for APCServiceTrayController application class.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.CMain.Main(System.String[])">
+            <summary>
+            Entry point for APCServiceTrayController application.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ServiceAction">
+            <summary>
+            Actions for service.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ServicePendingForm">
+            <summary>
+            Represents ServicePendingForm class for acting with service.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.ServicePendingForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.#ctor(System.ServiceProcess.ServiceController,Diacom.APCService.ServiceAction)">
+            <summary>
+            Initializes new instance of class.
+            </summary>
+            <param name="aSC">Service controller to deal with.</param>
+            <param name="act">Action for service to perform.</param>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.StopService">
+            <summary>
+            Stops the service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.StartService">
+            <summary>
+            Starts the service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.ServicePendingForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            Executes when form is loaded.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl">
+            <summary>
+            APCService System Tray Control.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Handle">
+            <summary>
+            Handle to an icon.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.OnPopup">
+            <summary>
+            Calls the OnPopup function/Event in a ContextMenu class.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.Shell_NotifyIcon(Diacom.APCService.Control.SystemTrayControl.Commands,Diacom.APCService.Control.SystemTrayControl.NotifyIconData@)">
+            <summary>
+            Sends a message to the taskbar's status area.
+            </summary>
+            <param name="cmd">Variable of type DWORD that specifies the action to be taken (<see cref="!:Diacom.APCService.Control.APCServiceSystemTrayControl.Commands"/> enumaration).</param>
+            <param name="data">Address of a NotifyIconData structure. The content of the structure depends on the value of cmd.</param>
+            <returns>0 if command is invalid.</returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.Update">
+            <summary>
+            Updates tray object.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.Remove">
+            <summary>
+            Removes object from tray.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.ShowBalloon(System.String,System.String,Diacom.APCService.Control.SystemTrayControl.InformationFlags,System.Int32)">
+            <summary>
+            Shows balloon tooltip.
+            </summary>
+            <param name="aTitle">Title for tip.</param>
+            <param name="aText">Text of tip.</param>
+            <param name="aType">Type of icon.</param>
+            <param name="aTimeoutInMilliSeconds">Time to show.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.#ctor(System.Drawing.Icon)">
+            <summary>
+            Creates tray icon.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="E:Diacom.APCService.Control.SystemTrayControl.BalloonClick">
+            <summary>
+            Occurs when user clicks on balloon tooltip (for Shell32.dll version 6, i.e. WindowsXP).
+            </summary>
+        </member>
+        <member name="E:Diacom.APCService.Control.SystemTrayControl.LeftMouseButtonDoubleClick">
+            <summary>
+            Occurs when user clicks twice on icon.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.Control.SystemTrayControl.ID">
+            <summary>
+            Icon ID (all icons in tray have one).
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.Control.SystemTrayControl.Menu">
+            <summary>
+            Menu that appears on right mouse click.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.Control.SystemTrayControl.Text">
+            <summary>
+            Text of tooltip.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.Control.SystemTrayControl.Icon">
+            <summary>
+            Icon user will see in tray.
+            </summary>
+        </member>
+        <member name="P:Diacom.APCService.Control.SystemTrayControl.Visible">
+            <summary>
+            Visibility property.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget">
+            <summary>
+            Implements target for Windows messages.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.WM_USER">
+            <summary>
+            ID for callback messages.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.WM_LEFT_MOUSE_BUTTON_DOUBLE_CLICK">
+            <summary>
+            Double click message.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.WM_RIGHT_MOUSE_BUTTON_UP">
+            <summary>
+            Right mouse button click message.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.NIN_BALLOON_CLICK">
+            <summary>
+            Click on balloon tooltip.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.#ctor(Diacom.APCService.Control.SystemTrayControl)">
+            <summary>
+            Creates new instance of the class.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.TrackPopupMenuEx(System.IntPtr,System.UInt32,System.Int32,System.Int32,System.IntPtr,System.IntPtr)">
+            <summary>
+            The TrackPopupMenuEx function displays a shortcut menu at the specified location and tracks the selection of items on the shortcut menu. The shortcut menu can appear anywhere on the screen.
+            </summary>
+            <param name="hMenu">Handle to the shortcut menu to be displayed. This handle can be obtained by calling the <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/winui/winui/windowsuserinterface/resources/menus/menureference/menufunctions/trackpopupmenuex.htm">CreatePopupMenu</see> function to create a new shortcut menu or by calling the <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/winui/winui/windowsuserinterface/resources/menus/menureference/menufunctions/trackpopupmenuex.htm">GetSubMenu</see> function to retrieve a handle to a submenu associated with an existing menu item.</param>
+            <param name="uFlags">Specifies function options.</param>
+            <param name="x">Horizontal location of the shortcut menu, in screen coordinates.</param>
+            <param name="y">Vertical location of the shortcut menu, in screen coordinates.</param>
+            <param name="hWnd">Handle to the window that owns the shortcut menu. This window receives all messages from the menu.</param>
+            <param name="ignore">Pointer to a TPMPARAMS structure that specifies an area of the screen the menu should not overlap. This parameter can be NULL.</param>
+            <returns>
+            <para>If you specify TPM_RETURNCMD in the fuFlags parameter, the return value is the menu-item identifier of the item that the user selected. If the user cancels the menu without making a selection, or if an error occurs, then the return value is zero.</para>
+            <para>If you do not specify TPM_RETURNCMD in the fuFlags parameter, the return value is nonzero if the function succeeds and zero if it fails</para>
+            </returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.GetCursorPos(Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.Point@)">
+            <summary>
+            Retrieves the cursor's position, in screen coordinates.
+            </summary>
+            <param name="point">Pointer to a <see cref="T:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.Point"/> structure that receives the screen coordinates of the cursor.</param>
+            <returns>
+            <para>If the function succeeds, the return value is nonzero.</para>
+            <para>If the function fails, the return value is zero.</para>
+            </returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.SetForegroundWindow(System.IntPtr)">
+            <summary>
+            Puts the thread that created the specified window into the foreground and activates the window. Keyboard input is directed to the window, and various visual cues are changed for the user. The system assigns a slightly higher priority to the thread that created the foreground window than it does to other threads.
+            </summary>
+            <param name="hWnd">Handle to the window that should be activated and brought to the foreground.</param>
+            <returns>
+            <para>If the window was brought to the foreground, the return value is nonzero.</para>
+            <para>If the window was not brought to the foreground, the return value is zero.</para>
+            </returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.DefWndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Handles incoming Windows messages.
+            </summary>
+            <param name="m">Message to handle.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.Point">
+            <summary>
+            This structure defines the x- and y-coordinates of a point.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.Point.x">
+            <summary>
+            Specifies the x-coordinate of a point.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.WinMsgTarget.Point.y">
+            <summary>
+            Specifies the y-coordinate of a point.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.InformationFlags">
+            <summary>
+            Balloon ToolTip icon styles.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.InformationFlags.None">
+            <summary>
+            No icon.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.InformationFlags.Info">
+            <summary>
+            'i' icon.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.InformationFlags.Warning">
+            <summary>
+            '!' icon.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.InformationFlags.Error">
+            <summary>
+            'x' icon.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.Commands">
+            <summary>
+            Commands for Shell_NotifyIcon function.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Commands.Add">
+            <summary>
+            Add icon to tray.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Commands.Modify">
+            <summary>
+            Modify icon data.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Commands.Remove">
+            <summary>
+            Remove icon from tray.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Commands.Version">
+            <summary>
+            Set version for Shell32.dll we wants to work with.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.Flags">
+            <summary>
+            Represents tray icon properties.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Flags.Message">
+            <summary>
+            Get Windows messages.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Flags.Icon">
+            <summary>
+            Icon to show.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Flags.Tip">
+            <summary>
+            Tip to show.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Flags.State">
+            <summary>
+            Icon state.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.Flags.Info">
+            <summary>
+            Information.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.State">
+            <summary>
+            tray icon state.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.SystemTrayControl.NotifyIconData">
+            <summary>
+            Structure with tray object properties (we are using version 5.0 of Shell32.dll).
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.Size">
+            <summary>
+            Size of this structure, in bytes.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.WndHandle">
+            <summary>
+            Handle to the window that receives notification messages associated with an icon in the taskbar status area. The Shell uses hWnd and uID to identify which icon to operate on when <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/shellcc/platform/shell/reference/structures/notifyicondata.htm">Shell_NotifyIcon</see> is invoked.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.ID">
+            <summary>
+            Application-defined identifier of the taskbar icon. The Shell uses hWnd and uID to identify which icon to operate on when Shell_NotifyIcon is invoked. You can have multiple icons associated with a single hWnd by assigning each a different uID.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.Flags">
+            <summary>
+            Flags that indicate which of the other members contain valid data <see cref="T:Diacom.APCService.Control.SystemTrayControl.Flags"/>.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.CallbackMessage">
+            <summary>
+            Application-defined message identifier. The system uses this identifier to send notifications to the window identified in hWnd. These notifications are sent when a mouse event occurs in the bounding rectangle of the icon, or when the icon is selected or activated with the keyboard. The wParam parameter of the message contains the identifier of the taskbar icon in which the event occurred. The lParam parameter holds the mouse or keyboard message associated with the event. For example, when the pointer moves over a taskbar icon, lParam is set to <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/shellcc/platform/shell/reference/structures/notifyicondata.htm">WM_MOUSEMOVE</see>. See the <see href="ms-help://MS.VSCC.2003/MS.MSDNQTR.2003APR.1033/shellcc/platform/shell/reference/structures/notifyicondata.htm">Taskbar</see> guide chapter for further discussion.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.IconHandle">
+            <summary>
+            Handle to the icon to be added, modified, or deleted. To avoid icon distortion, be aware that notification area icons have different levels of support under different versions of Microsoft® Windows®. Windows 95, Windows 98, and Microsoft Windows NT® 4.0 support icons of up to 4 bits per pixel (BPP). Windows Millennium Edition (Windows Me) and Windows 2000 support icons of a color depth up to the current display mode. Windows XP supports icons of up to 32 BPP.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.Tip">
+            <summary>
+            Pointer to a null-terminated string with the text for a standard ToolTip. It can have a maximum of 64 characters including the terminating NULL. For Version 5.0 and later, szTip can have a maximum of 128 characters, including the terminating NULL.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.State">
+            <summary>
+            State of the icon. There are two flags that can be set independently (<see cref="T:Diacom.APCService.Control.SystemTrayControl.State"/>).
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.StateMask">
+            <summary>
+            A value that specifies which bits of the state member are retrieved or modified. For example, setting this member to <see cref="F:Diacom.APCService.Control.SystemTrayControl.State.Hidden">State.Hidden</see> causes only the item's hidden state to be retrieved.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.Info">
+            <summary>
+            Pointer to a null-terminated string with the text for a balloon ToolTip. It can have a maximum of 255 characters. To remove the ToolTip, set the <see cref="!:Diacom.APCService.Control.APCServiceSystemTrayControl.Flags.Info"/>flag in <see cref="T:Diacom.APCService.Control.SystemTrayControl.Flags"/> and set Info to an empty string.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.TimeoutOrVersion">
+            <summary>
+            Union of Timeout and Version.
+            <para>
+            Timeout: the timeout value, in milliseconds, for a balloon ToolTip. The system enforces minimum and maximum timeout values. Timeout values that are too large are set to the maximum value and values that are too small default to the minimum value. The system minimum and maximum timeout values are currently set at 10 seconds and 30 seconds, respectively.
+            </para>
+            <para>
+            Version: specifies whether the Shell notify icon interface should use Windows 95 or Windows 2000 behavior. This member is only employed when using Shell_NotifyIcon to send a <see cref="F:Diacom.APCService.Control.SystemTrayControl.Commands.Version"/> message.
+            </para>
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.InfoTitle">
+            <summary>
+            Pointer to a null-terminated string containing a title for a balloon ToolTip. This title appears in boldface above the text. It can have a maximum of 63 characters.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.InfoFlags">
+            <summary>
+            Flags that can be set to add an icon to a balloon ToolTip. It is placed to the left of the title. If the <see cref="F:Diacom.APCService.Control.SystemTrayControl.NotifyIconData.InfoTitle"/> member is zero-length, the icon is not shown.
+            </summary>
+        </member>
+    </members>
+</doc>

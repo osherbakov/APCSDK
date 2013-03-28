@@ -1,0 +1,10 @@
+bin\Debug\APCLine.dll
+bin\Debug\APCLine.pdb
+bin\Debug\SPCore.dll
+bin\Debug\SPCore.pdb
+bin\Debug\SPCore.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\APCLine.dll
+obj\Debug\APCLine.pdb
+bin\Debug\APCLine.xml
+obj\Debug\APCLine.xml

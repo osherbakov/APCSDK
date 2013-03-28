@@ -1,0 +1,39 @@
+Parsing file: C:\APCSDK\STATEMACHINE\APCStates.vb
+The 'dir' start tag on line '7' does not match the end tag of 'remarks'. Line 8, position 4.
+
+Filename: C:\APCSDK\STATEMACHINE\APCStates.vb
+
+Signature: Private Function GetFullFilePath(ByVal FileEntry As String) As String
+
+Header: <summary>
+ Gets full path for directory entry. 
+ </summary>
+ <param name="DirEntry">Directory entry (full path or not).</param>
+ <returns>Full path to directory based on startup path.</returns>
+ <remarks>
+ Thinking all entries are of the following type: ".\<dir>" or "<dir>", and can start and end with "\". 
+ </remarks>
+
+Skipping and moving on....
+The 'dir' start tag on line '7' does not match the end tag of 'remarks'. Line 8, position 4.
+
+Filename: C:\APCSDK\STATEMACHINE\APCStates.vb
+
+Signature: Public Shared Function GetFullDirPath(ByVal DirEntry As String) As String
+
+Header: <summary>
+ Gets full path for directory entry. 
+ </summary>
+ <param name="DirEntry">Directory entry (full path or not).</param>
+ <returns>Full path to directory based on startup path.</returns>
+ <remarks>
+ Thinking all entries are of the following type: ".\<dir>" or "<dir>", and can start and end with "\". 
+ </remarks>
+
+Skipping and moving on....
+Parsing file: C:\APCSDK\STATEMACHINE\CmdModule.vb
+Parsing file: C:\APCSDK\STATEMACHINE\FilterModules\ConnectModule.vb
+Parsing file: C:\APCSDK\STATEMACHINE\FilterModules\PlayDTMFModule.vb
+Parsing file: C:\APCSDK\STATEMACHINE\FilterModules\PlayFileModule.vb
+Parsing file: C:\APCSDK\STATEMACHINE\FilterModules\RecordFileModule.vb
+Parsing file: C:\APCSDK\STATEMACHINE\FilterModules\ReleaseModule.vb

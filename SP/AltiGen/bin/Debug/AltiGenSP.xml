@@ -1,0 +1,3035 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AltiGenSP</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.AltiGen.LineInfo">
+            <summary>
+            Implements the structure to hold the Line info.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPData">
+            <summary>
+            <para>Defines the base class to read and write the data for AltiLink Plus packet.</para>
+            <para>Supports both ReadXXXX and Write(XXX) methods from BinaryReader and BinaryWriter.</para>
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus">
+            <summary>
+            Represents all aspects of AltiLink Plus protocol.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ENCODING_INT">
+            <summary>
+            Encoding as integer type.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ENCODING_BYTE">
+            <summary>
+            Encoding as byte type.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.CalculateCheckSum(System.Byte[])">
+            <summary>
+            Calculates checksum for array of bytes.
+            </summary>
+            <param name="bytesData">Array of bytes.</param>
+            <returns>Checksum for array.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.CalculateCheckSum(System.Int32)">
+            <summary>
+            Calculates checksum for int type.
+            </summary>
+            <param name="value">Integer.</param>
+            <returns>Checksum for integer.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeCheckSum(System.Byte)">
+            <summary>
+            Calculates encoded checksum for byte type.
+            </summary>
+            <param name="value">Byte type variable.</param>
+            <returns>Checksum for byte type variable.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeCheckSum(System.Int16)">
+            <summary>
+            Calculates encoded checksum for short type.
+            </summary>
+            <param name="value">Short type variable.</param>
+            <returns>Checksum for short type variable.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeCheckSum(System.Int32)">
+            <summary>
+            Calculates encoded checksum for int type.
+            </summary>
+            <param name="value">Int type variable.</param>
+            <returns>Checksum for int type variable.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeCheckSum(System.Byte[])">
+            <summary>
+            Calculates encoded checksum for array of bytes.
+            </summary>
+            <param name="bytesData">Array of bytes.</param>
+            <returns>Checksum for the array.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeData(System.Byte)">
+            <summary>
+            Encodes byte type variable.
+            </summary>
+            <param name="byteData">Byte type variable.</param>
+            <returns>Encoded byte type variable.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeData(System.Int16)">
+            <summary>
+            Encodes short type variable.
+            </summary>
+            <param name="shortData">Short type variable.</param>
+            <returns>Encoded short type variable.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeData(System.Int32)">
+            <summary>
+            Encodes int type variable.
+            </summary>
+            <param name="intData">Int type variable.</param>
+            <returns>Encoded int type variable.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.EncodeData(System.Byte[])">
+            <summary>
+            Encodes array of bytes.
+            </summary>
+            <param name="bytesData">Array of bytes.</param>
+            <returns>Encoded array of bytes.</returns>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALP_PACKET_TYPE">
+            <summary>
+            Specifies the type of AltiLink Plus packet.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PACKET_TYPE.ALP_PACKET_NONE">
+            <summary>
+            Empty.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PACKET_TYPE.ALP_PACKET_CMD">
+            <summary>
+            Command.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PACKET_TYPE.ALP_PACKET_RESP">
+            <summary>
+            Responce.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PACKET_TYPE.ALP_PACKET_EVENT">
+            <summary>
+            Event.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE">
+            <summary>
+            Specifies the type of the parameters.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_BYTE">
+            <summary>
+            Byte type of parameter.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_INT">
+            <summary>
+            Int type of parameter.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_CHAR">
+            <summary>
+            Char type of parameter.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_WCHAR">
+            <summary>
+            Wide char type of parameter.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_STRUCT">
+            <summary>
+            Parameter is struct.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_BBLOCK">
+            <summary>
+            Parameter is block.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALV2Tag">
+            <summary>
+            Defines AltiLink Plus v.2 packet tag.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.ALV2">
+            <summary>
+            AltiLink Plus v2 'ALV2' signature.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.ALV2_SIG">
+            <summary>
+            AltiLink Plus v2 'ALV2' signature as int32 type variable.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.ALV2_SIG_BIG_ENDIAN">
+            <summary>
+            AltiLink Plus v2 'ALV2' signature as int32 type variable (bigendian coding).
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.Find(System.IO.BinaryReader)">
+            <summary>
+            Finds the AltiLink Plus Tag structure in the stream.
+            </summary>
+            <remarks>Will be reading all bytes in the stream until it finds the Tag.</remarks>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the AltiLink Plus Tag structure from the stream.
+            </summary>
+            <exception cref="T:System.ApplicationException">Raised when data read is not a valid AltiLink Plus Tag.</exception>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the AltiLink Plus Tag structure to the stream.
+            </summary>
+            <param name="bw">Binary writer for the stream.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.Length">
+            <summary>
+            Gets the Tag structure length in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALV2Tag.CheckSum">
+            <summary>
+            Gets the Tag structure checksum.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.PacketHeader">
+            <summary>
+             Defines the packet header for AltiLink Plus; immediately follows the Tag.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.PacketHeader.versionId">
+            <summary>
+            Version ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.PacketHeader.blockCount">
+            <summary>
+            Quantity of blocks.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.PacketHeader.sessionId">
+            <summary>
+            Session ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.PacketHeader.packetLength">
+            <summary>
+            Length of the packet.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.PacketHeader.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the packet header structure from the stream.
+            </summary>
+            <exception cref="T:System.ApplicationException">Raised when version of the packet does not match.</exception>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.PacketHeader.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the packet header structure to the stream.
+            </summary>
+            <param name="bw">Binary writer for the stream.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketHeader.PacketLength">
+            <summary>
+            Gets or sets the total packet length in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketHeader.BlockCount">
+            <summary>
+            Gets or sets the number of blocks in the packet.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketHeader.SessionId">
+            <summary>
+            Gets or sets the session ID for that connection.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketHeader.Length">
+            <summary>
+            Gets the length of the packet header in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketHeader.CheckSum">
+            <summary>
+            Gets the packet header checksum.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.BlockHeader">
+            <summary>
+             Represents Data block header structure for the AltiLink Plus packet.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.BlockHeader.blockLength">
+            <summary>
+            Length of the block.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.BlockHeader.blockType">
+            <summary>
+            Type of the block.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.BlockHeader.blockSequenceId">
+            <summary>
+            Sequence ID for block.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.BlockHeader.locationId">
+            <summary>
+            Location ID for block.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.BlockHeader.commandCode">
+            <summary>
+            Command code for block.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.BlockHeader.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the data block header structure from the stream.
+            </summary>
+            <exception cref="T:System.ApplicationException">Raised when packet type is not valid.</exception>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.BlockHeader.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the data block header structure to the stream.
+            </summary>
+            <param name="bw">Binary writer for the stream.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.BlockHeader.Length">
+            <summary>
+            Gets the length of the header in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.BlockHeader.CheckSum">
+            <summary>
+            Gets the checksum of the header.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPData">
+            <summary>
+            <para>Defines the base class to read and write the data for AltiLink Plus packet.</para>
+            <para>Supports both ReadXXXX and Write(XXX) methods from BinaryReader and BinaryWriter.</para>
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPData.br">
+            <summary>
+            BinaryReader for data.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPData.bw">
+            <summary>
+            BinaryWriter for data.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.#ctor">
+            <summary>
+            Initializes an instance of the ALPData class without parameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ToALPData(System.Byte[])">
+            <summary>
+            Initializes the storage in ALPData class from the supplied array of bytes.
+            </summary>
+            <param name="buffer">Byte array that is used to fill and initialize the storage.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ToALPData(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Initializes the storage in ALPData class from the supplied array of bytes.
+            </summary>
+            <param name="buffer">Byte array that is used to fill and initialize the storage.</param>
+            <param name="index">Starting position in a byte array the data will be read from.</param>
+            <param name="count">The number of bytes that will be taken from the buffer to initialize the Read storage.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ReadByte">
+            <summary>
+            Reads the next byte from the data storage and advances the current position by one byte.
+            </summary>
+            <returns>The byte from the curent position in a data block.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ReadBytes(System.Int32)">
+            <summary>
+            Reads <paramref name="count" /> bytes from the data block into a byte array and advances the current position by <paramref name="count" /> bytes.
+            </summary>
+            <param name="count">The number of bytes to read.</param>
+            <returns>A byte array containing data read from the data block.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ReadInt16">
+            <summary>
+            Reads short (2 bytes) integer from the datablock and advances the current position by two byte.
+            </summary>
+            <returns>The short (2 bytes) from the curent position in a data block.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ReadInt32">
+            <summary>
+            Reads int (4 bytes) integer from the datablock and advances the current position by four bytes.
+            </summary>
+            <returns>The int (4 bytes) from the curent position in a data block.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ReadString">
+            <summary>
+            <para>Reads the string from the data block and advances the current position to the next byte after string terminating null character.</para>
+            <para>Converts all bytes from the current position till the first null character.</para>
+            </summary>
+            <returns>A string from the curent position in a data block.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.ReadString(System.Int32)">
+            <summary>
+            <para>Reads the <paramref name="stringSize" /> bytes from the data block and converts them into the string.</para>
+            <para>Advances the current position by <paramref name="stringSize" /> bytes.</para>
+            </summary>
+            <param name="stringSize">Number of bytes to read.</param>
+            <returns>A string from the curent position in a data block.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.GetBytes">
+            <summary>
+            Converts all data stored in the ALPData class to an array of bytes. 
+            </summary>
+            <returns>An array of bytes that represents all internal storage of ALPData class.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.Write(System.Byte[])">
+            <summary>
+            Adds the provided array of bytes into the data block and advances the current position by the size of the <paramref name="value" /> parameter.
+            </summary>
+            <param name="value">Array of bytes to be added to the data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.Write(System.Byte)">
+            <summary>
+            Adds one byte into the data block and advances the current position by one bytes.
+            </summary>
+            <param name="value">Byte to be added to the data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.Write(System.Int16)">
+            <summary>
+            Adds short (2 bytes) integer into the data block and advances the current position by two bytes.
+            </summary>
+            <param name="value">Short to be added to the data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.Write(System.Int32)">
+            <summary>
+            Adds int (4 bytes) integer into the data block and advances the current position by four bytes.
+            </summary>
+            <param name="value">Int to be added to the parameter block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.Write(System.String)">
+            <summary>
+            <para>Adds string into the data block and  terminating null byte.</para>
+            <para>Advances the current position by the (length of the string + 1) bytes.</para>
+            </summary>
+            <param name="value">String to be added to the data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPData.Write(System.String,System.Int32)">
+            <summary>
+            <para>Adds string of fixed size into the data block and terminating null byte.</para>
+            <para>The rest will be filled with null bytes if the string is shorter that a specified length.</para>
+            <para>Advances the current position by <see ref ="Size"/> bytes.</para>
+            </summary>
+            <param name="value">String to be added to the data block.</param>
+            <param name="Size">Size of the string - exactly that many bytes will be placed into the data block.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPData.Position">
+            <summary>
+            Gets and sets the position in the data storage where the next write or read will put/get bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPData.Length">
+            <summary>
+            Gets and sets the total number of bytes in data storage.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock">
+            <summary>
+            Defines the base class for Command, Event and Response data blocks.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.internalSequenceID">
+            <summary>
+            Storage for sequence ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.header">
+            <summary>
+            Header of the block.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.paramArray">
+            <summary>
+            The array of all parameters read - we keep it here for index Method to work.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.currentParam">
+            <summary>
+            Current parameter counter.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.currentValue">
+            <summary>
+            Current parameter value.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.#ctor(Diacom.AltiGen.AltiLinkPlus.BlockHeader)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock"/> class using information from supplied Data header.
+            </summary>
+            <param name="dataHeader">Provides the information for new data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.#ctor(Diacom.AltiGen.AltiLinkPlus.ALP_PACKET_TYPE,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock"/> class using provided information.
+            </summary>
+            <param name="packetType">Type of the Datablock.</param>
+            <param name="sequenceID">Unique sequence ID for that data block.</param>
+            <param name="locID">Unique number for line or trunk.</param>
+            <param name="commandID">Command code for Command packet or Command code for which Responce packet will be sent.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.ProcessParams">
+            <summary>
+            Processes and extracts all parameters from the datablock data into the internal array.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the datablock from the stream.
+            </summary>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the datablock into the stream.
+            </summary>
+            <param name="bw">Binary writer for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Add(Diacom.AltiGen.AltiLinkPlus.ALPData)">
+            <summary>
+            Adds any object derived from ALPData into the datablock.
+            </summary>
+            <param name="value">Parameter to be added.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.NextSequenceId">
+            <summary>
+            Generates the next unique sequence number.
+            </summary>
+            <returns>An int that is the next value for the sequence.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Implements <see cref="T:System.Collections.IEnumerable"/> method.
+            </summary>
+            <returns>Enumerator for the class.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.GetEnumerator">
+            <summary>
+            Implements the <see cref="T:System.Collections.IEnumerable"/> interface for simple parameters iteration.
+            </summary>
+            <returns>A class that implements <see cref="T:System.Collections.IEnumerator"/> interface.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.System#Collections#IEnumerator#Reset">
+            <summary>
+            <para>Implements the <see cref="M:System.Collections.IEnumerator.Reset"/> interface for simple iteration.</para>
+            <para>Resets enumeration.</para>
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Reset">
+            <summary>
+            <para>Implements the <see cref="M:System.Collections.IEnumerator.Reset"/> interface for simple iteration.</para>
+            <para>Resets the iterator.</para>
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.System#Collections#IEnumerator#MoveNext">
+            <summary>
+            <para>Implements the <see cref="M:System.Collections.IEnumerator.Reset"/> interface for simple iteration.</para>
+            <para>Moves to next element in enumeration.</para>
+            </summary>
+            <returns>Next element in enumeration.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.MoveNext">
+            <summary>
+            <para>Implements the <see cref="M:System.Collections.IEnumerator.MoveNext"/> interface for simple iteration.</para>
+            <para>Advances the iterator to the next element.</para>
+            </summary>
+            <returns>
+            <para><see langword="true"/> if the next element exists;</para>
+            <para><see langword="false"/> if iterator cannot continue.</para>
+            </returns>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Length">
+            <summary>
+            Gets the total length of the datablock in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.SequenceId">
+            <summary>
+            Gets the current sequence Id number for the datablock.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.LocationId">
+            <summary>
+            Gets the line or trunk number to which DataBlock referrs to.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.CommandId">
+            <summary>
+            Gets the current command ID.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.CheckSum">
+            <summary>
+            Gets the checksum of the datablock.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Item(System.Int32)">
+            <summary>
+            Implements the indexer functionality to get and set parameters into datablock.
+            <para>Returns <see langword="null"/> if parameter does not exist.</para>
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Count">
+            <summary>
+            Gets the number of parameters in the datablock.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.System#Collections#IEnumerator#Current">
+            <summary>
+            <para>Implements the <see cref="M:System.Collections.IEnumerator.Reset"/> interface for simple iteration.</para>
+            <para>Gets current element.</para>
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPDataBlock.Current">
+            <summary>
+            <para>Implements the <see cref="P:System.Collections.IEnumerator.Current"/> interface for simple iteration.</para>
+            <para>Gets the current value.</para>
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPCommand">
+            <summary>
+            Represents AltiServ Command.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPCommand.#ctor(Diacom.AltiGen.AltiLinkPlus.BlockHeader)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPCommand"/> class using information from supplied Data header.
+            </summary>
+            <param name="dataHeader">Information for new data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPCommand"/> class using provided information.
+            </summary>
+            <param name="locID">Unique number for line or trunk.</param>
+            <param name="commandID">Command code for the packet.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPCommand.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPCommand"/> information from the stream.
+            </summary>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPEvent">
+            <summary>
+            Represents an asynchronous event from AltiServ.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPEvent.#ctor(Diacom.AltiGen.AltiLinkPlus.BlockHeader)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPEvent"/> class using information from supplied Data header.
+            </summary>
+            <param name="dataHeader">Information for new data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPEvent.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPEvent"/> class using provided information.
+            </summary>
+            <param name="locID">Unique number for line or trunk.</param>
+            <param name="eventID">Event code for the packet.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPEvent.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPEvent"/> information from the stream.
+            </summary>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPResponse">
+            <summary>
+            Represents the response to the previously sent command to AltiServ.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPResponse.respCode">
+            <summary>
+            Responce code.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPResponse.#ctor(Diacom.AltiGen.AltiLinkPlus.BlockHeader)">
+            <summary>
+            Initializes a new instance instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPResponse"/> class using information from supplied Data header.
+            </summary>
+            <param name="dataHeader">Information for new data block.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPResponse.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPResponse"/> class using provided information.
+            </summary>
+            <param name="sequenceID">Unique sequence ID for that datablock.</param>
+            <param name="locID">Unique number for line or trunk.</param>
+            <param name="commandID">Command code for which this response is sent.</param>
+            <param name="responseCode">Response code for the previously sent command.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPResponse.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPResponse"/> information from the stream.
+            </summary>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPResponse.ResponseCode">
+            <summary>
+            Gets the value of the responce code for the Responce packet.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter">
+            <summary>
+            Defines the parameters for the command sent to AltiServ or Event data from AltiServ.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPParameter.paramID">
+            <summary>
+            Parameter ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPParameter.paramType">
+            <summary>
+            Parameter type.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPParameter.paramSize">
+            <summary>
+            Parameter size.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(Diacom.AltiGen.AltiLinkPlus.ALPData)">
+            <summary>
+            <para>Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class from the supplied data class.</para>
+            <para>Reads from the <see ref="data"/> class necessary number of bytes and advances the current position.</para>
+            </summary>
+            <exception cref="T:System.ApplicationException">Raised when size and type do not match.</exception>
+            <param name="data">Array of bytes from which all parameters are extracted.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor">
+            <summary>
+            <para>Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class with no parameters.</para>
+            <para>Creates PARAM_TYPE_STRUCT block, which may hold other types.</para>
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class of specified type.
+            </summary>
+            <exception cref="T:System.ApplicationException">Raised when parameter type is not valid.</exception>
+            <param name="parameterType">Type of the parameters the <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> will hold.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.Int32,Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class with specified information.
+            </summary>
+            <exception cref="T:System.ApplicationException">Raised when parameter type is not valid.</exception>
+            <param name="parameterID">Parameter ID - 0, 1, 2 and so on.</param>
+            <param name="parameterType">Type of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class that holds only one parameter of type <see cref="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_BYTE"/>.
+            </summary>
+            <param name="value">Value of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.Int32,System.Byte)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class that holds only one parameter of type <see cref="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_BYTE"/>.
+            </summary>
+            <param name="parameterID">Parameter ID - 0, 1, 2 and so on.</param>
+            <param name="value">Value of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class that holds only one parameter of type <see cref="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_INT"/>.
+            </summary>
+            <param name="value">Value of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class that holds only one parameter of type <see cref="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_INT"/>.
+            </summary>
+            <param name="parameterID">Parameter ID - 0, 1, 2 and so on.</param>
+            <param name="value">Value of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class that holds only one parameter of type <see cref="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_CHAR"/>.
+            </summary>
+            <param name="value">Value of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Diacom.AltiGen.AltiLinkPlus.ALPParameter"/> class that holds only one parameter of type <see cref="F:Diacom.AltiGen.AltiLinkPlus.ALP_PARAM_TYPE.PARAM_TYPE_CHAR"/>.
+            </summary>
+            <param name="parameterID">Parameter ID - 0, 1, 2 and so on.</param>
+            <param name="value">Value of the parameter.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPParameter.GetBytes">
+            <summary>
+            Converts the all data stored in the parameter into an array of bytes.
+            </summary>
+            <returns>An array of bytes that represents all internal storage for the parameter.</returns>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPParameter.MinimumLength">
+            <summary>
+            Gets the minimum length required for the parameter block in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPParameter.Length">
+            <summary>
+            Gets the total length of the parameter block in bytes.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPParameter.ParameterID">
+            <summary>
+            Gets and sets the Parameter ID - 0, 1, 2 ,3 and so on for that parameter block.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPParameter.ParameterType">
+            <summary>
+            Gets the type of the parameter.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPParameter.ParameterSize">
+            <summary>
+            Gets the size of the parameter in bytes.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.PacketCheckSum">
+            <summary>
+            Defines the CheckSum structure for the whole AltiLink Plus packet.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.PacketCheckSum.checkSum">
+            <summary>
+            Checksum storage.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.PacketCheckSum.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads checksum.
+            </summary>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.PacketCheckSum.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes checksum.
+            </summary>
+            <param name="bw">Binary writer for the stream.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketCheckSum.Length">
+            <summary>
+            Length of checksum.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.PacketCheckSum.Value">
+            <summary>
+            Value of checksum.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiLinkPlus.ALPPacket">
+            <summary>
+            <para>Represents the whole AltiLink Plus packet. 
+            Starts with the ALV2 tag, then packed header,
+            then one or more datablocks, and all is closed by the checksum.</para>
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPPacket.tag">
+            <summary>
+            ALV2 tag for packet.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPPacket.header">
+            <summary>
+            Header of the packet.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPPacket.checkSum">
+            <summary>
+            Checksum of the packet.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPPacket.#ctor">
+            <summary>
+            Initializes a new instance of ALPPacket class without parameters.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiLinkPlus.ALPPacket.payloadData">
+            <summary>
+            Payload data array.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPPacket.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of ALPPacket class with specified SessionID.
+            </summary>
+            <param name="SessionId">Unique number identifying the current session with AltiLink.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPPacket.#ctor(System.Int32,Diacom.AltiGen.AltiLinkPlus.ALPDataBlock)">
+            <summary>
+            Initializes a new instance of ALPPacket class with specified SessionID and adds the specified data block.
+            </summary>
+            <param name="SessionId">Unique number identifying the current session.</param>
+            <param name="PacketData">Command, Event or Response to be added to the packet.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPPacket.Write(System.IO.BinaryWriter)">
+            <summary>
+            Writes the whole AltiLink Plus packet into the provided stream.
+            </summary>
+            <param name="bw">Binary writer for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPPacket.Read(System.IO.BinaryReader)">
+            <summary>
+            Reads the whole AltiLink Plus packet from the provided data stream.
+            </summary>
+            <param name="br">Binary reader for the stream.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiLinkPlus.ALPPacket.Add(Diacom.AltiGen.AltiLinkPlus.ALPDataBlock)">
+            <summary>
+            Adds the datablock into the AltiLink Plus packet.
+            </summary>
+            <param name="value">Command, Event or Response to be added to the packet.</param>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPPacket.PacketData">
+            <summary>
+            Gets the data blocks from the packet.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPPacket.SessionId">
+            <summary>
+            Gets the session Id for the packet.
+            </summary>
+        </member>
+        <member name="P:Diacom.AltiGen.AltiLinkPlus.ALPPacket.BlockCount">
+            <summary>
+            Gets the number of data blocks (ALPCommand, ALPEvent or ALPResponse) in the packet.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.lineHandle">
+            <summary>
+            Line handle (line PAD).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.lineType">
+            <summary>
+            Type of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.lineSubType">
+            <summary>
+            Subtype of the line (unused).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.lineNumber">
+            <summary>
+            Number of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.firstName">
+            <summary>
+            First part of the line name.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.lastName">
+            <summary>
+            Second part of the line name.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.physPort">
+            <summary>
+            Phisical port for the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.direction">
+            <summary>
+            Direction of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.accessDigit">
+            <summary>
+            Access digit for the line.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.LineInfo.#ctor">
+            <summary>
+            Initializes a new instance of the class LineInfo with default paameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.LineInfo.#ctor(Diacom.AltiGen.AltiLinkPlus.ALPData,System.Int32)">
+            <summary>
+            <para>Initializes a new instance of the class LineInfo from the ALPData storage.</para>
+            <para>Reads the necessary number of bytes from the provided data storage and advances the current position.</para>
+            </summary>
+            <param name="data">Any object deriving from ALPData that holds the data.</param>
+            <param name="versionID">ALPV2 version (differences in parameters for versions 2.7 and higher).</param>
+        </member>
+        <member name="M:Diacom.AltiGen.LineInfo.GetBytes">
+            <summary>
+            Gets all the data from Line Info structure.
+            </summary>
+            <returns>An array of bytes holding all data for Line Info structure.</returns>
+        </member>
+        <member name="F:Diacom.AltiGen.LineInfo.Length">
+            <summary>
+            Gets or sets the size of the structure Line info.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.CallInfo">
+            <summary>
+            Implements the structure to hold the Call info.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.lineID">
+            <summary>
+            Line ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.callerPAD">
+            <summary>
+            Caller line PAD.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.callerIPAddress">
+            <summary>
+            Caller IP address.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.callerID">
+            <summary>
+            Caller ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.callerName">
+            <summary>
+            Caller name.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.calleePAD">
+            <summary>
+            Callee line PAD.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.accessCode">
+            <summary>
+            Access code.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.calleeID">
+            <summary>
+            Callee ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.calleeName">
+            <summary>
+            Callee name.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.workgroupPAD">
+            <summary>
+            Workgroup PAD.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.WorkGroupNumber">
+            <summary>
+            Workgroup number.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.OutBoundWorkGroupNumber">
+            <summary>
+            Outbound workgroup number.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.DNISID">
+            <summary>
+            DNIS ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.DNISName">
+            <summary>
+            DNIS name.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.ANIID">
+            <summary>
+            ANI ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.ANIName">
+            <summary>
+            ANI name.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.CurrentTime">
+            <summary>
+            The time the information was got.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.StartTime">
+            <summary>
+            Call start time.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.HoldTime">
+            <summary>
+            The call was holded.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.CallHandle">
+            <summary>
+            Call handle.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.CallInfo.SessionHandle">
+            <summary>
+            Call session handle.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.CallInfo.#ctor">
+            <summary>
+            Initializes a new instance of the class CallInfo with default paameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.CallInfo.#ctor(Diacom.AltiGen.AltiLinkPlus.ALPData)">
+            <summary>
+            <para>Initializes a new instance of the class CallInfo from the ALPData storage.</para>
+            <para>Reads the necessary number of bytes from the provided data storage and advances the current position.</para>
+            </summary>
+            <param name="data">Any object deriving from ALPData that holds the data.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.CallInfo.GetBytes">
+            <summary>
+            Gets all the data from Call Info structure.
+            </summary>
+            <returns>An array of bytes holding all data for Call Info structure.</returns>
+        </member>
+        <member name="P:Diacom.AltiGen.CallInfo.Length">
+            <summary>
+            Gets the size of the structure Callinfo.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPCmdStatus">
+            <summary>
+            Possible command statuses.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdStatus.FAILED">
+            <summary>
+            Command failed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdStatus.STARTED">
+            <summary>
+            Command execution started.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdStatus.FINISHED">
+            <summary>
+            Command execution finished.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdStatus.SUCCEED">
+            <summary>
+            Command successfully executed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdStatus.INVM">
+            <summary>
+            In voice message.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdStatus.OUTVM">
+            <summary>
+            Out voice message.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.LineStateInfo">
+            <summary>
+            Implements the structure to hold the Status info.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineStateInfo.lineID">
+            <summary>
+            ID of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineStateInfo.commandID">
+            <summary>
+            ID of the command.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineStateInfo.cmdStatus">
+            <summary>
+            Status of the command.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LineStateInfo.cmdData">
+            <summary>
+            Additional data.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.LineStateInfo.#ctor">
+            <summary>
+            Initializes a new instance of the class StateInfo with default paameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.LineStateInfo.#ctor(Diacom.AltiGen.AltiLinkPlus.ALPData)">
+            <summary>
+            <para>Initializes a new instance of the class StateInfo from the ALPData storage.</para>
+            <para>Reads the necessary number of bytes from the provided data storage and advances the current position.</para>
+            </summary>
+            <param name="data">Any object deriving from ALPData that holds the data.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.LineStateInfo.GetBytes">
+            <summary>
+            Gets all the data from Line Info structure.
+            </summary>
+            <returns>An array of bytes holding all data for Line Info structure.</returns>
+        </member>
+        <member name="P:Diacom.AltiGen.LineStateInfo.Length">
+            <summary>
+            Gets the size of the structure Line info.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.LastCommandStruct">
+            <summary>
+            Implements command parameters for a line (mean command is FOR this line).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LastCommandStruct.ID">
+            <summary>
+            Command ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LastCommandStruct.SenderLine">
+            <summary>
+            Command sender line PAD.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LastCommandStruct.SequenceID">
+            <summary>
+            Command sequence ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.LastCommandStruct.Status">
+            <summary>
+            Command status.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.LastCommandStruct.Set(System.Int32,Diacom.AltiGen.ALPCmdID,System.Object)">
+            <summary>
+            Sets all the properties.
+            </summary>
+            <param name="seq">Command sequence ID.</param>
+            <param name="id">Command ID (see <see cref="T:Diacom.AltiGen.ALPCmdID">ALPCmdID</see> enumeration).</param>
+            <param name="sender">Command sender line PAD.</param>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPLine">
+            <summary>
+            Class for storing information about line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLine.IsUnderAPCControl">
+            <summary>
+            Shows if the line is under APC or not.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLine.SPLineInfo">
+            <summary>
+            SPLine property for storing information about line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLine.LastCommand">
+            <summary>
+            LastCommandStruct for storing information about last command ON THIS line. 
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.ALPLine.#ctor(Diacom.AltiGen.LineInfo)">
+            <summary>
+            Based on line information constructor.
+            </summary>
+            <param name="lineInfo">Line information.</param>
+        </member>
+        <member name="T:Diacom.AltiGen.OutcallCommandStruct">
+            <summary>
+            Structure for saving information about Dial and Ring Extension commands.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.OutcallCommandStruct.#ctor(System.Object,System.Object,Diacom.Cmd.CommandID)">
+            <summary>
+            Usable constructor. Sets all the fields as needed.
+            </summary>
+            <param name="sender">Line that sent that command and will receive the response.</param>
+            <param name="targetLine">Line on which the command was sent.</param>
+            <param name="commandID">Command ID.</param>
+        </member>
+        <member name="F:Diacom.AltiGen.OutcallCommandStruct.Sender">
+            <summary>
+            Sender ID - the ID of the line that sent the command.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.OutcallCommandStruct.Line">
+            <summary>
+            The line on which that command was sent.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.OutcallCommandStruct.ID">
+            <summary>
+            Command ID.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ConvertTime">
+            <summary>
+            Provides static function for time_t and DateTime conversion.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.ConvertTime.#ctor">
+            <summary> 
+            Private constructor to prevent the class from being instantiated. 
+            </summary> 
+        </member>
+        <member name="M:Diacom.AltiGen.ConvertTime.ToDateTime(System.Int32)">
+            <summary> 
+            time_t is an int representing the number of seconds since Midnight UTC 1 Jan 1970 on the Gregorian Calendar. 
+            </summary> 
+            <param name="time_t"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Diacom.AltiGen.ConvertTime.To_time_t(System.DateTime)">
+            <summary> 
+            time_t is an int representing the number of seconds since Midnight UTC 1 Jan 1970 on the Gregorian Calendar. 
+            </summary> 
+            <param name="time"></param> 
+            <returns></returns> 
+        </member>
+        <member name="T:Diacom.AltiGen.TraceOut">
+            <summary>
+            Implements debug output.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.TraceOut.Put(Diacom.AltiGen.AltiLinkPlus.ALPEvent)">
+            <summary>
+            Puts given parameter to trace output, adding the time it happends.
+            </summary>
+            <param name="altiEvent">Event in AltiLink Plus V2 format.</param>
+        </member>
+        <member name="M:Diacom.AltiGen.TraceOut.Put(Diacom.AltiGen.AltiLinkPlus.ALPResponse)">
+            <summary>
+            Puts given parameter to trace output, adding the time it happends.
+            </summary>
+            <param name="altiResponse">Response on command in AltiLink Plus V2 format.</param>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiGenServiceProvider">
+            <summary>
+            Implements <see cref="T:Diacom.ISP"/> interface for AltiGen servers.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.AltiGenSPCore">
+            <summary>
+            Implements connection to AltiGen servers.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.tcpc">
+            <summary>
+            TCP client for connection to AltiGen server.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.st">
+            <summary>
+            Stream to access the TCP client.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.bw">
+            <summary>
+            Binary reader for the stream.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.br">
+            <summary>
+            Binary writer for the stream.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.eventsQueue">
+            <summary>
+            Queue for events (incoming).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.inThreadHandle">
+            <summary>
+            Thread handle for incoming messages.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.inThreadLivingStatus">
+            <summary>
+            Flag for thread for incoming messages to end his job.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.commandsQueue">
+            <summary>
+            Queue for commands (outgoing).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.outThreadHandle">
+            <summary>
+            Thread handle for outcoming messages.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.outThreadLivingStatus">
+            <summary>
+            Flag for thread for outcoming messages to end his job.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.ControlLocationID">
+            <summary>
+            SP account ID (control line PAD).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.lines">
+            <summary>
+            Hashtable of all lines in system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.waitingCommands">
+            <summary>
+            Hashtable of all commands that are waiting.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.spStatus">
+            <summary>
+            Status of SP.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.isDisposed">
+            <summary>
+            Disposing flag.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.ConnectionChecker">
+            <summary>
+            Checks if connection with SP was interrupted and restarts the connection in this case.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.ConnectionIsAlive">
+            <summary>
+            The flag representing connection status.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenSPCore.VersionID">
+            <summary>
+            Version of AltiLink Plus protocol.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.RaiseEvent(Diacom.SPStatus,System.String)">
+            <summary>
+            Raises event with information about IAltiGenSP status.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.#ctor">
+            <summary>
+            Initializes main SP components.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Connect(System.String,System.Int32,Diacom.SPLogonType,System.String,System.String,System.Int32)">
+            <summary>
+            Connects to server with given parameters.
+            </summary>
+            <param name="serverIP">IP address of server.</param>
+            <param name="serverPort">Port to connect.</param>
+            <param name="logonType">Type of logon.</param>
+            <param name="account">Account.</param>
+            <param name="password">Password.</param>
+            <param name="timeout">Timeout interval.</param>
+            <remarks>
+            <para>Creates new TCP socket, connects to server with given IP address and port,
+            tries to logon as "logonType" to "account" with given "password".</para>
+            <para>Blocks the current thread until initialization is finished.
+            Waits for connection "timeout" miliseconds.</para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.CheckConnection(System.Object)">
+            <summary>
+            Checks the connection status.
+            </summary>
+            <param name="data">Data for check (not used).</param>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Dispose(System.Boolean)">
+             <summary>
+             Implements <see cref="M:System.IDisposable.Dispose"/> method of 
+             <see cref="T:System.IDisposable"/> interface.
+             </summary>
+             <remarks>
+             <para>Stops threads, closes socket, etc.</para>
+             <seealso cref="T:System.IDisposable"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Dispose">
+             <summary>
+             Implements <see cref="M:System.IDisposable.Dispose"/> method  of <see cref="T:Diacom.ISP"/> interface.
+             </summary>
+             <remarks>
+             <para>Stops threads, closes socket, etc.</para>
+             <seealso cref="T:Diacom.ISP"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Status">
+            <summary>
+            Implements <see cref="M:Diacom.ISP.Status"/> of <see cref="T:Diacom.ISP"/> interface - 
+            method which indicates status of execution of any method.
+            </summary>
+            <remarks>
+            <para>Check this property every time you think there can be an error during execution 
+            (see documentation on <see cref="T:Diacom.AltiGen.ASPHdw"/> methods and constructor).</para>
+            <seealso cref="M:Diacom.ISP.Status"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Disconnect">
+            <summary>
+            Implements <see cref="M:Diacom.ISP.Disconnect"/> method of <see cref="T:Diacom.ISP"/> interface.
+            Closes the SP - logoffs from the server, releases TCP connections, etc.
+            </summary>
+            <remarks>
+            <seealso cref="T:Diacom.ISP"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Receive">
+            <summary>
+            Implements <see cref="M:Diacom.ISP.Receive"/> method of <see cref="T:Diacom.ISP"/> interface.
+            Retrieves next available event (one of <see cref="N:Diacom.Ev"/> namespace classes).
+            </summary>
+            <returns>Next available event.</returns>
+            <remarks>
+            <para>Waits while queue is empty.</para>
+            <para>If execution is not successfull, raises <see cref="E:Diacom.ISP.SPStatusEvent"/> event.</para>
+            <seealso cref="T:Diacom.ISP"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.Send(Diacom.Cmd.CmdBase)">
+            <summary>
+            Implements <see cref="M:Diacom.ISP.Send(Diacom.Cmd.CmdBase)"/> method of <see cref="T:Diacom.ISP"/> interface.
+            Sends command (one of <see cref="N:Diacom.Cmd"/> namespace classes).
+            </summary>
+            <param name="cmd">Command to send.</param>
+            <remarks>
+            <para>Returns immediately.</para>
+            <seealso cref="T:Diacom.ISP"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.GetLines">
+            <summary>
+            Implements <see cref="M:Diacom.ISP.GetLines"/> method of <see cref="T:Diacom.ISP"/> interface.
+            Provides an access to all the lines available.
+            </summary>
+            <returns>Pointer to array of <see cref="T:Diacom.SPLine"/> type (null if error).</returns>
+            <remarks>
+            <seealso cref="T:Diacom.ISP"/>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.GetLine(System.Object)">
+            <summary>
+            Provides an access to specified line.
+            </summary>
+            <param name="lineID">Line ID.</param>
+            <returns><see cref="T:Diacom.SPLine"/> instance if line exists, null otherwise.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.ProcessCommand(Diacom.Cmd.CmdBase)">
+            <summary>
+            Converts object into AltiLink Plus v2.0 format and returns it.
+            </summary>
+            <param name="cmd">Command to convert (of "object" type).</param>
+            <returns>Command in AltiLink Plus v2.0 format (or null).</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.ProcessEvent(Diacom.AltiGen.AltiLinkPlus.ALPEvent)">
+            <summary>
+            Processes all events.
+            </summary>
+            <param name="altiEvent">Block of data to process.</param>
+            <returns>An object with the event.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.ProcessResponse(Diacom.AltiGen.AltiLinkPlus.ALPResponse)">
+            <summary>
+            Process all responses.
+            </summary>
+            <param name="altiResponse">Block of data to process.</param>
+            <returns>An object with the response.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.outThread">
+            <summary>
+            Thread which extracts commands from commandsQueue queue and sends them to SP.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.inThread">
+            <summary>
+            Thread which receives packets from AltiGen Server and 
+            calls the appropriate procedures - to process event or response.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenSPCore.ToString">
+            <summary>
+            Represents information about a class.
+            </summary>
+            <returns>Information about a class.</returns>
+        </member>
+        <member name="E:Diacom.AltiGen.AltiGenSPCore.SPStatusEvent">
+            <summary>
+            Implements <see cref="E:Diacom.ISP.SPStatusEvent"/> event of <see cref="T:Diacom.ISP"/> interface
+            with information about SP status.
+            </summary>
+            <remarks>
+            <para>Raised when any thread have exception - i.e. when <see cref="M:Diacom.AltiGen.ASPHdw.Send(Diacom.Cmd.CmdBase)"/>
+            or <see cref="M:Diacom.AltiGen.ASPHdw.Receive"/> methods of 
+            <see cref="T:Diacom.AltiGen.ASPHdw"/> class are failed.</para>
+            <seealso cref="E:Diacom.ISP.SPStatusEvent"/>
+            </remarks>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenServiceProvider.outcallNumbersDialingCommands">
+            <summary>
+            Hashtable for storing information on commands DIAL.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.AltiGenServiceProvider.StoredRingInfo">
+            <summary>
+            Hashtable for storing information on incoming Ring.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenServiceProvider.ProcessCommand(Diacom.Cmd.CmdBase)">
+            <summary>
+            Converts object into AltiLink Plus v2.0 format and returns it.
+            </summary>
+            <param name="obj">Command to convert (of "object" type).</param>
+            <returns>Command in AltiLink Plus v2.0 format (or null).</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenServiceProvider.ProcessEvent(Diacom.AltiGen.AltiLinkPlus.ALPEvent)">
+            <summary>
+            Processes all events.
+            </summary>
+            <param name="altiEvent">Block of data to process.</param>
+            <returns>An object whith the event.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.AltiGenServiceProvider.ProcessResponse(Diacom.AltiGen.AltiLinkPlus.ALPResponse)">
+            <summary>
+            Process all responses.
+            </summary>
+            <param name="altiResponse">Block of data to process.</param>
+            <returns>An object with the response.</returns>
+        </member>
+        <member name="T:Diacom.AltiGen.ASPHdw">
+            <summary>
+            Implements <see cref="T:Diacom.ISP"/> interface for AltiGen servers.
+            </summary>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.Disconnect">
+             <summary>
+             Disconnects from the server.
+             </summary>
+             <remarks>
+             <para>
+             Stops threads, closes sockets, etc.
+             </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.Send(Diacom.Cmd.CmdBase)">
+            <summary>
+            Sends command (one of <see cref="N:Diacom.Cmd"/> neamespace classes).
+            </summary>
+            <param name="cmd">Command to send of <see cref="N:Diacom.Cmd"/> type.</param>
+            <remarks>Returns immediately.</remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.Receive">
+            <summary>
+            Retrieves next available event (one of <see cref="N:Diacom.Ev"/> namespace classes).
+            </summary>
+            <returns>Next available event of <see cref="N:Diacom.Ev"/> type.</returns>
+            <remarks>Waits while queue is empty.</remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.Connect(System.String,System.Int32,Diacom.SPLogonType,System.String,System.String,System.Int32)">
+            <summary>
+            Connects to the server with given parameters.
+            </summary>
+            <param name="serverIP">IP address of server.</param>
+            <param name="serverPort">Port to connect.</param>
+            <param name="logonType">Type of logon.</param>
+            <param name="account">Account.</param>
+            <param name="password">Password.</param>
+            <param name="timeout">Timeout interval.</param>
+            <remarks>
+            <para>
+            Creates new TCP socket, connects to server with given IP address and port,
+            tries to logon as "logonType" to "account" with given "password".
+            </para>
+            <para>
+            Blocks the current thread until initialization is finished.
+            Waits for connection "timeout" miliseconds.
+            </para>
+            <para>
+            To check execution results, use <see cref="M:Diacom.ISP.Status"/> property and <see cref="T:Diacom.SPStatus"/> enumeration.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.GetLines">
+            <summary>
+            Provides an access to all the lines available.
+            </summary>
+            <returns>Pointer to array of <see cref="T:Diacom.SPLine"/> [] type.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.GetLine(System.Object)">
+            <summary>
+            Provides an access to specified line.
+            </summary>
+            <param name="lineID">Line ID.</param>
+            <returns><see cref="T:Diacom.SPLine"/> instance if line exists, null otherwise.</returns>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.Status">
+            <summary>
+            Indicates status of execution of any method.
+            </summary>
+            <remarks>
+            Check this property every time you think there can be an error during execution.
+            </remarks>
+        </member>
+        <member name="M:Diacom.AltiGen.ASPHdw.Dispose">
+             <summary>
+             Implements <see cref="M:System.IDisposable.Dispose"/> method of 
+             <see cref="T:System.IDisposable"/> interface.
+             </summary>
+             <remarks>
+             <para>Stops threads, closes socket, etc.</para>
+             <seealso cref="T:System.IDisposable"/>
+            </remarks>
+        </member>
+        <member name="E:Diacom.AltiGen.ASPHdw.SPStatusEvent">
+            <summary>
+            Event with information about <see cref="T:Diacom.ISP"/> status.
+            </summary>
+            <remarks>
+            Raised when any thread raises exception - i.e. when <see cref="M:Diacom.ISP.Send(Diacom.Cmd.CmdBase)"/> or <see cref="M:Diacom.ISP.Receive"/> methods of <see cref="T:Diacom.ISP"/> interface are failed.
+            </remarks>
+        </member>
+        <member name="P:Diacom.AltiGen.ASPHdw.Item(System.Object,System.Object)">
+            <summary>
+            Gets or sets the user-specific data.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPCmdID">
+            <summary>
+            AltiLink Plus v.2 protocol commands codes.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.NOT_A_COMMAND">
+            <summary>
+            Not a command at all.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.REGISTER_APPID">
+            <summary>
+            Register application.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SET_VERSION">
+            <summary>
+            Set version ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.MAKECALL">
+            <summary>
+            Make a call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.ANSWER">
+            <summary>
+            Answer the call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.DROPCALL">
+            <summary>
+            Drop (finish) the call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.REDIRECT">
+            <summary>
+            Redirect the call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.HOLD">
+            <summary>
+            Hold line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.RESET">
+            <summary>
+            Reset the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.RING">
+            <summary>
+            Ring the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.PLAY">
+            <summary>
+            Play media.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.RECORD">
+            <summary>
+            Record media.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.PING">
+            <summary>
+            Ping line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SIM_CHARS">
+            <summary>
+            Simulate chars.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SIM_ONHOOK">
+            <summary>
+            Simulate onhook event.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CALLMONITORING">
+            <summary>
+            Call monitoring.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.REALTIMEMONITOR">
+            <summary>
+            Realtime call monitoring.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.LOGON">
+            <summary>
+            Logon (see <see cref="T:Diacom.SPLogonType"/>) to server.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.LOGOFF">
+            <summary>
+            Logoff from server.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.LOGON_WORKGROUP">
+            <summary>
+            Logon to workgroup.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.WEBCALL_SETUP">
+            <summary>
+            Web call setup.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.PUSH_URL">
+            <summary>
+            Push URL.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_LINEINFO">
+            <summary>
+            Get line information.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_LINECONFIG">
+            <summary>
+            Get line configuration information.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SET_LINECONFIG">
+            <summary>
+            Set line configuration information.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_CALLINFO">
+            <summary>
+            Get call information.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_EXTRACALLINFO">
+            <summary>
+            Get more information on call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SET_USERDATA">
+            <summary>
+            Set user information.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_SYSCONFIG">
+            <summary>
+            Get system configuration.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_WORKGROUPINFO">
+            <summary>
+            Get information on workgroup.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_SERVERTIMESTAMP">
+            <summary>
+            Set server time stamp.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_AGENTSTATE">
+            <summary>
+            Get agent state.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SET_AGENTSTATE">
+            <summary>
+            Set agent state.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_MONITORENTRY">
+            <summary>
+            Get monitoring entry.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SET_MONITORENTRY">
+            <summary>
+            Set monitoring entry.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_VMDLISTID">
+            <summary>
+            Get voice mail list ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_VMDLISTENTRY">
+            <summary>
+            Get voice mail list entry.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SET_VMDLIST">
+            <summary>
+            Get voice mail list.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_REASONCODE">
+            <summary>
+            Get reason code.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_QUERYCDR">
+            <summary>
+            Query CDR - Constant Density Recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_LOGRTMCALL">
+            <summary>
+            Log Registered Transfer Module to CDR.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_GETTOTALCOUNT">
+            <summary>
+            Get total number of CDR records.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_DELETECDR">
+            <summary>
+            Delete CDR record.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_QUERYSTART">
+            <summary>
+            Start query in CDR.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_QUERYNEXT">
+            <summary>
+            Next query in CDR.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_GETQUERYCOUNT">
+            <summary>
+            Get number of queries in CDR.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CDR_QUERYCLOSE">
+            <summary>
+            Close query in CDR.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.SEND_VM">
+            <summary>
+            Send voice mail.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.DDR_RESPONSE">
+            <summary>
+            DDR responce.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GET_VERSION">
+            <summary>
+            Get version ID.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_RING_EXT">
+            <summary>
+            Ring SP extension.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_MAKE_CALL">
+            <summary>
+            Make SP call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_DROP_CALL">
+            <summary>
+            Drop (finish) SP call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_TRANSFER_CALL">
+            <summary>
+            Transfer SP call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_PLAY_VOICE">
+            <summary>
+            Play file on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_STOP_PLAY_VOICE">
+            <summary>
+            Stop playing file on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_RECORD_VOICE">
+            <summary>
+            Record file on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_STOP_RECORD_VOICE">
+            <summary>
+            Stop recording file on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_PLAY_DTMF">
+            <summary>
+            Play DTMF sequence on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_SWITCH_MUSIC">
+            <summary>
+            Swith music mode (on/off) on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_GET_DATA">
+            <summary>
+            Get data from SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_SET_DATA">
+            <summary>
+            Set data on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_CONNECT_CALL">
+            <summary>
+            Connect call on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_SNATCH_LINE">
+            <summary>
+            Snatch the line to SP control.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_PLAY_FILES">
+            <summary>
+            Play files on SP line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_CALL_REJECT_SET">
+            <summary>
+            Set the rejection timeout.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_ANSWER_CALL">
+            <summary>
+            Answer the incoming call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_REJECT_CALL">
+            <summary>
+            Reject the incoming call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APC_PASS_CALL">
+            <summary>
+            Pass the incoming call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.FORCE_WORKGROUP_LOGOFF">
+            <summary>
+            Forced workgroup logoff.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.ALTIDB_QUERY">
+            <summary>
+            Query to database.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.ALTIDB_GETDATA">
+            <summary>
+            Get data from database.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.ALTIDB_QUERYCLOSE">
+            <summary>
+            Close query to database.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.ALTIDB_GETVALUE">
+            <summary>
+            Get value from database.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.VOICE_RECORD">
+            <summary>
+            Voice recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.UNREGISTER_APPID">
+            <summary>
+            Unregister application.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.CALLPICKUP">
+            <summary>
+            Pickup the call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.GETREALTIMEDATA">
+            <summary>
+            Get data in realtime mode.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.VMACTION">
+            <summary>
+            Voice mail action.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.STORAGE">
+            <summary>
+            Storage.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.REQUEST_OFFHOOK">
+            <summary>
+            Request offhook.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.START_CALLRECORD">
+            <summary>
+            Start call recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.STOP_CALLRECORD">
+            <summary>
+            Stop call recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.PAUSE_CALLRECORD">
+            <summary>
+            Pause call recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APPCFG_REQUEST">
+            <summary>
+            Application configuration request.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCmdID.APPCFG_RESPONSE">
+            <summary>
+            Application configuration responce.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPInfoType">
+            <summary>
+            AltiLink Plus v.2 protocol possible data request types.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPCallType">
+            <summary>
+            AltiLink Plus v.2 protocol possible call types.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCallType.PSTN">
+            <summary>
+            PSTN - Public Switched Telephone Network.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCallType.IP">
+            <summary>
+            IP.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCallType.VM">
+            <summary>
+            Voice mail.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPCallType.AA">
+            <summary>
+            AutoAttendant.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPRingMode">
+            <summary>
+            AltiLink Plus v.2 protocol possible ring modes.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRingMode.OUTSIDE_OPERATOR">
+            <summary>
+            Outside operator.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRingMode.INSIDE_OPERATOR">
+            <summary>
+            Inside operator.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRingMode.EXTERNAL">
+            <summary>
+            External mode.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRingMode.INTERNAL">
+            <summary>
+            Internal mode.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPEvID">
+            <summary>
+            AltiLink Plus v.2 protocol events codes.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.RESET">
+            <summary>
+            Line reseted.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.RING">
+            <summary>
+            Ring on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.RING_BACK">
+            <summary>
+            Ring is back on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.STCHG">
+            <summary>
+            State changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.DIGIT">
+            <summary>
+            Button pressed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.MWI">
+            <summary>
+            Message from line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.PARK">
+            <summary>
+            Line parked.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.CALLDROP">
+            <summary>
+            Call is droped on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.QEMPTY">
+            <summary>
+            Query is empty on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.SYSREINIT">
+            <summary>
+            Reinitialisation of the system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.INQUEUE">
+            <summary>
+            Incoming call queued.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.OUTQUEUE">
+            <summary>
+            Outgoing call queued.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.LINEREINIT">
+            <summary>
+            Reinitialisation of the line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.IPCALL_STARTED">
+            <summary>
+            IP call started.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.PUSHED_URL">
+            <summary>
+            UTL pushed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.AGENT_STATE_CHG">
+            <summary>
+            Agent state changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.RTM_DATA">
+            <summary>
+            Registered Transfer Module data.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.CONFIG_CHG">
+            <summary>
+            Configuration of line changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.SYSCONFIG_CHG">
+            <summary>
+            System configuration changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.DDR_REQUEST">
+            <summary>
+            DDR request.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.OC_EXPROC">
+            <summary>
+            Voice message proceed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_CALLPRESENT">
+            <summary>
+            SP call present.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_DIGIT">
+            <summary>
+            Button was pressed in line under SP control.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_STATUS">
+            <summary>
+             Status of the line under SP control changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_RINGBACK">
+            <summary>
+            Ring is back to SP. 
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_CALLDROP">
+            <summary>
+            Call is dropped (finished) on line under SP control.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_RESERVE1">
+            <summary>
+            Reserved for SP.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_RESERVE2">
+            <summary>
+            Reserved for SP.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_RESERVE3">
+            <summary>
+            Reserved for SP.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APC_RESERVE4">
+            <summary>
+            Reserved for SP.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.CONFIG_CHG2">
+            <summary>
+            System configuration changed (second variant).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.TONE">
+            <summary>
+            Tone detected.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.VR">
+            <summary>
+            Vioce recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.SERVERINFO">
+            <summary>
+            Server information changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.SERVICEINFO">
+            <summary>
+            Service information changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.APPCFG_REQUEST">
+            <summary>
+            Application configuration request.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPEvID.CONNECT_BY_SP">
+            <summary>
+            Line is connected by SP.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPRespID">
+            <summary>
+            AltiLink Plus v.2 protocol responses on commands codes.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.OK">
+            <summary>
+            All is OK.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_ID">
+            <summary>
+            ID is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_CMD">
+            <summary>
+            Command is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_PARAM">
+            <summary>
+            Parameter is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_PWD">
+            <summary>
+            PWD is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_STATE">
+            <summary>
+            State is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_APPID">
+            <summary>
+            Application ID is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_DATA">
+            <summary>
+            Data is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_SERIAL">
+            <summary>
+            Serial number is invalid.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.SYSTEM_ERROR">
+            <summary>
+            System error.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.PROTOCOL_ERROR">
+            <summary>
+            Protocol error.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.PORT_OUTOFREACH">
+            <summary>
+            Port is out of reach.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.APPID_LICENSE_FULL">
+            <summary>
+            Application has full licence.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NOT_LOGON">
+            <summary>
+            User is not logged in system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.LOGON_ALREADY">
+            <summary>
+            User already logged in system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.WEBCALL_REJECT">
+            <summary>
+            Web call rejected.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.ECHO">
+            <summary>
+            Echo.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.SERIAL_EXIST">
+            <summary>
+            Serial exists in system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INSERT_DUPLICATE">
+            <summary>
+            Insert is duplicated.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.CALLDB_FULL">
+            <summary>
+            Calls database is overfulled.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.DBLINK_ERROR">
+            <summary>
+            Error to link to database.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_RECORD_SELECTED">
+            <summary>
+            No record was selected.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.CDRQUERY_DATA">
+            <summary>
+            CDR query data.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.APPID_REGISTERED">
+            <summary>
+            Application with this ID is already registered.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.LIST_END">
+            <summary>
+            End of list.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.LOGON_FAILED">
+            <summary>
+            logon failed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.CALL_ABANDONED">
+            <summary>
+            Call abandoned.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.MAXDBCON_REACHED">
+            <summary>
+            Maximum number of connections to database reached.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.BACKUP_INPROCESS">
+            <summary>
+            Buckup is in processing.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.SQLTEMPDB_FULL">
+            <summary>
+            SQL temporary database is overfulled.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_MORE_SESSION">
+            <summary>
+            No free session.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.OPTIONPACK_NOT_INSTALLED">
+            <summary>
+            Option pack is not installed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.IPEXT_NOTENABLED">
+            <summary>
+            IP extension not enabled.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.IPEXT_IPFIXED">
+            <summary>
+            IP extension is fixed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.LINEBUSY">
+            <summary>
+            Line is busy.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.INVALID_ACCODE">
+            <summary>
+            Invalid access control code.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.APC_INVALID_CONTROLLER">
+            <summary>
+            Invalid SP controller.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.APC_EXTENSION_BUSY">
+            <summary>
+            Extension under SP control is busy.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.ACCESSDENY">
+            <summary>
+            Access denied.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_BAS_LICENSE">
+            <summary>
+            No basic license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_VRD_LICENSE">
+            <summary>
+            No VRD license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_APC_LICENSE">
+            <summary>
+            No SP license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_ECDR_LICENSE">
+            <summary>
+            No ECDR license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_ACRT_LICENSE">
+            <summary>
+            No AltiCRT license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_CSLE_LICENSE">
+            <summary>
+            No CSLE license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_AWEB_LICENSE">
+            <summary>
+            No AltiWeb license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_AVIEW_LICENSE">
+            <summary>
+            No AltiView license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_AWRG_LICENSE">
+            <summary>
+            No AltiWorkgroup license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NOT_REGISTERED">
+            <summary>
+            Application is not registered.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.ALREADY_REGISTERED">
+            <summary>
+            Application is registered alredy.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_MORE_CONSOLE">
+            <summary>
+            There are no more console.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.LOGIN_ISBLOCKED">
+            <summary>
+            Login is blocked.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.LOGIN_OK_UNSECURE_PWD">
+            <summary>
+            Login is OK (unsecure password).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_IPPHONE_LICENSE">
+            <summary>
+            No IP phone license.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.NO_PRIVILEGE">
+            <summary>
+            No priviledge.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.WARN_VERSIONMISMATCH">
+            <summary>
+            Version mismatch warning.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.ERR_VERSIONMISMATCH">
+            <summary>
+            Version mismatch error.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_SYSTEM_DISABLE">
+            <summary>
+            System disabled voice recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_RECORDING_IN_PROGRESS">
+            <summary>
+            Voice recording in progress.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_FILE_CANNOT_OPEN">
+            <summary>
+            System can't open file for voice recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_DISK_FULL">
+            <summary>
+            Disk is full for voice recording.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_VRSERVICE_NOT_INSTALLED">
+            <summary>
+            Voice recording sevice is not installed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_MAILBOX_IS_FULL">
+            <summary>
+            Mail box for voice recording is overfulled.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_INVALID_VRTYPE">
+            <summary>
+            Invalid voice recording type.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_EXT_DISABLE">
+            <summary>
+            Voice recording for this extension is disabled.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_NOT_SUPPORTED">
+            <summary>
+            Voice recording is not supported.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_NOT_START">
+            <summary>
+            Voice recording not started.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.VR_MAX">
+            <summary>
+            Voice recording processes maximum riched.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.ERROR">
+            <summary>
+            Error (reason is undefined).
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPRespID.UNKNOWN">
+            <summary>
+            Unknown error.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.ALPLineState">
+            <summary>
+            Line states.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.IDLE">
+            <summary>
+            Line is idle.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.EAP">
+            <summary>
+            Line is in Extensible Authentication Protocol mode.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.CONNECTED">
+            <summary>
+            Line is connected.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.INUSE">
+            <summary>
+            Line is in use.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.OFFHOOK">
+            <summary>
+            Line is offhook.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.CALLPENDING">
+            <summary>
+            Call pending on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.RINGBACK">
+            <summary>
+            Ring is back on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.CONFERENCING">
+            <summary>
+            Line is in conferencing mode.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.AA">
+            <summary>
+            Line is connected with autoateddant.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.VM">
+            <summary>
+            Line is in voice message recording mode.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.HOLD">
+            <summary>
+            Line is hold.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.HOLDPENDING">
+            <summary>
+            Hold pending on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.PROCEEDING">
+            <summary>
+            Line is proceeding.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.DISCONNECT">
+            <summary>
+            Line is disconnected.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.ERROR">
+            <summary>
+            Error on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.RING">
+            <summary>
+            Ring on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.PARK">
+            <summary>
+            Line is parked.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.SOFTOFFHOOK">
+            <summary>
+            Line is softly offhooked.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.MUSICONHOLD">
+            <summary>
+            Music on hold on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.XFER_WAITFORONHOOK">
+            <summary>
+            Tranfering waiting for onhook on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.XFER_RINGBACK">
+            <summary>
+            Transfering ring is back.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.BUSY">
+            <summary>
+            Line is busy.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.PLAY">
+            <summary>
+            Line is playing file.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.RECORD">
+            <summary>
+            Line is recording file.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.APC">
+            <summary>
+            Line is under SP control.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.VOICE_RECORD_START">
+            <summary>
+            Voice recording started on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.VOICE_RECORD_STOP">
+            <summary>
+            Voice recording stopped on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.SILENTMONITOR">
+            <summary>
+            Line is monitored silently.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.BARGEIN">
+            <summary>
+            Barge in on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.HOLD_CONFERENCE">
+            <summary>
+            Line is holding AltiView conference.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.HFDTD_IDLE">
+            <summary>
+            Line is idle for offhook when hand free/dialtone disable
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.PLAY_CALL_STOP">
+            <summary>
+            Play call finished on line.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.PLAY_CALL">
+            <summary>
+            Line is playing call.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.LINE_ADD">
+            <summary>
+            New line added.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.ALPLineState.LINE_REMOVE">
+            <summary>
+            Line not accessible any more.
+            </summary>
+        </member>
+        <member name="T:Diacom.AltiGen.SystemConfigChangeCodes">
+            <summary>
+            Possible codes of system configuration changes.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.NUMBERPLAN">
+            <summary>
+            Number plan changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.OPERATOR">
+            <summary>
+            Operator changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.MENUNAMES">
+            <summary>
+            Menu names changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.DIALMETHOD">
+            <summary>
+            Dial method changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.SPEEDDIAL">
+            <summary>
+            Speed dial changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.LINEREMOVE">
+            <summary>
+            Line is removed from system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.LINEADD">
+            <summary>
+            Line added to system.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.WGMEMBERCHG">
+            <summary>
+            Workgroup member changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.SQLSERVER">
+            <summary>
+            SQL server changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.VMDLISTCHG">
+            <summary>
+            Voice mail list changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.REASONCODE">
+            <summary>
+            Reason code changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.SYSTEMID">
+            <summary>
+            System ID changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.ACC">
+            <summary>
+            Area Communication Controller changed.
+            </summary>
+        </member>
+        <member name="F:Diacom.AltiGen.SystemConfigChangeCodes.OVERHEADPAGING">
+            <summary>
+            Paging overhead detected.
+            </summary>
+        </member>
+    </members>
+</doc>

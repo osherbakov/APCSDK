@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APCRegKeys</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.APCRegKeys.APCRegKeys">
+            <summary>
+            Creates or removes some registry values.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCRegKeys.APCRegKeys.CreateRegistryValues">
+            <summary>
+            Creates registry values (APCService description and autorun for APCServiceControl).
+            </summary>
+        </member>
+        <member name="M:Diacom.APCRegKeys.APCRegKeys.DeleteRegistryValues">
+            <summary>
+            Deletes registry values (APCService description and autorun for APCServiceControl).
+            </summary>
+        </member>
+        <member name="M:Diacom.APCRegKeys.APCRegKeys.Main(System.String[])">
+            <summary>
+            Entry point for app.
+            </summary>
+            <param name="args">Commands application to perform.</param>
+            <remarks>
+            <para>
+            Argument for command line should be following: "-install" or "-unistall" -- the action to perform.
+            </para>
+            </remarks>
+        </member>
+    </members>
+</doc>

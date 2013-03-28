@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AltiGenSP">
+</Property><Property Name="Solution File" Value="H:\APCSDK.NET2\SP\AltiGen\AltiGenSP.sln">
+</Property><Property Name="Date" Value="8 ноября 2005 г.">
+</Property><Property Name="Time" Value="15:44">
+</Property></Properties><Event ErrorLevel="2" Project="AltiGenSP" Source="AltiGenSP.csproj" Description="Project file is not writable: H:\APCSDK.NET2\SP\AltiGen\AltiGenSP.csproj">
+</Event><Event ErrorLevel="2" Project="AltiGenSP" Source="AltiGenSP.csproj" Description="Unable to save converted project file.">
+</Event><Event ErrorLevel="3" Project="AltiGenSP" Source="AltiGenSP.csproj" Description="Not Converted">
+</Event><Event ErrorLevel="0" Project="SPCore" Source="..\SPCore.csproj" Description="The project file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="SPCore" Source="..\SPCore.csproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="AltiGenSP.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="AltiGenSP.sln" Description="Converted">
+</Event></UpgradeLog>

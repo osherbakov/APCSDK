@@ -1,0 +1,6 @@
+bin\Debug\SPCore.dll
+bin\Debug\SPCore.pdb
+bin\Debug\SPCore.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\SPCore.dll
+obj\Debug\SPCore.pdb

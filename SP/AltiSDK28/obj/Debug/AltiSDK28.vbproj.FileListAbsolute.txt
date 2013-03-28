@@ -1,0 +1,13 @@
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\obj\Debug\ResolveAssemblyReference.cache
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\obj\Debug\AltiSDK28.vbproj.ResolveComReference.cache
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\obj\Debug\AltiSDK28.dll
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\obj\Debug\AltiSDK28.xml
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\obj\Debug\AltiSDK28.pdb
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\AltiSDK28.dll
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\SPCore.dll
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\SPCore.pdb
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\SPCore.xml
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\obj\Debug\Interop.AltiComLib.dll
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\AltiSDK28.pdb
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\AltiSDK28.xml
+I:\ProjectsGIT\APCSDK\SP\AltiSDK28\bin\Interop.AltiComLib.dll

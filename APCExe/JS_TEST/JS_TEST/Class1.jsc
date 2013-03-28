@@ -1,0 +1,46 @@
+
+class Test extends Diacom.APCLineControl
+{
+	function Test()
+	{
+	}
+
+	function Z() : void
+	{
+		Init();
+	}
+	function Main() : void
+	{
+		FunctionTest("Test!!!!!!");
+	}
+
+	function FreeLine() : void
+	{
+        ResetAll();
+        OnEvent("XYSTWZ", "Z");
+        DropCall(2);
+        WaitComplete();
+	}
+
+	function ZJ() : void   // Event RING "J" came from the line
+	{
+        set_Timeout(45);
+        OnEvent("XYSTW", "FreeLine");  // On any error or disconnect event initialize the line        
+		// set_Var("Attempts", 3);     // Initialize retries counter
+        // set_Var("ValidPassword", false);	
+	}
+
+	function ZJI()  : void   // Event CONNECT "I" came - now we are connected
+	{
+		set_Timeout(45);
+		GotoState("InvalidTrunk");
+	}
+
+	function InvalidTrunk() : void
+	{
+        Reset();
+        OnEvent("XYSTW", "FreeLine");  // On any error or disconnect event init the line
+        PlayFile("202");     // Play "Sorry that you are having problems" phrase
+        DropCall(2);
+	}
+}

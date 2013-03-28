@@ -1,0 +1,9 @@
+bin\Debug\APCServiceCore.dll
+bin\Debug\APCServiceCore.pdb
+bin\Debug\APCServiceCore.xml
+bin\Debug\SPCore.dll
+bin\Debug\SPCore.pdb
+bin\Debug\SPCore.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\APCServiceCore.dll
+obj\Debug\APCServiceCore.pdb

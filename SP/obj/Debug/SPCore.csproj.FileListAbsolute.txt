@@ -1,0 +1,9 @@
+I:\ProjectsGIT\APCSDK\SP\bin\Debug\SPCore.dll
+I:\ProjectsGIT\APCSDK\SP\bin\Debug\SPCore.pdb
+I:\ProjectsGIT\APCSDK\SP\bin\Debug\SPCore.xml
+I:\ProjectsGIT\APCSDK\SP\obj\Debug\ResolveAssemblyReference.cache
+I:\ProjectsGIT\APCSDK\SP\obj\Debug\SPCore.dll
+I:\ProjectsGIT\APCSDK\SP\obj\Debug\SPCore.pdb
+I:\ProjectsGIT\APCSDK\SP\bin\Debug\Interop.AltiComLib.dll
+I:\ProjectsGIT\APCSDK\SP\obj\Debug\Interop.AltiComLib.dll
+I:\ProjectsGIT\APCSDK\SP\obj\Debug\SPCore.csproj.ResolveComReference.cache

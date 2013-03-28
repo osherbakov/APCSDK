@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>AEPScript</name>
+    <version>1.0.1902.20377</version>
+    <fullname>AEPScript, Version=1.0.1902.20377, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="M:.AEPScript.IsAddressOK(System.Collections.IEnumerable,String)">
+      <summary>
+ Checks if the specified address is in the supplied control access list. 
+ </summary>
+ <param name="arrayOfAddresses">Array or collection of addresses.</param>
+ <param name="Address">Address to check.</param>
+ <returns>True - if found match, False - if not</returns></member>
+    <member name="T:.DropLine">
+      <summary>
+ Class to fully disconnect the line (including connected lines). 
+ </summary>
+    </member>
+    <member name="T:.Password">
+      <summary>
+ Represents the class that asks for the password from the user. 
+ </summary>
+    </member>
+  </members>
+</doc>

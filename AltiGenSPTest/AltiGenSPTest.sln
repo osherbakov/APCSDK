@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{85DBBE1A-4C38-4D45-835B-44604E55A9E7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCore", "..\..\APCSDK\SP\SPCore.csproj", "{742943D6-9ED5-4F91-9A7F-518783AAD630}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltiGenSP", "..\..\APCSDK\SP\AltiGen\AltiGenSP.csproj", "{7157FA11-6E5A-47DB-9D29-F92127924442}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectUniqueName0 = ..\\..\\APCSDK\\SP\\SPCore.csproj
+		SccProjectName0 = \u0022$/APCSDK/SP\u0022,\u0020XGBAAAAA
+		SccLocalPath0 = ..\\..\\APCSDK\\SP
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = ..\\..\\APCSDK\\SP\\AltiGen\\AltiGenSP.csproj
+		SccProjectName1 = \u0022$/APCSDK/SP/AltiGen\u0022,\u0020XYBAAAAA
+		SccLocalPath1 = ..\\..\\APCSDK\\SP\\AltiGen
+		CanCheckoutShared = false
+		SccLocalPath2 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {D9E30676-DDB7-4B5D-857C-A8B7AA23AFA7}
+		SccProjectUniqueName3 = Test\\Test.csproj
+		SccLocalPath3 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection3 = Test\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{85DBBE1A-4C38-4D45-835B-44604E55A9E7}.Debug.ActiveCfg = Debug|.NET
+		{85DBBE1A-4C38-4D45-835B-44604E55A9E7}.Debug.Build.0 = Debug|.NET
+		{85DBBE1A-4C38-4D45-835B-44604E55A9E7}.Release.ActiveCfg = Release|.NET
+		{85DBBE1A-4C38-4D45-835B-44604E55A9E7}.Release.Build.0 = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.ActiveCfg = Debug|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Debug.Build.0 = Debug|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.ActiveCfg = Release|.NET
+		{742943D6-9ED5-4F91-9A7F-518783AAD630}.Release.Build.0 = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Debug.ActiveCfg = Debug|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Debug.Build.0 = Debug|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Release.ActiveCfg = Release|.NET
+		{7157FA11-6E5A-47DB-9D29-F92127924442}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+﻿Installing assembly 'c:\apcsdk\apcservice\service\bin\debug\apcservice.exe'.
+Affected parameters are:
+   assemblypath = c:\apcsdk\apcservice\service\bin\debug\apcservice.exe
+   logfile = c:\apcsdk\apcservice\service\bin\debug\apcservice.InstallLog
+Installing service APCService...
+Service APCService has been successfully installed.
+Creating EventLog source APCService in log Application...
+Committing assembly 'c:\apcsdk\apcservice\service\bin\debug\apcservice.exe'.
+Affected parameters are:
+   assemblypath = c:\apcsdk\apcservice\service\bin\debug\apcservice.exe
+   logfile = c:\apcsdk\apcservice\service\bin\debug\apcservice.InstallLog

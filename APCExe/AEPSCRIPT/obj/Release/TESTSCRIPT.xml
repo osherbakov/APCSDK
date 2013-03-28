@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>TESTSCRIPT</name>
+    <version>1.0.1788.15183</version>
+    <fullname>TESTSCRIPT, Version=1.0.1788.15183, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="T:TESTSCRIPT.Password">
+      <summary>
+ Represents the class that asks for the password from the user. 
+ </summary>
+    </member>
+  </members>
+</doc>

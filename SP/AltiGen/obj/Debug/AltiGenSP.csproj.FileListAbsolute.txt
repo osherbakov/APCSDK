@@ -1,0 +1,3 @@
+I:\ProjectsGIT\APCSDK\SP\AltiGen\obj\Debug\ResolveAssemblyReference.cache
+I:\ProjectsGIT\APCSDK\SP\AltiGen\obj\Debug\Interop.AltiComLib.dll
+I:\ProjectsGIT\APCSDK\SP\AltiGen\obj\Debug\AltiGenSP.csproj.ResolveComReference.cache

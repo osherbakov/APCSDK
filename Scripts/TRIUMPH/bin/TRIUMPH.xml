@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>TRIUMPH</name>
+    <version>1.0.1901.32959</version>
+    <fullname>TRIUMPH, Version=1.0.1901.32959, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="T:Diacom.Scripts.DealerID">
+      <summary>
+ Represents the class that asks for and verifies the DealerID from the caller. 
+ </summary>
+    </member>
+  </members>
+</doc>

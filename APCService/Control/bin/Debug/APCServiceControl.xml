@@ -1,0 +1,505 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APCServiceControl</name>
+    </assembly>
+    <members>
+        <member name="T:Diacom.APCService.Control.MessageBox">
+            <summary>
+            Summary description for APCServiceControlMessage.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.MessageBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.MessageBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ServiceAction">
+            <summary>
+            Actions for service.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ServicePendingForm">
+            <summary>
+            Represents ServicePendingForm class for acting with service.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.ServicePendingForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.#ctor(System.ServiceProcess.ServiceController,Diacom.APCService.ServiceAction)">
+            <summary>
+            Initializes new instance of class.
+            </summary>
+            <param name="aSC">Service controller to deal with.</param>
+            <param name="act">Action for service to perform.</param>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.StopService">
+            <summary>
+            Stops the service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.StartService">
+            <summary>
+            Starts the service.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ServicePendingForm.ServicePendingForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            Executes when form is loaded.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.APCServiceTrayForm">
+            <summary>
+            Summary description for APCServiceTrayForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.BalloonTimeout">
+            <summary>
+            Timeout for balloon to be shown (milliseconds).
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.#ctor">
+            <summary>
+            Creates an instance of the class without parameters.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.TrayMenu">
+            <summary>
+            Context menu for an icon.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceNotControlledIcon">
+            <summary>
+            Icon, which appears in taskbar when service is not controlled.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceIsPendingIcon">
+            <summary>
+            Icon, which appears in taskbar when service is pending action.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceIsStoppedIcon">
+            <summary>
+            Icon, which appears in taskbar when service is stopped.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceIsRunningIcon">
+            <summary>
+            Icon, which appears in taskbar when service is running and all is OK.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceProviderIsNotOKIcon">
+            <summary>
+            Icon, which appears in taskbar when service is running but where is an error on service provider side.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.ServiceConfiguredIcon">
+            <summary>
+            Icon, which appears in taskbar when service is configured.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.Timer">
+            <summary>
+            Timer for refreshing information on service behavior.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.Info">
+            <summary>
+            information on class storage.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.APCSrvOpt">
+            <summary>
+            APCService options.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.SPst">
+            <summary>
+            Service provider status.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.APCServiceController">
+            <summary>
+            APCService service controller.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.RemoteChannel">
+            <summary>
+            TCP channel for remote connections with APCService.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.RunAPCServiceControlConfiguration">
+            <summary>
+            Flag which indicates what APCService Control Tool should be configured after exit.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.IsConfiguring">
+            <summary>
+            Flag which indicates if APCService is configuring now.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.IsUpdating">
+            <summary>
+            Flag which indicates if APCService is Updating now.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.LastKnownSPStatus">
+            <summary>
+            Last known service provider status.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.LastAdditionalInfo">
+            <summary>
+            Last known Additional Information.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.LastMessageShown">
+            <summary>
+            Last known Message shown.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ShowMessage(Diacom.APCService.Control.APCServiceTrayForm.MessageType,System.String,System.String)">
+            <summary>
+            Shows message to user.
+            </summary>
+            <param name="aType">Type of message <see cref="T:Diacom.APCService.Control.APCServiceTrayForm.MessageType"/> enumeration.</param>
+            <param name="aSPStatus">Status of service provider.</param>
+            <param name="aAddInf">Additional information.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.InitializeTray">
+            <summary>
+            Initializes tray icon components.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.GetServiceController">
+            <summary>
+            Gets service controller for APCService.
+            </summary>
+            <returns>True if service controller created and service is working properly.</returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ConfigureService">
+            <summary>
+            Shows service options dialog and restarts service if needed.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.RefreshAPCServiceStatus">
+            <summary>
+            Refreshes APCService and service provider status.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ToString">
+            <summary>
+            Class information as string (which machine is controlled).
+            </summary>
+            <returns>Information about controlled machine.</returns>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.OnDoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Occurs when user clicks twice in icon.
+            </summary>
+            <param name="sender">Sender of event.</param>
+            <param name="id">ID of message target.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.OnTimerTick(System.Object,System.EventArgs)">
+            <summary>
+            Occurs on timer activity (one per second).
+            </summary>
+            <param name="sender">Sender of event.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ValidateContextMenuItems">
+            <summary>
+            Validates context menu items depending the status of service or on argument.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIAbout_Click(System.Object,System.EventArgs)">
+            <summary>
+            About context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIExit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exit context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIConfigureAPCService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Configure Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIStartService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Start Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIRestartService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Restart Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.CMIStopService_Click(System.Object,System.EventArgs)">
+            <summary>
+            Stop Service context menu item clicked.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceTrayForm.ContextMenu_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Occurs before context menu pops up. Validates menu items.
+            </summary>
+            <param name="sender">Sender of event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.APCServiceTrayForm.MessageType">
+            <summary>
+            Messages types.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorConnectionToMachine">
+            <summary>
+            Unable to connect to specified machine.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorNoServiceFound">
+            <summary>
+            Where is no service on machine specified.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorTCPConnection">
+            <summary>
+            TCP channels error.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorConfiguring">
+            <summary>
+            Error what occurs during APCService configuration.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorNoServiceControl">
+            <summary>
+            APCService not controlled.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.ErrorServiceActionTimeoutExpired">
+            <summary>
+            Command to stop, start or restart APCService timeout expired.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.MessageServiceIsRunning">
+            <summary>
+            Service is running.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.MessageSPStatus">
+            <summary>
+            Service provider status should be shown to user.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.WarningNoOptionsFile">
+            <summary>
+            No APCServiceControl.ini.xml file found.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.WarningServiceIsStopped">
+            <summary>
+            Service is stopped.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceTrayForm.MessageType.None">
+            <summary>
+            No messages (empty entry).
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.ConfigureForm">
+            <summary>
+            Summary description for ConfigureForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.ConfigureForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.#ctor(System.String,System.String,Diacom.APCService.APCServiceOptions)">
+            <summary>
+            Constructor for the form.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.ConfigureForm_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Form is closing - check if checkbox is checked and closing is not cancelling operation.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.ConfigureForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.CMain">
+            <summary>
+            Represents entry point for APCServiceTrayController application class.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.CMain.Main(System.String[])">
+            <summary>
+            Entry point for APCServiceTrayController application.
+            </summary>
+        </member>
+        <member name="T:Diacom.APCService.Control.APCServiceControlConfiguratorForm">
+            <summary>
+            Represents APCServiceControlConfiguratorForm class.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceControlConfiguratorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.APCServiceControlConfiguratorForm.opt">
+            <summary>
+            Variables for testing and configuring.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.#ctor">
+            <summary>
+            Creates new form for configuration.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.OnLoad(System.Object,System.EventArgs)">
+            <summary>
+            Executes when form is loaded.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.TestOptions(System.Object,System.EventArgs)">
+            <summary>
+            Tests configuration is valid (connects to service and gets its options).
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.SaveOptions(System.Object,System.EventArgs)">
+            <summary>
+            Saves all options.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.TargetMachineNameTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Where are some changes... User should test them before save.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.TargetMachinePortTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Where are some changes... User should test them before save.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.Dispose(System.Boolean)">
+            <summary>
+            Cleans up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.APCServiceControlConfiguratorForm.OnClose(System.Object,System.EventArgs)">
+            <summary>
+            Checking if we should run control tool after closing.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">Event parameters.</param>
+        </member>
+        <member name="T:Diacom.APCService.Control.AboutForm">
+            <summary>
+            Summary description for AboutForm.
+            </summary>
+        </member>
+        <member name="F:Diacom.APCService.Control.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.AboutForm.#ctor(System.String)">
+            <summary>
+            Creates new windows form with for specified machine name.
+            </summary>
+            <param name="aMachineName">Name of the machine controlled.</param>
+        </member>
+        <member name="M:Diacom.APCService.Control.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Diacom.APCService.Control.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
