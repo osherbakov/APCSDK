@@ -10,9 +10,7 @@ I:\ProjectsGIT\APCSDK\SP\obj\Debug\SPCore.csproj.ResolveComReference.cache
 C:\Projects\APCSDK\SP\bin\Debug\SPCore.dll
 C:\Projects\APCSDK\SP\bin\Debug\SPCore.pdb
 C:\Projects\APCSDK\SP\bin\Debug\SPCore.xml
-C:\Projects\APCSDK\SP\bin\Debug\Interop.AltiComLib.dll
 C:\Projects\APCSDK\SP\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\APCSDK\SP\obj\Debug\Interop.AltiComLib.dll
 C:\Projects\APCSDK\SP\obj\Debug\SPCore.csproj.ResolveComReference.cache
 C:\Projects\APCSDK\SP\obj\Debug\SPCore.dll
 C:\Projects\APCSDK\SP\obj\Debug\SPCore.pdb

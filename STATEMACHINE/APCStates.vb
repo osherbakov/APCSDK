@@ -484,7 +484,7 @@ Namespace Diacom.APCStates
 
                 Do
                     If FindAndExecute(stateLine, sName & stateSuffix) Then Exit Try
-                    sName = sName.Substring(0, sName.Length - (Me.ApcCmdMod.FileTimeStamp Xor Const2))
+                    sName = sName.Substring(0, sName.Length - 1)
                 Loop While recursive AndAlso (sName <> String.Empty)
                 If reportError Then
                     stateLine.FireStateEvent(StateControlObject.SourceLine, APCEvents.ELSECONTINUE, Nothing, True)

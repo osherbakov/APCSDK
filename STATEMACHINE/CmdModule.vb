@@ -16,8 +16,6 @@ Namespace Diacom.APCStates
     ''' -----------------------------------------------------------------------------
     Public Class APCCommandModule : Implements IAPCInterface
         Private ReadOnly apcControl As APCStateControl
-        Public FileTimeStamp As Integer
-        Public DecodeKey1 As Integer
 
         Public Sub New(ByVal apcCtl As APCStateControl)
             Me.apcControl = apcCtl
@@ -128,7 +126,6 @@ Namespace Diacom.APCStates
                     _fileName = _fileName.Trim.ToUpper
                     ' If the string can be converted to a number - use it
                     If Int32.TryParse(_fileName, _phraseNum) Then
-                        _phraseNum += (Me.DecodeKey1 Xor &H20)
                         _fileName = apcControl.Convert(_line.CurrentLanguageSet, "phrase", _phraseNum)
                     End If
                     ' After conversion to the number there can be multiple other strings - split them
